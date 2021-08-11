@@ -7,6 +7,7 @@
 
 
 extern int __VERIFIER_nondet_int(void);
+extern char __VERIFIER_nondet_char(void);
 
 char *strrchr(const char *t, int c) {
   register char ch;
@@ -28,6 +29,10 @@ int main(){
   int in_len = __VERIFIER_nondet_int();
   if(in_len < 1){return 1;}
   char* in = alloca(in_len);
+  for(int i=0; i<in_len-1; i++)
+  {
+    in[i] = __VERIFIER_nondet_char();
+  }
   in[in_len-1]=0;
   int the_int = __VERIFIER_nondet_int();
   return (int) strrchr(in, the_int);

@@ -503,6 +503,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
 
 extern int __VERIFIER_nondet_int(void);
+extern char __VERIFIER_nondet_char(void);
 int strcasecmp ( const char* s1, const char* s2 )
 {
     register unsigned int x2;
@@ -522,10 +523,18 @@ int main(){
   int in_len = __VERIFIER_nondet_int();
   if(in_len < 1){return 1;}
   char* in = __builtin_alloca (in_len);
+  for(int i=0; i<in_len-1; i++)
+  {
+    in[i] = __VERIFIER_nondet_char();
+  }	
   in[in_len-1]=0;
   int out_len = __VERIFIER_nondet_int();
   if(out_len < 1){return 1;}
   char* out = __builtin_alloca (in_len);
+  for(int i=0; i<out_len-1; i++)
+  {
+    out[i] = __VERIFIER_nondet_char();
+  }
   out[out_len-1]=0;
   return strcasecmp(in, out);
 }

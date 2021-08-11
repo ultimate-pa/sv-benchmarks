@@ -41,7 +41,7 @@ int ssl3_connect(int initial_state )
   int s__ctx__stats__sess_hit = __VERIFIER_nondet_int() ;
   int s__ctx__stats__sess_connect_good = __VERIFIER_nondet_int() ;
   int s__s3__change_cipher_spec ;
-  int s__s3__flags ;
+  int s__s3__flags = __VERIFIER_nondet_int() ;
   int s__s3__delay_buf_pop_ret ;
   int s__s3__tmp__cert_req = __VERIFIER_nondet_int() ;
   int s__s3__tmp__new_compression = __VERIFIER_nondet_int() ;
@@ -55,7 +55,7 @@ int ssl3_connect(int initial_state )
   int buf ;
   unsigned long tmp ;
   unsigned long l ;
-  int num1 ;
+  int num1 = __VERIFIER_nondet_int() ;
   int cb ;
   int ret ;
   int new_state ;

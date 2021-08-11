@@ -4,7 +4,7 @@
 
 
 extern int __VERIFIER_nondet_int(void);
-
+extern char __VERIFIER_nondet_char(void);
 
 int atoi(const char* s) {
   long int v=0;
@@ -25,6 +25,10 @@ int main(){
   int in_len = __VERIFIER_nondet_int();
   if(in_len < 1){return 1;}
   char* in = alloca(in_len);
+  for(int i=0; i<in_len-1; i++)
+  {
+    in[i] = __VERIFIER_nondet_char();
+  }
   in[in_len-1]=0;
 
   return atoi(in);

@@ -12,7 +12,7 @@ void __VERIFIER_assert(int cond){
 }
 
 int main(){
-  unsigned int x;
+  unsigned int x = __VERIFIER_nondet_int();
   unsigned int y = 1;
   
   while(__VERIFIER_nondet_int()){
