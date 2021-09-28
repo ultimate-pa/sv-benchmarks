@@ -1,5 +1,17 @@
 # Translating from Boogie to C
 
+For each Boogie file:
+
+* translate the program to C and pthreads
+* update the YAML file with the new input file, language and data model (ILP32)
+* analyse with Automizer to see if C program is (still) correct or incorrect
+
+Generally:
+
+* find out what preprocessing is needed
+* fix paths to property files
+
+
 - [ ] `./clever.wvr.yml`
 - [ ] `./fibonacci.wvr.yml`
 - [ ] `./loop-tiling-eq.wvr.yml`
