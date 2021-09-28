@@ -11,6 +11,19 @@ Generally:
 * find out what preprocessing is needed
 * fix paths to property files
 
+Semantical differences to pay attention to:
+
+* Reading uninitialized local variables is undefined behaviour in C.
+  **Solution:** Initialize explicitly using `__VERIFIER_nondet_*` functions.
+* Global variables are initialized implicitly (deterministically).
+  **Solution:** Initialize explicitly using `__VERIFIER_nondet_*` functions.
+* Signed integer overflow is undefined behaviour in C.
+  **Solution:** Depends; possibly use unsigned integers; or add checks to prevent overflow.
+* Single-line statements (including increments / decrements) are not necessarily atomic in C.
+  **Solution:** Where necessary, wrap in `__VERIFIER_atomic_*` functions.
+* Data races between threads are undefined behaviour in C.
+  **Solution:** Where necessary, wrap in `__VERIFIER_atomic_*` functions.
+
 
 - [ ] `./clever.wvr.yml`
 - [ ] `./fibonacci.wvr.yml`
