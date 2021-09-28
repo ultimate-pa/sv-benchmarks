@@ -20,6 +20,7 @@ void* thread1() {
     }
     i1++;
   }
+
   return 0;
 }
 
@@ -28,14 +29,16 @@ void* thread2() {
     k2 = k2 + m;
     i2++;
   }
+
+  return 0;
 }
 
 void main() {
   pthread_t t1, t2;
 
   // initialize global variables
-  n = __VERIFIER_nondet_int();
-  m = __VERIFIER_nondet_int();
+  n  = __VERIFIER_nondet_int();
+  m  = __VERIFIER_nondet_int();
   i1 = __VERIFIER_nondet_int();
   i2 = __VERIFIER_nondet_int();
   j1 = __VERIFIER_nondet_int();
@@ -54,3 +57,4 @@ void main() {
   assume_abort_if_not( !(k1 == k2) );
   reach_error();
 }
+
