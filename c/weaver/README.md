@@ -24,7 +24,8 @@ Semantical differences to pay attention to:
 * Data races between threads are undefined behaviour in C.
   **Solution:** Where necessary, wrap in `__VERIFIER_atomic_*` functions.
 
-
+- [ ] `./array-eq-symm.wvr.yml`
+- [ ] `./array-eq-trans.wvr.yml`
 - [ ] `./clever.wvr.yml`
 - [ ] `./fibonacci.wvr.yml`
 - [ ] `./loop-tiling-eq.wvr.yml`
@@ -41,10 +42,6 @@ Semantical differences to pay attention to:
 - [ ] `./unroll-cond-3.wvr.yml`
 - [ ] `./unroll-cond-4.wvr.yml`
 - [ ] `./unroll-cond-5.wvr.yml`
-
-## `./array/`
-- [ ] `./array-eq-symm.wvr.yml`
-- [ ] `./array-eq-trans.wvr.yml`
 
 ## `./bench/`
 - [ ] `./bench/exp1x3.wvr.yml`
