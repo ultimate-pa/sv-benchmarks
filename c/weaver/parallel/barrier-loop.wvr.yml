@@ -1,11 +1,12 @@
 format_version: '2.0'
 
-input_files: 'barrier-loop.wvr.bpl'
+input_files: 'barrier-loop.wvr.c'
 
 properties:
-  - property_file: ../../../../../svcomp/properties/unreach-call.prp
+  - property_file: ../../unreach-call.prp
     expected_verdict: false
 
 options:
-  language: Boogie
+  language: C
+  data_model: ILP32
 
