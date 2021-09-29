@@ -55,7 +55,11 @@ void* thread4() {
 
 void main() {
   pthread_t t1, t2, t3, t4;
-
+  
+  N1 = __VERIFIER_nondet_int();
+  N2 = __VERIFIER_nondet_int();
+  M1 = __VERIFIER_nondet_int();
+  M2 = __VERIFIER_nondet_int();
   assume_abort_if_not(N1 == N2 && N1 == M1 && N1 == M2);
   
   // main method
