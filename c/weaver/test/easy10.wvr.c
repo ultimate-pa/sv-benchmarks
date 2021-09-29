@@ -1,0 +1,77 @@
+#include <pthread.h>
+typedef unsigned long int pthread_t;
+
+#include <assert.h>
+void reach_error() { assert(0); }
+
+extern int  __VERIFIER_nondet_int(void);
+extern _Bool __VERIFIER_nondet_bool(void);
+extern void __VERIFIER_atomic_begin(void);
+extern void __VERIFIER_atomic_end(void);
+
+extern void abort(void);
+void assume_abort_if_not(int cond) {
+  if(!cond) {abort();}
+}
+
+int x1, x2, y1, y2;
+_Bool t11, t12, t21, t22, f11, f12, f21, f22;
+
+void* thread1() {
+  t11 = x1 + 1;
+  x1 = t11;
+  f11 = 1;
+  assume_abort_if_not(f11 && f21);
+  t11 = y1 + 1;
+  y1 = t11;
+}
+
+void* thread2() {
+  t21 = y1 + 1;
+  y1 = t21;
+  f21 = 1;
+  assume_abort_if_not(f11 && f21);
+  t21 = x1 + 1;
+  x1 = t21;
+}
+
+void* thread3() {
+  t12 = x2 + 1;
+  x2 = t12;
+  f12 = 1;
+  assume_abort_if_not(f12 && f22);
+  t12 = y2 + 1;
+  y2 = t12;
+}
+
+void* thread4() {
+  t22 = y2 + 1;
+  y2 = t22;
+  f22 = 1;
+  assume_abort_if_not(f12 && f22);
+  t22 = x2 + 1;
+  x2 = t22;
+}
+
+void main() {
+  pthread_t t1, t2, t3, t4;
+  
+  x1 = __VERIFIER_nondet_int();
+  x2 = __VERIFIER_nondet_int();
+  y1 = __VERIFIER_nondet_int();
+  y2 = __VERIFIER_nondet_int();
+  assume_abort_if_not(x1 == x2 && y1 == y2);
+  
+  // main method
+  pthread_create(&t1, NULL, thread1, NULL);
+  pthread_create(&t2, NULL, thread2, NULL);
+  pthread_create(&t3, NULL, thread3, NULL);
+  pthread_create(&t4, NULL, thread4, NULL);
+  pthread_join(t1, 0);
+  pthread_join(t2, 0);
+  pthread_join(t3, 0);
+  pthread_join(t4, 0);
+
+  assume_abort_if_not(x1 != x2 || y1 != y2);
+  reach_error();
+}
