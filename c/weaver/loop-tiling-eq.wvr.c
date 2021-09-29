@@ -43,7 +43,10 @@ void main() {
   L = M * N;
   A = create_fresh_int_array(L);
   F = create_fresh_int_array(L);
-  B = (int**)malloc(sizeof(int) * L);
+  B = (int**)malloc(sizeof(int*) * N);
+  for (int i=0; i<N; i++) {
+    B[i] = create_fresh_int_array(M);
+  }
   
   // main method
   pthread_create(&t1, NULL, thread1, NULL);
