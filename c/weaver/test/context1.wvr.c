@@ -5,6 +5,7 @@ typedef unsigned long int pthread_t;
 void reach_error() { assert(0); }
 
 extern int  __VERIFIER_nondet_int(void);
+extern _Bool __VERIFIER_nondet_bool(void);
 extern void __VERIFIER_atomic_begin(void);
 extern void __VERIFIER_atomic_end(void);
 
