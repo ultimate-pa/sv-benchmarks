@@ -67,5 +67,5 @@ void main() {
   pthread_join(t3, 0);
   
   assume_abort_if_not(x_1 + x_2 != x_3);
-  assert false; // should be unreachable
+  reach_error();
 }
