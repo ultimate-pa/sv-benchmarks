@@ -1,0 +1,69 @@
+#include <pthread.h>
+typedef unsigned long int pthread_t;
+
+#include <assert.h>
+void reach_error() { assert(0); }
+
+extern int  __VERIFIER_nondet_int(void);
+extern void __VERIFIER_atomic_begin(void);
+extern void __VERIFIER_atomic_end(void);
+
+extern void abort(void);
+void assume_abort_if_not(int cond) {
+  if(!cond) {abort();}
+}
+
+int *queue;
+int x, front, size, n;
+
+int *create_fresh_int_array(int size);
+
+
+void* thread1() {
+  for (int i = 0; i < n; i++) {
+    __VERIFIER_atomic_begin();
+    assume_abort_if_not(queue[front + size] == 5);
+    size++;
+    __VERIFIER_atomic_end();
+  }
+  return 0;
+}
+
+void* thread2() {
+  while (__VERIFIER_nondet_bool()) {
+    __VERIFIER_atomic_begin();
+    assume_abort_if_not(size > 0);
+    x = queue[front];
+    front++;
+    size--;
+    __VERIFIER_atomic_end();
+  }
+  return 0;
+}
+
+void main() {
+  pthread_t t1, t2;
+  
+  x = 5;
+  n = __VERIFIER_nondet_int();
+  queue = create_fresh_int_array(n);
+  
+  // main method
+  pthread_create(&t1, NULL, thread1, NULL);
+  pthread_create(&t2, NULL, thread2, NULL);
+  pthread_join(t1, 0);
+  pthread_join(t2, 0);
+
+  assume_abort_if_not(x != 5);
+  reach_error();
+}
+
+int *create_fresh_int_array(int size) {
+  assume_abort_if_not(size >= 0);
+
+  int* arr = (int*)malloc(sizeof(int) * size);
+  for (int i = 0; i < size; i++) {
+    arr[i] = __VERIFIER_nondet_int();
+  }
+  return arr;
+}
