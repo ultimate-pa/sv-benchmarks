@@ -5,6 +5,7 @@ typedef unsigned long int pthread_t;
 void reach_error() { assert(0); }
 
 extern int   __VERIFIER_nondet_int(void);
+extern _Bool __VERIFIER_nondet_bool(void);
 extern void  __VERIFIER_atomic_begin();
 extern void  __VERIFIER_atomic_end();
 
@@ -80,6 +81,7 @@ void main() {
   s  = __VERIFIER_nondet_int();
   t  = __VERIFIER_nondet_int();
   x  = __VERIFIER_nondet_int();
+  b  = __VERIFIER_nondet_bool();
 
   // main method
   assume_abort_if_not( s == t && s == x && s == 0 && b == 0 );
