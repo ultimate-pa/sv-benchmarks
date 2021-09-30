@@ -1,0 +1,146 @@
+#include <pthread.h>
+typedef unsigned long int pthread_t;
+
+#include <assert.h>
+void reach_error() { assert(0); }
+
+extern int   __VERIFIER_nondet_int(void);
+extern _Bool __VERIFIER_nondet_bool(void);
+extern void  __VERIFIER_atomic_begin();
+extern void  __VERIFIER_atomic_end();
+
+extern void abort(void);
+void assume_abort_if_not(int cond) {
+  if(!cond) {abort();}
+}
+
+int* nondet_0;
+int name_1, name_2, name_3, result_4, i_5, current_6, break_7, result_8, i_9, current_10, break_11, result_12, i_13, current_14, break_15;
+
+int *create_fresh_int_array(int size);
+
+void* thread1() {
+  __VERIFIER_atomic_begin();
+  i_5 = 0;
+  break_7 = 0;
+  result_4 = ( name_1 == name_2 ) ? 0 : result_4;
+  break_7 = ( name_1 == name_2 ) ? 1 : break_7;
+  __VERIFIER_atomic_end();
+
+  while ( __VERIFIER_nondet_bool() ) {
+    __VERIFIER_atomic_begin();
+    assume_abort_if_not( ( i_5 < 3 ) && !break_7 );
+    current_6 = nondet_0[i_5];
+    result_4 = ( current_6 == name_1 ) ? 1 : result_4;
+    break_7  = ( current_6 == name_1 ) ? 1 : break_7;
+    result_4 = ( !break_7 && ( current_6 == name_2 ) ) ? ( 0 - 1 ) : result_4;
+    break_7  = ( !break_7 && ( current_6 == name_2 ) ) ? 1 : break_7;
+    i_5++;
+    __VERIFIER_atomic_end();
+  }
+  __VERIFIER_atomic_begin();
+  assume_abort_if_not( !( ( i_5 < 3 ) && !break_7 ) );
+  result_4 = ( !break_7 ) ? ( name_1 - name_2 ) : result_4;
+  __VERIFIER_atomic_end();
+
+  return 0;
+}
+
+void* thread2() {
+  __VERIFIER_atomic_begin();
+  i_9 = 0;
+  break_11 = 0;
+  result_8 = ( name_1 == name_3 ) ? 0 : result_8;
+  break_11 = ( name_1 == name_3 ) ? 1 : break_11;
+  __VERIFIER_atomic_end();
+
+  while ( __VERIFIER_nondet_bool() ) {
+    __VERIFIER_atomic_begin();
+    assume_abort_if_not( ( i_9 < 3 ) && !break_11 );
+    current_10 = nondet_0[i_9];
+    result_8 = ( current_10 == name_1 ) ? 1 : result_8;
+    break_11 = ( current_10 == name_1 ) ? 1 : break_11;
+    result_8 = ( !break_11 && ( current_10 == name_3 ) ) ? ( 0 - 1 ) : result_8;
+    break_11 = ( !break_11 && ( current_10 == name_3 ) ) ? 1 : break_11;
+    i_9++;
+    __VERIFIER_atomic_end();
+  }
+
+  __VERIFIER_atomic_begin();
+  assume_abort_if_not( !( ( i_9 < 3 ) && !break_11 ) );
+  result_8 = (!break_11) ? ( name_1 - name_3 ) : result_8;
+  __VERIFIER_atomic_end();
+
+  return 0;
+}
+
+void* thread3() {
+  __VERIFIER_atomic_begin();
+  i_13 = 0;
+  break_15 = 0;
+  result_12 = ( name_2 == name_3 ) ? 0 : result_12;
+  break_15  = ( name_2 == name_3 ) ? 1 : break_15;
+  __VERIFIER_atomic_end();
+
+  while ( __VERIFIER_nondet_bool() ) {
+    __VERIFIER_atomic_begin();
+    assume_abort_if_not( ( i_13 < 3 ) && !break_15 );
+    current_14 = nondet_0[i_13];
+    result_12 = ( current_14 == name_2 ) ? 1 : result_12;
+    break_15  = ( current_14 == name_2 ) ? 1 : break_15;
+    result_12 = ( !break_15 && ( current_14 == name_3 ) ) ? ( 0 - 1 ) : result_12;
+    break_15  = ( !break_15 && ( current_14 == name_3 ) ) ? 1 : break_15;
+    i_13++;
+    __VERIFIER_atomic_end();
+  }
+
+  __VERIFIER_atomic_begin();
+  assume_abort_if_not( !( ( i_13 < 3 ) && !break_15 ) );
+  result_12 = (!break_15) ? ( name_2 - name_3 ) : result_12;
+  __VERIFIER_atomic_end();
+
+  return 0;
+}
+
+void main() {
+  pthread_t t1, t2, t3;
+
+  // initialize global variables
+  name_1 = __VERIFIER_nondet_int();
+  name_2 = __VERIFIER_nondet_int();
+  name_3 = __VERIFIER_nondet_int();
+  result_4 = __VERIFIER_nondet_int();
+  i_5 = __VERIFIER_nondet_int();
+  current_6 = __VERIFIER_nondet_int();
+  break_7 = __VERIFIER_nondet_int();
+  result_8 = __VERIFIER_nondet_int();
+  i_9 = __VERIFIER_nondet_int();
+  current_10 = __VERIFIER_nondet_int();
+  break_11 = __VERIFIER_nondet_int();
+  result_12 = __VERIFIER_nondet_int();
+  i_13 = __VERIFIER_nondet_int();
+  current_14 = __VERIFIER_nondet_int();
+  break_15 = __VERIFIER_nondet_int();
+  nondet_0 = create_fresh_int_array(3);
+
+  // main method
+  pthread_create(&t1, NULL, thread1, NULL);
+  pthread_create(&t2, NULL, thread2, NULL);
+  pthread_create(&t3, NULL, thread3, NULL);
+  pthread_join(t1, 0);
+  pthread_join(t2, 0);
+  pthread_join(t3, 0);
+
+  assume_abort_if_not( !( ( result_4 != 0 ) || ( ( ( result_8 > 0 ) == ( result_12 > 0 ) ) && ( ( result_8 < 0 ) == ( result_12 < 0 ) ) ) ));
+  reach_error();
+}
+
+int *create_fresh_int_array(int size) {
+  assume_abort_if_not(size >= 0);
+
+  int* arr = (int*)malloc(sizeof(int) * size);
+  for (int i = 0; i < size; i++) {
+    arr[i] = __VERIFIER_nondet_int();
+  }
+  return arr;
+}
