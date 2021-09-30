@@ -106,7 +106,7 @@ void* thread4() {
 }
 
 void main() {
-  pthread_t t1, t2, t3;
+  pthread_t t1, t2, t3, t4;
 
   // initialize global variables
   e1 = __VERIFIER_nondet_bool();
