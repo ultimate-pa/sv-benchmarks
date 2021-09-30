@@ -24,33 +24,34 @@ Semantical differences to pay attention to:
 * Data races between threads are undefined behaviour in C.
   **Solution:** Where necessary, wrap in `__VERIFIER_atomic_*` functions.
 
-- [ ] `./array-eq-symm.wvr.yml`
-- [ ] `./array-eq-trans.wvr.yml`
-- [ ] `./clever.wvr.yml`
-- [ ] `./fibonacci.wvr.yml`
-- [ ] `./loop-tiling-eq.wvr.yml`
-- [ ] `./mult-comm.wvr.yml`
-- [ ] `./mult-dist.wvr.yml`
-- [ ] `./mult-flipped-dist.wvr.yml`
-- [ ] `./security.wvr.yml`
-- [ ] `./spaghetti.wvr.yml`
-- [ ] `./unroll-2.wvr.yml`
-- [ ] `./unroll-3.wvr.yml`
-- [ ] `./unroll-4.wvr.yml`
-- [ ] `./unroll-5.wvr.yml`
-- [ ] `./unroll-cond-2.wvr.yml`
-- [ ] `./unroll-cond-3.wvr.yml`
-- [ ] `./unroll-cond-4.wvr.yml`
-- [ ] `./unroll-cond-5.wvr.yml`
+## `./`
+- [x] `./array-eq-symm.wvr.yml`
+- [x] `./array-eq-trans.wvr.yml`
+- [x] `./clever.wvr.yml`
+- [x] `./fibonacci.wvr.yml`
+- [x] `./loop-tiling-eq.wvr.yml`
+- [x] `./mult-comm.wvr.yml`
+- [x] `./mult-dist.wvr.yml`
+- [x] `./mult-flipped-dist.wvr.yml`
+- [x] `./security.wvr.yml`
+- [x] `./spaghetti.wvr.yml`
+- [x] `./unroll-2.wvr.yml`
+- [x] `./unroll-3.wvr.yml`
+- [x] `./unroll-4.wvr.yml`
+- [x] `./unroll-5.wvr.yml`
+- [x] `./unroll-cond-2.wvr.yml`
+- [x] `./unroll-cond-3.wvr.yml`
+- [x] `./unroll-cond-4.wvr.yml`
+- [x] `./unroll-cond-5.wvr.yml`
 
 ## `./bench/`
-- [ ] `./bench/exp1x3.wvr.yml`
-- [ ] `./bench/exp2x3.wvr.yml`
-- [ ] `./bench/exp2x4.wvr.yml`
-- [ ] `./bench/exp2x6.wvr.yml`
-- [ ] `./bench/exp2x9.wvr.yml`
-- [ ] `./bench/exp3x3-opt.wvr.yml`
-- [ ] `./bench/exp3x3.wvr.yml`
+- [x] `./bench/exp1x3.wvr.yml`
+- [x] `./bench/exp2x3.wvr.yml`
+- [x] `./bench/exp2x4.wvr.yml`
+- [x] `./bench/exp2x6.wvr.yml`
+- [x] `./bench/exp2x9.wvr.yml`
+- [x] `./bench/exp3x3-opt.wvr.yml`
+- [x] `./bench/exp3x3.wvr.yml`
 
 ## `./chl/`
 - [ ] `./chl/array-int-subst.wvr.yml`
@@ -101,35 +102,35 @@ Semantical differences to pay attention to:
 
 
 ## `./parallel/`
-- [ ] `./parallel/bakery-2.wvr.yml`
-- [ ] `./parallel/bakery-3.wvr.yml`
-- [ ] `./parallel/bakery-4.wvr.yml`
-- [ ] `./parallel/barrier-loop.wvr.yml`
-- [ ] `./parallel/barrier.wvr.yml`
-- [ ] `./parallel/bluetooth.wvr.yml`
-- [ ] `./parallel/lamport.wvr.yml`
-- [ ] `./parallel/min-max-1.wvr.yml`
-- [ ] `./parallel/min-max-2.wvr.yml`
-- [ ] `./parallel/misc-1.wvr.yml`
-- [ ] `./parallel/misc-2-unrolled-atomic.wvr.yml`
-- [ ] `./parallel/misc-2-unrolled.wvr.yml`
-- [ ] `./parallel/misc-2.wvr.yml`
-- [ ] `./parallel/misc-3-extended.wvr.yml`
-- [ ] `./parallel/misc-3.wvr.yml`
-- [ ] `./parallel/misc-4.wvr.yml`
-- [ ] `./parallel/misc-5.wvr.yml`
-- [ ] `./parallel/parallel-sum-1-dsl.wvr.yml`
-- [ ] `./parallel/parallel-sum-1.wvr.yml`
-- [ ] `./parallel/parallel-sum-2.wvr.yml`
-- [ ] `./parallel/parallel-sum-equiv.wvr.yml`
-- [ ] `./parallel/simple-equiv.wvr.yml`
-- [ ] `./parallel/ticket-2.wvr.yml`
-- [ ] `./parallel/ticket-3.wvr.yml`
-- [ ] `./parallel/ticket-4.wvr.yml`
-- [ ] `./parallel/ticket-5.wvr.yml`
-- [ ] `./parallel/ticket-6.wvr.yml`
-- [ ] `./parallel/ticket-7.wvr.yml`
-- [ ] `./parallel/ticket-8.wvr.yml`
+- [x] `./parallel/bakery-2.wvr.yml`
+- [x] `./parallel/bakery-3.wvr.yml`
+- [x] `./parallel/bakery-4.wvr.yml`
+- [x] `./parallel/barrier-loop.wvr.yml`
+- [x] `./parallel/barrier.wvr.yml`
+- [x] `./parallel/bluetooth.wvr.yml`
+- [x] `./parallel/lamport.wvr.yml`
+- [x] `./parallel/min-max-1.wvr.yml`
+- [x] `./parallel/min-max-2.wvr.yml`
+- [x] `./parallel/misc-1.wvr.yml`
+- [x] `./parallel/misc-2-unrolled-atomic.wvr.yml`
+- [x] `./parallel/misc-2-unrolled.wvr.yml`
+- [x] `./parallel/misc-2.wvr.yml`
+- [x] `./parallel/misc-3-extended.wvr.yml`
+- [x] `./parallel/misc-3.wvr.yml`
+- [x] `./parallel/misc-4.wvr.yml`
+- [x] `./parallel/misc-5.wvr.yml`
+- [x] `./parallel/parallel-sum-1-dsl.wvr.yml`
+- [x] `./parallel/parallel-sum-1.wvr.yml`
+- [x] `./parallel/parallel-sum-2.wvr.yml`
+- [x] `./parallel/parallel-sum-equiv.wvr.yml`
+- [x] `./parallel/simple-equiv.wvr.yml`
+- [x] `./parallel/ticket-2.wvr.yml`
+- [x] `./parallel/ticket-3.wvr.yml`
+- [x] `./parallel/ticket-4.wvr.yml`
+- [x] `./parallel/ticket-5.wvr.yml`
+- [x] `./parallel/ticket-6.wvr.yml`
+- [x] `./parallel/ticket-7.wvr.yml`
+- [x] `./parallel/ticket-8.wvr.yml`
 
 ## `./popl20/`
 - [ ] `./popl20/channel-sum.wvr.yml`
@@ -152,7 +153,6 @@ Semantical differences to pay attention to:
 - [ ] `./popl20/prod-cons3.wvr.yml`
 - [ ] `./popl20/prod-cons-eq.wvr.yml`
 - [ ] `./popl20/prod-cons.wvr.yml`
-- [ ] `./popl20-proofs/counter-add-4-semi-Q67.wvr.yml`
 - [ ] `./popl20/queue-add-2.wvr.yml`
 - [ ] `./popl20/queue-add-3.wvr.yml`
 - [ ] `./popl20/send-receive-alt.wvr.yml`
@@ -212,14 +212,17 @@ Semantical differences to pay attention to:
 - [ ] `./popl20-more/sum-fun.wvr.yml`
 - [ ] `./popl20-more/vector-add.wvr.yml`
 
+## `./popl20-proofs/`
+- [x] `./popl20-proofs/counter-add-4-semi-Q67.wvr.yml`
+
 ## `./test/`
-- [ ] `./test/context1.wvr.yml`
-- [ ] `./test/easy10.wvr.yml`
-- [ ] `./test/easy11.wvr.yml`
-- [ ] `./test/easy1.wvr.yml`
-- [ ] `./test/easy6.wvr.yml`
-- [ ] `./test/easy7.wvr.yml`
-- [ ] `./test/easy8.wvr.yml`
-- [ ] `./test/hard1.wvr.yml`
-- [ ] `./test/semi1.wvr.yml`
+- [x] `./test/context1.wvr.yml`
+- [x] `./test/easy10.wvr.yml`
+- [x] `./test/easy11.wvr.yml`
+- [x] `./test/easy1.wvr.yml`
+- [x] `./test/easy6.wvr.yml`
+- [x] `./test/easy7.wvr.yml`
+- [x] `./test/easy8.wvr.yml`
+- [x] `./test/hard1.wvr.yml`
+- [x] `./test/semi1.wvr.yml`
 
