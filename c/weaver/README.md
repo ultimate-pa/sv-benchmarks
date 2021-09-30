@@ -167,8 +167,8 @@ Semantical differences to pay attention to:
 
 ## `./popl20-bad/`
 - [x] `./popl20-bad/buffer-mult-alt.wvr.yml`
-- [ ] `./popl20-bad/commit-1.wvr.yml`
-- [ ] `./popl20-bad/commit-2.wvr.yml`
+- [x] `./popl20-bad/commit-1.wvr.yml`
+- [x] `./popl20-bad/commit-2.wvr.yml`
 - [x] `./popl20-bad/counter-queue.wvr.yml`
 - [x] `./popl20-bad/dot-product-alt.wvr.yml`
 - [x] `./popl20-bad/dot-product.wvr.yml`
@@ -185,8 +185,8 @@ Semantical differences to pay attention to:
 - [ ] `./popl20-more/buffer-series.wvr.yml`
 - [ ] `./popl20-more/dec-subseq-array.wvr.yml`
 - [ ] `./popl20-more/dec-subseq.wvr.yml`
-- [ ] `./popl20-more/dot-product-array.wvr.yml`
-- [ ] `./popl20-more/dot-product.wvr.yml`
+- [x] `./popl20-more/dot-product-array.wvr.yml`
+- [x] `./popl20-more/dot-product.wvr.yml`
 - [ ] `./popl20-more/inc-subseq-array.wvr.yml`
 - [ ] `./popl20-more/inc-subseq.wvr.yml`
 - [x] `./popl20-more/max-array-hom.wvr.yml`
