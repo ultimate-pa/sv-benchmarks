@@ -150,13 +150,13 @@ Semantical differences to pay attention to:
 - [x] `./popl20/mult-equiv.wvr.yml`
 - [x] `./popl20/nonblocking-cntr-alt.wvr.yml`
 - [x] `./popl20/nonblocking-cntr.wvr.yml`
-- [ ] `./popl20/prod-cons3.wvr.yml`
+- [x] `./popl20/prod-cons3.wvr.yml`
 - [ ] `./popl20/prod-cons-eq.wvr.yml`
-- [ ] `./popl20/prod-cons.wvr.yml`
-- [ ] `./popl20/queue-add-2.wvr.yml`
-- [ ] `./popl20/queue-add-3.wvr.yml`
-- [ ] `./popl20/send-receive-alt.wvr.yml`
-- [ ] `./popl20/send-receive.wvr.yml`
+- [x] `./popl20/prod-cons.wvr.yml`
+- [x] `./popl20/queue-add-2.wvr.yml`
+- [x] `./popl20/queue-add-3.wvr.yml`
+- [x] `./popl20/send-receive-alt.wvr.yml`
+- [x] `./popl20/send-receive.wvr.yml`
 - [x] `./popl20/simple-array-sum.wvr.yml`
 - [ ] `./popl20/simple-queue.wvr.yml`
 - [x] `./popl20/threaded-sum-3.wvr.yml`
