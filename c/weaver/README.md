@@ -133,23 +133,23 @@ Semantical differences to pay attention to:
 - [x] `./parallel/ticket-8.wvr.yml`
 
 ## `./popl20/`
-- [ ] `./popl20/channel-sum.wvr.yml`
+- [x] `./popl20/channel-sum.wvr.yml`
 - [ ] `./popl20/commit-1.wvr.yml`
 - [ ] `./popl20/commit-2.wvr.yml`
-- [ ] `./popl20/counter-determinism.wvr.yml`
+- [x] `./popl20/counter-determinism.wvr.yml`
 - [ ] `./popl20/counter-fun.wvr.yml`
-- [ ] `./popl20/difference-det.wvr.yml`
-- [ ] `./popl20/figure1-alt.wvr.yml`
-- [ ] `./popl20/figure1.wvr.yml`
-- [ ] `./popl20/figure3.wvr.yml`
+- [x] `./popl20/difference-det.wvr.yml`
+- [x] `./popl20/figure1-alt.wvr.yml`
+- [x] `./popl20/figure1.wvr.yml`
+- [x] `./popl20/figure3.wvr.yml`
 - [ ] `./popl20/horseshoe.wvr.yml`
-- [ ] `./popl20/min-max-dec.wvr.yml`
-- [ ] `./popl20/min-max-inc-dec.wvr.yml`
-- [ ] `./popl20/min-max-inc.wvr.yml`
-- [ ] `./popl20/mult-4.wvr.yml`
-- [ ] `./popl20/mult-equiv.wvr.yml`
-- [ ] `./popl20/nonblocking-cntr-alt.wvr.yml`
-- [ ] `./popl20/nonblocking-cntr.wvr.yml`
+- [x] `./popl20/min-max-dec.wvr.yml`
+- [x] `./popl20/min-max-inc-dec.wvr.yml`
+- [x] `./popl20/min-max-inc.wvr.yml`
+- [x] `./popl20/mult-4.wvr.yml`
+- [x] `./popl20/mult-equiv.wvr.yml`
+- [x] `./popl20/nonblocking-cntr-alt.wvr.yml`
+- [x] `./popl20/nonblocking-cntr.wvr.yml`
 - [ ] `./popl20/prod-cons3.wvr.yml`
 - [ ] `./popl20/prod-cons-eq.wvr.yml`
 - [ ] `./popl20/prod-cons.wvr.yml`
@@ -157,29 +157,29 @@ Semantical differences to pay attention to:
 - [ ] `./popl20/queue-add-3.wvr.yml`
 - [ ] `./popl20/send-receive-alt.wvr.yml`
 - [ ] `./popl20/send-receive.wvr.yml`
-- [ ] `./popl20/simple-array-sum.wvr.yml`
+- [x] `./popl20/simple-array-sum.wvr.yml`
 - [ ] `./popl20/simple-queue.wvr.yml`
-- [ ] `./popl20/threaded-sum-3.wvr.yml`
-- [ ] `./popl20/three-array-max.wvr.yml`
-- [ ] `./popl20/three-array-min.wvr.yml`
-- [ ] `./popl20/three-array-sum.wvr.yml`
+- [x] `./popl20/threaded-sum-3.wvr.yml`
+- [x] `./popl20/three-array-max.wvr.yml`
+- [x] `./popl20/three-array-min.wvr.yml`
+- [x] `./popl20/three-array-sum.wvr.yml`
 - [ ] `./popl20/two-queue.wvr.yml`
 
 ## `./popl20-bad/`
-- [ ] `./popl20-bad/buffer-mult-alt.wvr.yml`
+- [x] `./popl20-bad/buffer-mult-alt.wvr.yml`
 - [ ] `./popl20-bad/commit-1.wvr.yml`
 - [ ] `./popl20-bad/commit-2.wvr.yml`
-- [ ] `./popl20-bad/counter-queue.wvr.yml`
-- [ ] `./popl20-bad/dot-product-alt.wvr.yml`
-- [ ] `./popl20-bad/dot-product.wvr.yml`
-- [ ] `./popl20-bad/ring-nondet.wvr.yml`
-- [ ] `./popl20-bad/ring.wvr.yml`
-- [ ] `./popl20-bad/threaded-sum-2.wvr.yml`
-- [ ] `./popl20-bad/three-array-sum-alt.wvr.yml`
+- [x] `./popl20-bad/counter-queue.wvr.yml`
+- [x] `./popl20-bad/dot-product-alt.wvr.yml`
+- [x] `./popl20-bad/dot-product.wvr.yml`
+- [x] `./popl20-bad/ring-nondet.wvr.yml`
+- [x] `./popl20-bad/ring.wvr.yml`
+- [x] `./popl20-bad/threaded-sum-2.wvr.yml`
+- [x] `./popl20-bad/three-array-sum-alt.wvr.yml`
 
 ## `./popl20-more/`
-- [ ] `./popl20-more/array-sum-alt.wvr.yml`
-- [ ] `./popl20-more/array-sum.wvr.yml`
+- [x] `./popl20-more/array-sum-alt.wvr.yml`
+- [x] `./popl20-more/array-sum.wvr.yml`
 - [ ] `./popl20-more/buffer-mult.wvr.yml`
 - [ ] `./popl20-more/buffer-series-array.wvr.yml`
 - [ ] `./popl20-more/buffer-series.wvr.yml`
@@ -189,28 +189,28 @@ Semantical differences to pay attention to:
 - [ ] `./popl20-more/dot-product.wvr.yml`
 - [ ] `./popl20-more/inc-subseq-array.wvr.yml`
 - [ ] `./popl20-more/inc-subseq.wvr.yml`
-- [ ] `./popl20-more/max-array-hom.wvr.yml`
-- [ ] `./popl20-more/max-array.wvr.yml`
-- [ ] `./popl20-more/max-fun-alt.wvr.yml`
-- [ ] `./popl20-more/max-fun.wvr.yml`
-- [ ] `./popl20-more/min-array-hom.wvr.yml`
-- [ ] `./popl20-more/min-array.wvr.yml`
-- [ ] `./popl20-more/min-fun-alt.wvr.yml`
-- [ ] `./popl20-more/min-fun.wvr.yml`
-- [ ] `./popl20-more/min-le-max.wvr.yml`
-- [ ] `./popl20-more/mts-array.wvr.yml`
-- [ ] `./popl20-more/mts.wvr.yml`
+- [x] `./popl20-more/max-array-hom.wvr.yml`
+- [x] `./popl20-more/max-array.wvr.yml`
+- [x] `./popl20-more/max-fun-alt.wvr.yml`
+- [x] `./popl20-more/max-fun.wvr.yml`
+- [x] `./popl20-more/min-array-hom.wvr.yml`
+- [x] `./popl20-more/min-array.wvr.yml`
+- [x] `./popl20-more/min-fun-alt.wvr.yml`
+- [x] `./popl20-more/min-fun.wvr.yml`
+- [x] `./popl20-more/min-le-max.wvr.yml`
+- [x] `./popl20-more/mts-array.wvr.yml`
+- [x] `./popl20-more/mts.wvr.yml`
 - [ ] `./popl20-more/multiply-verify.wvr.yml`
-- [ ] `./popl20-more/nonblocking-counter-alt2.wvr.yml`
-- [ ] `./popl20-more/parray-copy.wvr.yml`
+- [x] `./popl20-more/nonblocking-counter-alt2.wvr.yml`
+- [x] `./popl20-more/parray-copy.wvr.yml`
 - [ ] `./popl20-more/queue-add-2-nl.wvr.yml`
 - [ ] `./popl20-more/queue-add-3-nl.wvr.yml`
-- [ ] `./popl20-more/sorted.wvr.yml`
-- [ ] `./popl20-more/sum-array-hom.wvr.yml`
-- [ ] `./popl20-more/sum-array.wvr.yml`
-- [ ] `./popl20-more/sum-fun-alt.wvr.yml`
-- [ ] `./popl20-more/sum-fun.wvr.yml`
-- [ ] `./popl20-more/vector-add.wvr.yml`
+- [x] `./popl20-more/sorted.wvr.yml`
+- [x] `./popl20-more/sum-array-hom.wvr.yml`
+- [x] `./popl20-more/sum-array.wvr.yml`
+- [x] `./popl20-more/sum-fun-alt.wvr.yml`
+- [x] `./popl20-more/sum-fun.wvr.yml`
+- [x] `./popl20-more/vector-add.wvr.yml`
 
 ## `./popl20-proofs/`
 - [x] `./popl20-proofs/counter-add-4-semi-Q67.wvr.yml`
