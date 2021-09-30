@@ -134,8 +134,8 @@ Semantical differences to pay attention to:
 
 ## `./popl20/`
 - [x] `./popl20/channel-sum.wvr.yml`
-- [ ] `./popl20/commit-1.wvr.yml`
-- [ ] `./popl20/commit-2.wvr.yml`
+- [x] `./popl20/commit-1.wvr.yml`
+- [x] `./popl20/commit-2.wvr.yml`
 - [x] `./popl20/counter-determinism.wvr.yml`
 - [ ] `./popl20/counter-fun.wvr.yml`
 - [x] `./popl20/difference-det.wvr.yml`
