@@ -142,7 +142,7 @@ Semantical differences to pay attention to:
 - [x] `./popl20/figure1-alt.wvr.yml`
 - [x] `./popl20/figure1.wvr.yml`
 - [x] `./popl20/figure3.wvr.yml`
-- [ ] `./popl20/horseshoe.wvr.yml`
+- [x] `./popl20/horseshoe.wvr.yml`
 - [x] `./popl20/min-max-dec.wvr.yml`
 - [x] `./popl20/min-max-inc-dec.wvr.yml`
 - [x] `./popl20/min-max-inc.wvr.yml`
