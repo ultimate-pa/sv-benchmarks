@@ -84,7 +84,7 @@ Semantical differences to pay attention to:
 - [x] `./chl/nzb-file-subst.wvr.yml`
 - [x] `./chl/nzb-file-symm.wvr.yml`
 - [x] `./chl/nzb-file-trans.wvr.yml`
-- [ ] `./chl/poker-hand-subst.wvr.yml`
+- [x] `./chl/poker-hand-subst.wvr.yml`
 - [ ] `./chl/poker-hand-symm.wvr.yml`
 - [ ] `./chl/poker-hand-trans.wvr.yml`
 - [ ] `./chl/simpl-str-subst.wvr.yml`
