@@ -93,9 +93,9 @@ Semantical differences to pay attention to:
 - [ ] `./chl/sre-subst.wvr.yml`
 - [ ] `./chl/sre-symm.wvr.yml`
 - [ ] `./chl/sre-trans.wvr.yml`
-- [ ] `./chl/time-subst.wvr.yml`
-- [ ] `./chl/time-symm.wvr.yml`
-- [ ] `./chl/time-trans.wvr.yml`
+- [x] `./chl/time-subst.wvr.yml`
+- [x] `./chl/time-symm.wvr.yml`
+- [x] `./chl/time-trans.wvr.yml`
 - [ ] `./chl/word-subst.wvr.yml`
 - [ ] `./chl/word-symm.wvr.yml`
 - [ ] `./chl/word-trans.wvr.yml`
