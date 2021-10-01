@@ -308,15 +308,9 @@ void main() {
   pthread_join(t1, 0);
   pthread_join(t2, 0);
   pthread_join(t3, 0);
-  fork 1 thread1();
-  fork 2,2 thread2();
-  fork 3,3,3 thread3();
-  join 1;
-  join 2,2;
-  join 3,3,3;
 
   assume_abort_if_not( !( !( result_12 == 0 ) || ( ( ( result_17 > 0 ) == ( result_22 > 0 ) ) && ( ( result_17 < 0 ) == ( result_22 < 0 ) ) ) ) );
-  assert 0; // should be unreachable
+  reach_error();
 }
 
 int *create_fresh_int_array(int size) {
