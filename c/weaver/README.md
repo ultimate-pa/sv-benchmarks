@@ -75,9 +75,9 @@ Semantical differences to pay attention to:
 - [ ] `./chl/match-subst.wvr.yml`
 - [ ] `./chl/match-symm.wvr.yml`
 - [ ] `./chl/match-trans.wvr.yml`
-- [ ] `./chl/name-comparator-subst.wvr.yml`
-- [ ] `./chl/name-comparator-symm.wvr.yml`
-- [ ] `./chl/name-comparator-trans.wvr.yml`
+- [x] `./chl/name-comparator-subst.wvr.yml`
+- [x] `./chl/name-comparator-symm.wvr.yml`
+- [x] `./chl/name-comparator-trans.wvr.yml`
 - [ ] `./chl/node-subst.wvr.yml`
 - [ ] `./chl/node-symm.wvr.yml`
 - [ ] `./chl/node-trans.wvr.yml`
