@@ -158,12 +158,12 @@ Semantical differences to pay attention to:
 - [x] `./popl20/send-receive-alt.wvr.yml`
 - [x] `./popl20/send-receive.wvr.yml`
 - [x] `./popl20/simple-array-sum.wvr.yml`
-- [ ] `./popl20/simple-queue.wvr.yml`
+- [x] `./popl20/simple-queue.wvr.yml`
 - [x] `./popl20/threaded-sum-3.wvr.yml`
 - [x] `./popl20/three-array-max.wvr.yml`
 - [x] `./popl20/three-array-min.wvr.yml`
 - [x] `./popl20/three-array-sum.wvr.yml`
-- [ ] `./popl20/two-queue.wvr.yml`
+- [x] `./popl20/two-queue.wvr.yml`
 
 ## `./popl20-bad/`
 - [x] `./popl20-bad/buffer-mult-alt.wvr.yml`
