@@ -61,13 +61,13 @@ Semantical differences to pay attention to:
 - [x] `./chl/chromosome-subst.wvr.yml`
 - [x] `./chl/chromosome-symm.wvr.yml`
 - [x] `./chl/chromosome-trans.wvr.yml`
-- [ ] `./chl/collitem-subst.wvr.yml`
-- [ ] `./chl/collitem-symm.wvr.yml`
-- [ ] `./chl/collitem-trans.wvr.yml`
-- [ ] `./chl/container-subst.wvr.yml`
-- [ ] `./chl/container-symm.wvr.yml`
-- [ ] `./chl/container-trans.wvr.yml`
-- [ ] `./chl/exp-term-subst.wvr.yml`
+- [x] `./chl/collitem-subst.wvr.yml`
+- [x] `./chl/collitem-symm.wvr.yml`
+- [x] `./chl/collitem-trans.wvr.yml`
+- [x] `./chl/container-subst.wvr.yml`
+- [x] `./chl/container-symm.wvr.yml`
+- [x] `./chl/container-trans.wvr.yml`
+- [x] `./chl/exp-term-subst.wvr.yml`
 - [ ] `./chl/exp-term-symm.wvr.yml`
 - [ ] `./chl/file-item-subst.wvr.yml`
 - [ ] `./chl/file-item-symm.wvr.yml`

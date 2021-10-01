@@ -1,11 +1,12 @@
 format_version: '2.0'
 
-input_files: 'match-subst.wvr.bpl'
+input_files: 'match-subst.wvr.c'
 
 properties:
-  - property_file: ../../../../../svcomp/properties/unreach-call.prp
+  - property_file: ../../properties/unreach-call.prp
     expected_verdict: true
 
 options:
-  language: Boogie
+  language: C
+  data_model: ILP32
 
