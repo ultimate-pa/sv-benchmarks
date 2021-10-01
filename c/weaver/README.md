@@ -180,15 +180,15 @@ Semantical differences to pay attention to:
 ## `./popl20-more/`
 - [x] `./popl20-more/array-sum-alt.wvr.yml`
 - [x] `./popl20-more/array-sum.wvr.yml`
-- [ ] `./popl20-more/buffer-mult.wvr.yml`
-- [ ] `./popl20-more/buffer-series-array.wvr.yml`
-- [ ] `./popl20-more/buffer-series.wvr.yml`
-- [ ] `./popl20-more/dec-subseq-array.wvr.yml`
-- [ ] `./popl20-more/dec-subseq.wvr.yml`
+- [x] `./popl20-more/buffer-mult.wvr.yml`
+- [x] `./popl20-more/buffer-series-array.wvr.yml`
+- [x] `./popl20-more/buffer-series.wvr.yml`
+- [x] `./popl20-more/dec-subseq-array.wvr.yml`
+- [x] `./popl20-more/dec-subseq.wvr.yml`
 - [x] `./popl20-more/dot-product-array.wvr.yml`
 - [x] `./popl20-more/dot-product.wvr.yml`
-- [ ] `./popl20-more/inc-subseq-array.wvr.yml`
-- [ ] `./popl20-more/inc-subseq.wvr.yml`
+- [x] `./popl20-more/inc-subseq-array.wvr.yml`
+- [x] `./popl20-more/inc-subseq.wvr.yml`
 - [x] `./popl20-more/max-array-hom.wvr.yml`
 - [x] `./popl20-more/max-array.wvr.yml`
 - [x] `./popl20-more/max-fun-alt.wvr.yml`
@@ -200,11 +200,11 @@ Semantical differences to pay attention to:
 - [x] `./popl20-more/min-le-max.wvr.yml`
 - [x] `./popl20-more/mts-array.wvr.yml`
 - [x] `./popl20-more/mts.wvr.yml`
-- [ ] `./popl20-more/multiply-verify.wvr.yml`
+- [x] `./popl20-more/multiply-verify.wvr.yml`
 - [x] `./popl20-more/nonblocking-counter-alt2.wvr.yml`
 - [x] `./popl20-more/parray-copy.wvr.yml`
-- [ ] `./popl20-more/queue-add-2-nl.wvr.yml`
-- [ ] `./popl20-more/queue-add-3-nl.wvr.yml`
+- [x] `./popl20-more/queue-add-2-nl.wvr.yml`
+- [x] `./popl20-more/queue-add-3-nl.wvr.yml`
 - [x] `./popl20-more/sorted.wvr.yml`
 - [x] `./popl20-more/sum-array-hom.wvr.yml`
 - [x] `./popl20-more/sum-array.wvr.yml`
