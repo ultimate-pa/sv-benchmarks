@@ -54,13 +54,13 @@ Semantical differences to pay attention to:
 - [x] `./bench/exp3x3.wvr.yml`
 
 ## `./chl/`
-- [ ] `./chl/array-int-subst.wvr.yml`
-- [ ] `./chl/array-int-symm.wvr.yml`
-- [ ] `./chl/array-int-trans.wvr.yml`
-- [ ] `./chl/chromosome-opt-symm.wvr.yml`
-- [ ] `./chl/chromosome-subst.wvr.yml`
-- [ ] `./chl/chromosome-symm.wvr.yml`
-- [ ] `./chl/chromosome-trans.wvr.yml`
+- [x] `./chl/array-int-subst.wvr.yml`
+- [x] `./chl/array-int-symm.wvr.yml`
+- [x] `./chl/array-int-trans.wvr.yml`
+- [x] `./chl/chromosome-opt-symm.wvr.yml`
+- [x] `./chl/chromosome-subst.wvr.yml`
+- [x] `./chl/chromosome-symm.wvr.yml`
+- [x] `./chl/chromosome-trans.wvr.yml`
 - [ ] `./chl/collitem-subst.wvr.yml`
 - [ ] `./chl/collitem-symm.wvr.yml`
 - [ ] `./chl/collitem-trans.wvr.yml`
