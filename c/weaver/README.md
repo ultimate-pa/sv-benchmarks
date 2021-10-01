@@ -68,13 +68,13 @@ Semantical differences to pay attention to:
 - [x] `./chl/container-symm.wvr.yml`
 - [x] `./chl/container-trans.wvr.yml`
 - [x] `./chl/exp-term-subst.wvr.yml`
-- [ ] `./chl/exp-term-symm.wvr.yml`
-- [ ] `./chl/file-item-subst.wvr.yml`
-- [ ] `./chl/file-item-symm.wvr.yml`
-- [ ] `./chl/file-item-trans.wvr.yml`
-- [ ] `./chl/match-subst.wvr.yml`
-- [ ] `./chl/match-symm.wvr.yml`
-- [ ] `./chl/match-trans.wvr.yml`
+- [x] `./chl/exp-term-symm.wvr.yml`
+- [x] `./chl/file-item-subst.wvr.yml`
+- [x] `./chl/file-item-symm.wvr.yml`
+- [x] `./chl/file-item-trans.wvr.yml`
+- [x] `./chl/match-subst.wvr.yml`
+- [x] `./chl/match-symm.wvr.yml`
+- [x] `./chl/match-trans.wvr.yml`
 - [x] `./chl/name-comparator-subst.wvr.yml`
 - [x] `./chl/name-comparator-symm.wvr.yml`
 - [x] `./chl/name-comparator-trans.wvr.yml`
