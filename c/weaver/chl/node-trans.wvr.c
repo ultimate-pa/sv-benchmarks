@@ -15,8 +15,8 @@ void assume_abort_if_not(int cond) {
 }
 
 int id_0, id_3, id_6, result_9, order1_10, order2_11, result_12, order1_13, order2_14, result_15, order1_16, order2_17;
-int* get_2, get_5, get_8;
-_Bool* contains_key_1, contains_key_4, contains_key_7;
+int *get_2, *get_5, *get_8;
+_Bool *contains_key_1, *contains_key_4, *contains_key_7;
 
 int *create_fresh_int_array(int size);
 _Bool *create_fresh_bool_array(int size);
