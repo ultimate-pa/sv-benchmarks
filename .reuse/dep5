@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: SV-Benchmarks
-Source: https://github.com/sosy-lab/sv-benchmarks
+Source: https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks
 
 Files:
  c/*.set

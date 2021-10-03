@@ -168,8 +168,8 @@ For each program, the repository contains a .yml file that specifies the followi
 Optional items are explicitly marked as optional, all other items are mandatory.
 The dictionary `options` can contain additional data that are not mentioned above.
 
-[C-props]: https://github.com/sosy-lab/sv-benchmarks/tree/master/c/properties
-[Java-props]: https://github.com/sosy-lab/sv-benchmarks/tree/master/java/properties
+[C-props]: https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks/-/tree/main/c/properties
+[Java-props]: https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks/-/tree/main/java/properties
 
 The [SV-COMP 2019 report] has documented the first version of the repository's task-definition format 1.0,
 and contains a description of the format with an example in Sect. 4 and Fig. 3.
