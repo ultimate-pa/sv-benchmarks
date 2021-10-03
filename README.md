@@ -7,8 +7,6 @@ SPDX-FileCopyrightText: 2011-2020 The SV-Benchmarks Community
 SPDX-License-Identifier: Apache-2.0
 -->
 
-# Moved to https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks
-
 # Collection of Verification Tasks
 
 ## Repository Description
