@@ -11,7 +11,7 @@ stages:
 
 sanity-checks:
   stage: checks
-  image: registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/sanity-checks:latest
+  image: registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/sanity-checks:latest
   script: "c/check.py"
 
 .branch-compile-check: &branch-compile-check
@@ -25,12 +25,12 @@ sanity-checks:
     - "./diff_ci.sh 'make -j2 -C'"
 
 .clang-3-9: &clang-3-9
-  image: registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/clang:3.9
+  image: registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/clang:3.9
   variables:
     CC: clang-3.9
 
 .gcc-5: &gcc-5
-  image: registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/gcc:5
+  image: registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/gcc:5
   variables:
     CC: gcc-5 
     
@@ -83,7 +83,7 @@ branch-preprocessing-consistency:
   except: 
     refs:
       - master
-  image: registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/preprocessing-consistency:latest
+  image: registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/preprocessing-consistency:latest
   script:
     - "cd c"
     - "./diff_ci.sh './compare.py --keep-going --skip-large --directory'"
@@ -93,7 +93,7 @@ master-preprocessing-consistency:
   only: 
     refs:
       - master
-  image: registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/preprocessing-consistency:latest
+  image: registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/preprocessing-consistency:latest
   script:
     - "goto-diff --version"
     - "cd c"
@@ -101,7 +101,7 @@ master-preprocessing-consistency:
 
 java:
   stage: checks
-  image: registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/java:latest
+  image: registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/java:latest
   script:
       # unset variables to not leak their content through result files
     - "unset $(compgen -v CI) $(compgen -v GIT)"
