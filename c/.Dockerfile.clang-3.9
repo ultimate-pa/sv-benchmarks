@@ -6,12 +6,12 @@
 # SPDX-License-Identifier: Apache-2.0
 
 # This is a Docker image for running the compile checks for C programs with clang.
-# It should be pushed to registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/clang
+# It should be pushed to registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/clang
 # and will be used by CI as declared in .gitlab-ci.yml.
 #
 # Commands for updating the image:
-# docker build --pull -t registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/clang:3.9 - < .Dockerfile.clang-3.9
-# docker push registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/clang
+# docker build --pull -t registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/clang:3.9 - < .Dockerfile.clang-3.9
+# docker push registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/clang
 
 FROM ubuntu:bionic
 
