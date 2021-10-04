@@ -20,16 +20,16 @@ void* thread1() {
   for (int i=0; i<N; i++) {
     __VERIFIER_atomic_begin();
     counter1++;
-	__VERIFIER_atomic_end();
+    __VERIFIER_atomic_end();
   }
 }
 
 void* thread2() {
   for (int i=0; i<N; i++) {
     __VERIFIER_atomic_begin();
-	assume_abort_if_not(counter1 > 0);
+    assume_abort_if_not(counter1 > 0);
     counter1--;
-	__VERIFIER_atomic_end();
+  __VERIFIER_atomic_end();
   }
 }
 
@@ -37,16 +37,16 @@ void* thread3() {
   for (int i=0; i<N; i++) {
     __VERIFIER_atomic_begin();
     counter2++;
-	__VERIFIER_atomic_end();
+    __VERIFIER_atomic_end();
   }
 }
 
 void* thread4() {
   for (int i=0; i<N; i++) {
     __VERIFIER_atomic_begin();
-	assume_abort_if_not(counter2 > 0);
+    assume_abort_if_not(counter2 > 0);
     counter2--;
-	__VERIFIER_atomic_end();
+    __VERIFIER_atomic_end();
   }
 }
 

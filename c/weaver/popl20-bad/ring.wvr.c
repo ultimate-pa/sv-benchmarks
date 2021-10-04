@@ -32,7 +32,7 @@ void* thread1() {
     __VERIFIER_atomic_end();
     __VERIFIER_atomic_begin();
     assume_abort_if_not(q3_back > q3_front && q3_front >= 0 && q3_front < n3);
-	l = q3[q3_front];
+    l = q3[q3_front];
     q3_front++;
     __VERIFIER_atomic_end();
     r = r + l;

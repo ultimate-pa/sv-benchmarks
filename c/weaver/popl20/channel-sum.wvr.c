@@ -22,7 +22,7 @@ int *create_fresh_int_array(int size);
 void* thread1() {
   while (back > front) {
     assume_abort_if_not(front >= 0 && front < n);
-	element = queue[front];
+    element = queue[front];
     front++;
     sum = sum + element;
   }
@@ -31,7 +31,7 @@ void* thread1() {
 void* thread2() {
   _Bool flag = 1;
   while (__VERIFIER_nondet_bool()) {
-	assume_abort_if_not(back >= 0 && back < n);
+    assume_abort_if_not(back >= 0 && back < n);
     if (flag) {
       assume_abort_if_not(queue[back] == 1);
       back++;

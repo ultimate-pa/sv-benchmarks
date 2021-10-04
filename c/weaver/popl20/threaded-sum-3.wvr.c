@@ -19,10 +19,10 @@ int s, t, m, c, T, S, u, U;
 void* thread1() {
   while (s > 0 || t > 0 || u > 0) {
     __VERIFIER_atomic_begin();
-	if (s > 0) {
+    if (s > 0) {
       s--;
-      m++;	  
-	}
+      m++;    
+    }
     __VERIFIER_atomic_end();
   }
 }
@@ -30,22 +30,22 @@ void* thread1() {
 void* thread2() {
   while (t > 0 || u > 0) {
     __VERIFIER_atomic_begin();
-	if (t > 0) {
+    if (t > 0) {
       t--;
-      s++;	  
-	}
-	__VERIFIER_atomic_end();
+      s++;    
+    }
+    __VERIFIER_atomic_end();
   }
 }
 
 void* thread3() {
   while (u > 0) {
-	__VERIFIER_atomic_begin();
+    __VERIFIER_atomic_begin();
     t++;
-	__VERIFIER_atomic_end();
-	__VERIFIER_atomic_begin();
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     u--;
-	__VERIFIER_atomic_end();
+    __VERIFIER_atomic_end();
   }
 }
 

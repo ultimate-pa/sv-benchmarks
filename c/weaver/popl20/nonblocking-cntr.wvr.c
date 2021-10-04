@@ -28,11 +28,11 @@ void* thread2() {
   int i = 0;
   while (i < M) {
     __VERIFIER_atomic_begin();
-	if (counter > 0) {
+    if (counter > 0) {
       counter--;
-	  i++;
-	}
-	__VERIFIER_atomic_end();
+      i++;
+    }
+    __VERIFIER_atomic_end();
   }
 }
 

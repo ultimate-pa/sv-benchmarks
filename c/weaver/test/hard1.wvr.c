@@ -19,43 +19,43 @@ int p1, p2, n1, n2, m;
 void* thread1() {
   while (n1 > 0) {
     __VERIFIER_atomic_begin();
-	if (n1 > 0) {
-	  p1 = p1 + m;
-	  n1--;
-	}
+    if (n1 > 0) {
+      p1 = p1 + m;
+      n1--;
+    }
     __VERIFIER_atomic_end();
   }
 }
 
 void* thread2() {
   while (n1 > 1) {
-	__VERIFIER_atomic_begin();
-	if (n1 > 1) {
-	  p1 = p1 + 2 * m;
-	  n1 = n1 - 2;
-	}
+    __VERIFIER_atomic_begin();
+    if (n1 > 1) {
+      p1 = p1 + 2 * m;
+      n1 = n1 - 2;
+    }
     __VERIFIER_atomic_end();
   }
 }
 
 void* thread3() {
   while (n2 > 0) {
-	__VERIFIER_atomic_begin();
-	if (n2 > 0) {
-	  p2 = p2 + m;
-	  n2--;
-	}
+  __VERIFIER_atomic_begin();
+    if (n2 > 0) {
+      p2 = p2 + m;
+      n2--;
+    }
     __VERIFIER_atomic_end();
   }
 }
 
 void* thread4() {
   while (n2 > 1) {
-	__VERIFIER_atomic_begin();
-	if (n2 > 1) {
-	  p2 = p2 + 2 * m;
-	  n2 = n2 - 2;
-	}
+  __VERIFIER_atomic_begin();
+    if (n2 > 1) {
+      p2 = p2 + 2 * m;
+      n2 = n2 - 2;
+    }
     __VERIFIER_atomic_end();
   }
 }

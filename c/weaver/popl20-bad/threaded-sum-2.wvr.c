@@ -30,11 +30,11 @@ void* thread1() {
 void* thread2() {
   while (t > 0) {
     __VERIFIER_atomic_begin();
-	s++;
-	__VERIFIER_atomic_end();
-	__VERIFIER_atomic_begin();
+    s++;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     t--;
-	__VERIFIER_atomic_end();
+    __VERIFIER_atomic_end();
   }
 }
 

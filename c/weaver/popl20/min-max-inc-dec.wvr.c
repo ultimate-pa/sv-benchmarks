@@ -40,16 +40,16 @@ void* thread2() {
 void* thread3() {
   for (int i=0; i<N; i++) {
     __VERIFIER_atomic_begin();
-	A[i]++;
-	__VERIFIER_atomic_end();
+    A[i]++;
+    __VERIFIER_atomic_end();
   }
 }
 
 void* thread4() {
   for (int i=0; i<N; i++) {
     __VERIFIER_atomic_begin();
-	A[i]--;
-	__VERIFIER_atomic_end();
+    A[i]--;
+    __VERIFIER_atomic_end();
   }
 }
 

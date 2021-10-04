@@ -19,10 +19,10 @@ int L, M, N, p, q;
 void* thread1() {
   while (N > 0) {
     __VERIFIER_atomic_begin();
-	if (N > 0) {
+    if (N > 0) {
       p = p + M;
-	  N--;
-	}
+      N--;
+    }
     __VERIFIER_atomic_end();
   }
 }
@@ -30,10 +30,10 @@ void* thread1() {
 void* thread2() {
   while (N > 1) {
     __VERIFIER_atomic_begin();
-	if (N > 1) {
+    if (N > 1) {
       p = p + M + M;
-	  N = N - 2;
-	}
+      N = N - 2;
+    }
     __VERIFIER_atomic_end();
   }
 }

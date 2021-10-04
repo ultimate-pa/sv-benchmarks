@@ -20,16 +20,16 @@ void* thread1() {
   for (int i=0; i<N1; i++) {
     __VERIFIER_atomic_begin();
     counter++;
-	__VERIFIER_atomic_end();
+    __VERIFIER_atomic_end();
   }
 }
 
 void* thread2() {
   for (int i=0; i<N2; i++) {
     __VERIFIER_atomic_begin();
-	assume_abort_if_not(counter > 0);
+    assume_abort_if_not(counter > 0);
     counter--;
-	__VERIFIER_atomic_end();
+    __VERIFIER_atomic_end();
   }
 }
 

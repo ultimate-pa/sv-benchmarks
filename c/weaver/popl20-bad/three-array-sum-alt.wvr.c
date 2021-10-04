@@ -36,7 +36,7 @@ void* thread2() {
 void* thread3() {
   for (int i=0; i<N; i++) {
     C[i] = A[i] + B[i];
-	csum = csum + C[i];
+    csum = csum + C[i];
   }
 }
 

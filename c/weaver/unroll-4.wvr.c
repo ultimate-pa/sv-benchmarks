@@ -23,7 +23,7 @@ void* thread1() {
   while (i1 < 4 * n) {
     __VERIFIER_atomic_begin();
     x1 = f[x1];
-	assume_abort_if_not(x1 >= 0 && x1 < size);
+    assume_abort_if_not(x1 >= 0 && x1 < size);
     i1++;
     __VERIFIER_atomic_end();
   }
@@ -34,16 +34,16 @@ void* thread2() {
   while (i2 < 4 * n) {
     __VERIFIER_atomic_begin();
     x2 = f[x2];
-	assume_abort_if_not(x2 >= 0 && x2 < size);
+    assume_abort_if_not(x2 >= 0 && x2 < size);
     i2++;
     x2 = f[x2];
-	assume_abort_if_not(x2 >= 0 && x2 < size);
+    assume_abort_if_not(x2 >= 0 && x2 < size);
     i2++;
-	x2 = f[x2];
-	assume_abort_if_not(x2 >= 0 && x2 < size);
+    x2 = f[x2];
+    assume_abort_if_not(x2 >= 0 && x2 < size);
     i2++;
-	x2 = f[x2];
-	assume_abort_if_not(x2 >= 0 && x2 < size);
+    x2 = f[x2];
+    assume_abort_if_not(x2 >= 0 && x2 < size);
     i2++;
     __VERIFIER_atomic_end();
   }

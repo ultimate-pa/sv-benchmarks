@@ -29,8 +29,8 @@ void* thread2() {
     if (counter > 0) {
       counter = counter - C;
       i++;
-	  }
-	  __VERIFIER_atomic_end();
+    }
+    __VERIFIER_atomic_end();
   }
 }
 
