@@ -35,7 +35,7 @@ ENV LINKFLAGS=-static
 RUN make -C cbmc/src -j2 goto-diff.dir goto-cc.dir
 
 # Base image needs to be Ubuntu 14.04 because programs were preprocessed with headers from this version
-FROM ubuntu:focal
+FROM ubuntu:trusty
 
 RUN apt-get update && apt-get install -y \
   git \
