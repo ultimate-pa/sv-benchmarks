@@ -20,6 +20,7 @@ int temp_4, temp_5;
 int x_6, x_7;
 _Bool f1_8, f2_9;
 int temp_10, temp_11;
+int y_7;
 
 void* thread2() {
   temp_4 = x_0;
