@@ -85,8 +85,8 @@ Semantical differences to pay attention to:
 - [x] `./chl/nzb-file-symm.wvr.yml`
 - [x] `./chl/nzb-file-trans.wvr.yml`
 - [x] `./chl/poker-hand-subst.wvr.yml`
-- [ ] `./chl/poker-hand-symm.wvr.yml`
-- [ ] `./chl/poker-hand-trans.wvr.yml`
+- [x] `./chl/poker-hand-symm.wvr.yml`
+- [x] `./chl/poker-hand-trans.wvr.yml`
 - [x] `./chl/simpl-str-subst.wvr.yml`
 - [x] `./chl/simpl-str-symm.wvr.yml`
 - [x] `./chl/simpl-str-trans.wvr.yml`
@@ -151,7 +151,7 @@ Semantical differences to pay attention to:
 - [x] `./popl20/nonblocking-cntr-alt.wvr.yml`
 - [x] `./popl20/nonblocking-cntr.wvr.yml`
 - [x] `./popl20/prod-cons3.wvr.yml`
-- [ ] `./popl20/prod-cons-eq.wvr.yml`
+- [x] `./popl20/prod-cons-eq.wvr.yml`
 - [x] `./popl20/prod-cons.wvr.yml`
 - [x] `./popl20/queue-add-2.wvr.yml`
 - [x] `./popl20/queue-add-3.wvr.yml`
