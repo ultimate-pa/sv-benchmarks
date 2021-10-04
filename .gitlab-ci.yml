@@ -127,9 +127,7 @@ java-format:
 check-links:
     stage: checks
     image: "$CI_REGISTRY/sosy-lab/benchmarking/sv-benchmarks/ci/link-checks:latest"
-    script:
-      - "set -o pipefail"
-      - "for md in $(find . -name '*.md'); do pandoc -t html5 \"$md\" -o \"$md\".html; echo -e \"\\n\\nFILE: $md\"; linkchecker --check-extern --config .linkchecker.config  \"$md\".html; rm \"$md\".html; done" 
+    script: "FAIL=0; for md in $(find . -name '*.md'); do pandoc -t html5 \"$md\" -o \"$md\".html; echo -e \"\\n\\nFILE: $md\"; linkchecker --check-extern --config .linkchecker.config  \"$md\".html; FAIL=$((FAIL += $?)); rm \"$md\".html; done; exit $FAIL" 
 
 .build-docker:
   image:
