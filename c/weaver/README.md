@@ -137,7 +137,7 @@ Semantical differences to pay attention to:
 - [x] `./popl20/commit-1.wvr.yml`
 - [x] `./popl20/commit-2.wvr.yml`
 - [x] `./popl20/counter-determinism.wvr.yml`
-- [ ] `./popl20/counter-fun.wvr.yml`
+- [x] `./popl20/counter-fun.wvr.yml`
 - [x] `./popl20/difference-det.wvr.yml`
 - [x] `./popl20/figure1-alt.wvr.yml`
 - [x] `./popl20/figure1.wvr.yml`
