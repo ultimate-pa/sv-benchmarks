@@ -6,12 +6,12 @@
 # SPDX-License-Identifier: Apache-2.0
 
 # This is a Docker image for running the compile checks for C programs with GCC.
-# It should be pushed to registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/gcc
+# It should be pushed to registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/gcc
 # and will be used by CI as declared in .gitlab-ci.yml.
 #
 # Commands for updating the image:
-# docker build --pull -t registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/gcc:5 - < .Dockerfile.gcc-5
-# docker push registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/gcc
+# docker build --pull -t registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/gcc:5 - < .Dockerfile.gcc-5
+# docker push registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/gcc
 
 FROM ubuntu:bionic
 
