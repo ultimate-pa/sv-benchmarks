@@ -87,18 +87,18 @@ Semantical differences to pay attention to:
 - [x] `./chl/poker-hand-subst.wvr.yml`
 - [ ] `./chl/poker-hand-symm.wvr.yml`
 - [ ] `./chl/poker-hand-trans.wvr.yml`
-- [ ] `./chl/simpl-str-subst.wvr.yml`
-- [ ] `./chl/simpl-str-symm.wvr.yml`
-- [ ] `./chl/simpl-str-trans.wvr.yml`
-- [ ] `./chl/sre-subst.wvr.yml`
-- [ ] `./chl/sre-symm.wvr.yml`
-- [ ] `./chl/sre-trans.wvr.yml`
+- [x] `./chl/simpl-str-subst.wvr.yml`
+- [x] `./chl/simpl-str-symm.wvr.yml`
+- [x] `./chl/simpl-str-trans.wvr.yml`
+- [x] `./chl/sre-subst.wvr.yml`
+- [x] `./chl/sre-symm.wvr.yml`
+- [x] `./chl/sre-trans.wvr.yml`
 - [x] `./chl/time-subst.wvr.yml`
 - [x] `./chl/time-symm.wvr.yml`
 - [x] `./chl/time-trans.wvr.yml`
-- [ ] `./chl/word-subst.wvr.yml`
-- [ ] `./chl/word-symm.wvr.yml`
-- [ ] `./chl/word-trans.wvr.yml`
+- [x] `./chl/word-subst.wvr.yml`
+- [x] `./chl/word-symm.wvr.yml`
+- [x] `./chl/word-trans.wvr.yml`
 
 
 ## `./parallel/`

@@ -1,0 +1,110 @@
+#include <pthread.h>
+typedef unsigned long int pthread_t;
+
+#include <assert.h>
+void reach_error() { assert(0); }
+
+extern int  __VERIFIER_nondet_int(void);
+extern _Bool __VERIFIER_nondet_bool(void);
+extern void __VERIFIER_atomic_begin(void);
+extern void __VERIFIER_atomic_end(void);
+
+extern void abort(void);
+void assume_abort_if_not(int cond) {
+  if(!cond) {abort();}
+}
+
+int *get1, *get2, *get3;
+int count1, count2, count3, n1, n2, n3, res1, res2, res3;
+
+int *create_fresh_int_array(int size);
+
+void* thread1() {
+  _Bool stop = 0;
+  if (count1 == count2) {
+    for (int i=0; i<n1 && i<n2; i++) {
+      if (get1[i] != get2[i]) {
+        res1 = get1[i] < get2[i] ? -1 : 1;
+        stop = 1;
+        break;
+      }
+    }
+    if (!stop) {
+      res1 = n1 - n2;
+    }
+  } else {
+    res1 = count1 > count2 ? 1 : -1;
+  }
+}
+
+void* thread2() {
+  _Bool stop = 0;
+  if (count1 == count3) {
+    for (int i=0; i<n1 && i<n3; i++) {
+      if (get1[i] != get3[i]) {
+        res2 = get1[i] < get3[i] ? -1 : 1;
+        stop = 1;
+        break;
+      }
+    }
+    if (!stop) {
+      res2 = n1 - n3;
+    }
+  } else {
+    res2 = count1 > count3 ? 1 : -1;
+  }
+}
+
+void* thread3() {
+  _Bool stop = 0;
+  if (count2 == count3) {
+    for (int i=0; i<n2 && i<n3; i++) {
+      if (get2[i] != get3[i]) {
+        res3 = get2[i] < get3[i] ? -1 : 1;
+        stop = 1;
+        break;
+      }
+    }
+    if (!stop) {
+      res3 = n2 - n3;
+    }
+  } else {
+    res3 = count2 > count3 ? 1 : -1;
+  }
+}
+
+void main() {
+  pthread_t t1, t2, t3;
+  
+  count1 = __VERIFIER_nondet_int();
+  count2 = __VERIFIER_nondet_int();
+  count3 = __VERIFIER_nondet_int();
+  n1 = __VERIFIER_nondet_int();
+  n2 = __VERIFIER_nondet_int();
+  n3 = __VERIFIER_nondet_int();
+  get1 = create_fresh_int_array(n1);
+  get2 = create_fresh_int_array(n2);
+  get3 = create_fresh_int_array(n3);
+  
+  // main method
+  pthread_create(&t1, NULL, thread1, NULL);
+  pthread_create(&t2, NULL, thread2, NULL);
+  pthread_create(&t3, NULL, thread3, NULL);
+  pthread_join(t1, 0);
+  pthread_join(t2, 0);
+  pthread_join(t3, 0);
+
+  assume_abort_if_not(res1 == 0);
+  assume_abort_if_not((res2 > 0) != (res3 > 0) || (res2 < 0) != (res3 < 0));
+  reach_error();
+}
+
+int *create_fresh_int_array(int size) {
+  assume_abort_if_not(size >= 0);
+
+  int* arr = (int*)malloc(sizeof(int) * size);
+  for (int i = 0; i < size; i++) {
+    arr[i] = __VERIFIER_nondet_int();
+  }
+  return arr;
+}
