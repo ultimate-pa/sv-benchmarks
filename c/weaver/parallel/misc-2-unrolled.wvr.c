@@ -5,6 +5,8 @@ typedef unsigned long int pthread_t;
 void reach_error() { assert(0); }
 
 extern int   __VERIFIER_nondet_int(void);
+extern void  __VERIFIER_atomic_begin();
+extern void  __VERIFIER_atomic_end();
 
 extern void abort(void);
 void assume_abort_if_not(int cond) {
@@ -15,9 +17,13 @@ int pos, i1, i2, N;
 
 void* thread1() {
   while (( i1 < ( 2 * N ) )) {
+    __VERIFIER_atomic_begin();
     pos++;
+    __VERIFIER_atomic_end();
     i1++;
+    __VERIFIER_atomic_begin();
     pos--;
+    __VERIFIER_atomic_end();
     i1++;
   }
 

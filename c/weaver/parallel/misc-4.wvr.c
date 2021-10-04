@@ -6,6 +6,8 @@ void reach_error() { assert(0); }
 
 extern int   __VERIFIER_nondet_int(void);
 extern _Bool __VERIFIER_nondet_bool(void);
+extern void  __VERIFIER_atomic_begin();
+extern void  __VERIFIER_atomic_end();
 
 extern void abort(void);
 void assume_abort_if_not(int cond) {
@@ -18,12 +20,14 @@ _Bool d1, d2, v_assert;
 void* thread1() {
   while (v_assert) {
     if (d1) {
+      __VERIFIER_atomic_begin();
       pos++;
-
+      __VERIFIER_atomic_end();
     }
     else {
+      __VERIFIER_atomic_begin();
       pos--;
-
+      __VERIFIER_atomic_end();
     }
     d1 = !d1;
   }

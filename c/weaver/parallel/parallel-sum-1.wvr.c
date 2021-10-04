@@ -26,8 +26,8 @@ void* thread1() {
     i1++;
     t11 = x[i1];
     __VERIFIER_atomic_end();
+    s1 = s1 + t11;
   }
-  s1 = s1 + t11;
 }
 
 void* thread2() {
@@ -37,8 +37,8 @@ void* thread2() {
     i1++;
     t21 = x[i1];
     __VERIFIER_atomic_end();
+    s1 = s1 + t21;
   }
-  s1 = s1 + t21;
 }
 
 void* thread3() {
@@ -48,8 +48,8 @@ void* thread3() {
     i2++;
     t12 = x[i2];
     __VERIFIER_atomic_end();
+    s2 = s2 + t12;
   }
-  s2 = s2 + t12;
 }
 
 void* thread4() {
@@ -59,8 +59,8 @@ void* thread4() {
     i2++;
     t22 = x[i2];
     __VERIFIER_atomic_end();
+    s2 = s2 + t22;
   }
-  s2 = s2 + t22;
 }
 
 void main() {

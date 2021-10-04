@@ -116,6 +116,7 @@ void main() {
   x2  = __VERIFIER_nondet_int();
   n   = __VERIFIER_nondet_int();
   x = create_fresh_int_array(n + 1);
+  assume_abort_if_not(s11 == s21 && s11 == s12 && s11 == s22 && s11 == i1 && s11 == i2 && s11 == 0);
 
   // main method
   pthread_create(&t1, NULL, thread1, NULL);

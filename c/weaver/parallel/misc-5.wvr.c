@@ -49,7 +49,7 @@ void* thread2() {
       __VERIFIER_atomic_begin();
       assume_abort_if_not(c2 > 0);
       pos--;
-      c1--;
+      c2--;
       __VERIFIER_atomic_end();
     }
   }
