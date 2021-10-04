@@ -66,7 +66,7 @@ void main() {
   pthread_join(t2, 0);
   pthread_join(t3, 0);
   
-  assume_abort_if_not(min1 != (min2 < min3 ? min3 : min2));
+  assume_abort_if_not(min1 != (min2 > min3 ? min3 : min2));
   reach_error();
 }
 

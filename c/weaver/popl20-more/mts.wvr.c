@@ -33,7 +33,7 @@ void* thread2() {
 void* thread3() {
   for (int i=M; i<N; i++) {
     __VERIFIER_atomic_begin();
-    mts2 = mts2 + A[i] < 0 ? 0 : mts2 + A[i];
+    mts3 = mts3 + A[i] < 0 ? 0 : mts3 + A[i];
     sum = sum + A[i];
     __VERIFIER_atomic_end();
   }

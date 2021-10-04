@@ -23,7 +23,6 @@ int *create_fresh_int_array(int size);
 void* thread1() {
   int i = 0;
   assume_abort_if_not(!isNull1);
-  res1 = 1;
   while (!isNull2 && i < 5) {
     res1 = a1[i] - a2[i];
     if (res1 == 0) {
@@ -49,8 +48,8 @@ void* thread3() {
   int i = 0;
   assume_abort_if_not(!isNull2);
   while (!isNull3 && i < 5) {
-    res2 = a2[i] - a3[i];
-    if (res2 == 0) {
+    res3 = a2[i] - a3[i];
+    if (res3 == 0) {
       break;
     }
     i++;
