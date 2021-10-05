@@ -34,9 +34,9 @@ void* thread1() {
       result_12 = ( ( ends_with_2[i_13] && ends_with_6[i_13] ) ? 0 : result_12 );
       break_14  = ( ( ends_with_2[i_13] && ends_with_6[i_13] ) ? 1 : break_14 );
       result_12 = ( ( !break_14 && ends_with_2[i_13] ) ? ( ( 0 - 1000 ) + i_13 ) : result_12 );
-      break_14  = ( ( !break_14 && ends_with_2[i_13] ) ? true : break_14 );
+      break_14  = ( ( !break_14 && ends_with_2[i_13] ) ? 1 : break_14 );
       result_12 = ( ( !break_14 && ends_with_6[i_13] ) ? ( 1000 + i_13 ) : result_12 );
-      break_14  = ( ( !break_14 && ends_with_6[i_13] ) ? true : break_14 );
+      break_14  = ( ( !break_14 && ends_with_6[i_13] ) ? 1 : break_14 );
       i_13++;
       __VERIFIER_atomic_end();
     }
@@ -66,11 +66,11 @@ void* thread2() {
       __VERIFIER_atomic_begin();
       assume_abort_if_not( ( i_16 < 5 ) && !break_17 );
       result_15 = ( ( ends_with_6[i_16] && ends_with_10[i_16] ) ? 0 : result_15 );
-      break_17  = ( ( ends_with_6[i_16] && ends_with_10[i_16] ) ? true : break_17 );
+      break_17  = ( ( ends_with_6[i_16] && ends_with_10[i_16] ) ? 1 : break_17 );
       result_15 = ( ( !break_17 && ends_with_6[i_16] ) ? ( ( 0 - 1000 ) + i_16 ) : result_15 );
-      break_17  = ( ( !break_17 && ends_with_6[i_16] ) ? true : break_17 );
+      break_17  = ( ( !break_17 && ends_with_6[i_16] ) ? 1 : break_17 );
       result_15 = ( ( !break_17 && ends_with_10[i_16] ) ? ( 1000 + i_16 ) : result_15 );
-      break_17  = ( ( !break_17 && ends_with_10[i_16] ) ? true : break_17 );
+      break_17  = ( ( !break_17 && ends_with_10[i_16] ) ? 1 : break_17 );
       i_16++;
       __VERIFIER_atomic_end();
     }

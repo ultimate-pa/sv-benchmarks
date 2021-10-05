@@ -23,8 +23,7 @@ void* thread1() {
       __VERIFIER_atomic_begin();
       pos++;
       __VERIFIER_atomic_end();
-    }
-    else {
+    } else {
       __VERIFIER_atomic_begin();
       pos--;
       __VERIFIER_atomic_end();
@@ -44,11 +43,8 @@ void* thread2() {
   while (g2) {
     if (d2) {
       pos = ( pos + 2 );
-
-    }
-    else {
+    } else {
       pos = ( pos - 2 );
-
     }
     d2 = !d2;
     if (d2) {
@@ -65,20 +61,17 @@ void main() {
   pthread_t t1, t2;
 
   // initialize global variables
-  pos = __VERIFIER_nondet_int();
-  d1  = __VERIFIER_nondet_bool();
-  d2  = __VERIFIER_nondet_bool();
-  g1  = __VERIFIER_nondet_bool();
-  g2  = __VERIFIER_nondet_bool();
+  d1 = 1;
+  d2 = 1;
+  g1 = 1;
+  g2 = 1;
 
   // main method
-  assume_abort_if_not( pos == 0 && ( d1 == d2 && d1 == g1 && d1 == g2 && d1 == 1 ) );
-
   pthread_create(&t1, NULL, thread1, NULL);
   pthread_create(&t2, NULL, thread2, NULL);
   pthread_join(t1, 0);
   pthread_join(t2, 0);
 
-  assume_abort_if_not( pos != 0 );
+  assume_abort_if_not(pos != 0);
   reach_error();
 }

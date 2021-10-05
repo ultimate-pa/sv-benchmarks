@@ -6,6 +6,8 @@ void reach_error() { assert(0); }
 
 extern int   __VERIFIER_nondet_int(void);
 extern _Bool __VERIFIER_nondet_bool(void);
+extern void  __VERIFIER_atomic_begin();
+extern void  __VERIFIER_atomic_end();
 
 extern void abort(void);
 void assume_abort_if_not(int cond) {
@@ -18,12 +20,13 @@ _Bool d1, d2, d3, g1, g2, g3;
 void* thread1() {
   while (g1) {
     if (d1) {
+      __VERIFIER_atomic_begin();
       pos++;
-
-    }
-    else {
+      __VERIFIER_atomic_end();
+    } else {
+      __VERIFIER_atomic_begin();
       pos--;
-
+      __VERIFIER_atomic_end();
     }
     d1 = !d1;
     if (d1) {
@@ -39,12 +42,9 @@ void* thread1() {
 void* thread2() {
   while (g2) {
     if (d2) {
-      pos = ( pos + 2 );
-
-    }
-    else {
-      pos = ( pos - 2 );
-
+      pos = pos + 2;
+    } else {
+      pos = pos - 2;
     }
     d2 = !d2;
     if (d2) {
@@ -60,12 +60,9 @@ void* thread2() {
 void* thread3() {
   while (g3) {
     if (d3) {
-      pos = ( pos + 2 );
-
-    }
-    else {
-      pos = ( pos - 2 );
-
+      pos = pos + 2;
+    } else {
+      pos = pos - 2;
     }
     d3 = !d3;
     if (d3) {
@@ -82,17 +79,14 @@ void main() {
   pthread_t t1, t2, t3;
 
   // initialize global variables
-  pos = __VERIFIER_nondet_int();
-  d1  = __VERIFIER_nondet_bool();
-  d2  = __VERIFIER_nondet_bool();
-  d3  = __VERIFIER_nondet_bool();
-  g1  = __VERIFIER_nondet_bool();
-  g2  = __VERIFIER_nondet_bool();
-  g3  = __VERIFIER_nondet_bool();
+  d1 = 1;
+  d2 = 1;
+  d3 = 1;
+  g1 = 1;
+  g2 = 1;
+  g3 = 1;
 
   // main method
-  assume_abort_if_not( ( pos == 0 ) && ( d1 == d2 && d1 == d3 && d1 == g1 && d1 == g2 && d1 == g3 && d1 == true ) );
-
   pthread_create(&t1, NULL, thread1, NULL);
   pthread_create(&t2, NULL, thread2, NULL);
   pthread_create(&t3, NULL, thread3, NULL);
@@ -100,6 +94,6 @@ void main() {
   pthread_join(t2, 0);
   pthread_join(t3, 0);
 
-  assume_abort_if_not( pos != 0 );
+  assume_abort_if_not(pos != 0);
   reach_error();
 }

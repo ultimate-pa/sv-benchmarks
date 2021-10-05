@@ -49,8 +49,8 @@ void* thread3() {
   int i = 0;
   assume_abort_if_not(!isNull1);
   while (!isNull3 && i < 5) {
-    res2 = a1[i] - a3[i];
-    if (res2 == 0) {
+    res3 = a1[i] - a3[i];
+    if (res3 == 0) {
       break;
     }
     i++;

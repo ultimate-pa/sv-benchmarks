@@ -33,10 +33,10 @@ void* thread1() {
 void* thread2() {
   for (int i=0; i<N; i++) {
     __VERIFIER_atomic_begin();
-    assume_abort_if_not(counter >= 0 && counter < n);
-    assume_abort_if_not(f[counter] >= 0 && f[counter] < n_inv);
-    assume_abort_if_not(f_inv[f[counter]] == counter);
-    counter = f[counter];
+    assume_abort_if_not(counter >= 0 && counter < n_inv);
+    assume_abort_if_not(f_inv[counter] >= 0 && f_inv[counter] < n);
+    assume_abort_if_not(f[f_inv[counter]] == counter);
+    counter = f_inv[counter];
     __VERIFIER_atomic_end();
   }
 }
