@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2021 F. Schuessele <schuessf@informatik.uni-freiburg.de>, D. Klumpp <klumpp@informatik.uni-freiburg.de>
 
-SPDX-License-Identifier: BSD-3-Clause
+SPDX-License-Identifier: LicenseRef-BSD-3-Clause-Attribution-Vandikas
 -->
 
 The benchmarks in this directory were submitted by Frank Schuessele <schuessf@informatik.uni-freiburg.de> and Dominik Klumpp <klumpp@informatik.uni-freiburg.de>.
