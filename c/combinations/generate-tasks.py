@@ -176,7 +176,7 @@ def _get_spdx_header(*files):
                     all_spdx_info[key].add(value)
 
     return f"""// This file is part of the SV-Benchmarks collection of verification tasks:
-// https://github.com/sosy-lab/sv-benchmarks
+// https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks
 //
 {_spdx_info_to_text(all_spdx_info)}"""
 
