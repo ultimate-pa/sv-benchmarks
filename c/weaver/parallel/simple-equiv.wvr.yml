@@ -8,5 +8,5 @@ properties:
 
 options:
   language: C
-  data_model: ILP32;
+  data_model: ILP32
 
