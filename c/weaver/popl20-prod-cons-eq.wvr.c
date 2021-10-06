@@ -136,7 +136,7 @@ int *create_fresh_int_array(int size) {
 _Bool *create_fresh_bool_array(int size) {
   assume_abort_if_not(size >= 0);
 
-  _Bool* arr = (int*)malloc(sizeof(_Bool) * size);
+  _Bool* arr = (_Bool*)malloc(sizeof(_Bool) * size);
   for (int i = 0; i < size; i++) {
     arr[i] = __VERIFIER_nondet_bool();
   }

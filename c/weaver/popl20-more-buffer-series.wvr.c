@@ -72,7 +72,7 @@ void* thread2() {
 void* thread3() {
   while (i < N || q1_front < q1_back) {
     __VERIFIER_atomic_begin();
-    assume(q1_front < q1_back && q1_front >= 0 && q1_front < n1);
+    assume_abort_if_not(q1_front < q1_back && q1_front >= 0 && q1_front < n1);
     total = total + q1[q1_front];
     q1_front++;
     __VERIFIER_atomic_end();
