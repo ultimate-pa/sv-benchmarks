@@ -63,7 +63,7 @@ void* thread2() {
   n2 = 0;
 }
 
-void main() {
+int main() {
   pthread_t t1, t2;
   
   // main method

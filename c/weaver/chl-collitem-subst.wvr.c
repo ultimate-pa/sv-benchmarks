@@ -64,7 +64,7 @@ void* thread3() {
   __VERIFIER_atomic_end();
 }
 
-void main() {
+int main() {
   pthread_t t1, t2, t3;
   
   cardSet_0 = __VERIFIER_nondet_int();

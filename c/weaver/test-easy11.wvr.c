@@ -55,7 +55,7 @@ void* thread2() {
   Y = Y + x;
 }
 
-void main() {
+int main() {
   pthread_t t1, t2;
   
   X = __VERIFIER_nondet_int();

@@ -94,7 +94,7 @@ void* thread3() {
   }
 }
 
-void main() {
+int main() {
   pthread_t t1, t2, t3;
   
   count1 = __VERIFIER_nondet_int();

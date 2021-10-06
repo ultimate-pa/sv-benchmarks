@@ -45,7 +45,7 @@ void* thread2() {
   result_7 = score_3 > score_0 ? - 1 : (score_3 < score_0 ? 1 : (seq_1_start_4 + seq_2_start_5 < seq_1_start_1 + seq_2_start_2 ? -1 : (seq_1_start_4 + seq_2_start_5 > seq_1_start_1 + seq_2_start_2 ? 1 : 0)));
 }
 
-void main() {
+int main() {
   pthread_t t1, t2;
   
   score_0 = __VERIFIER_nondet_int();

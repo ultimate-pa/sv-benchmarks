@@ -205,7 +205,7 @@ void* thread2() {
   }
 }
 
-void main() {
+int main() {
   pthread_t t1, t2;
   
   index_of_0 = create_fresh_int_array(5);

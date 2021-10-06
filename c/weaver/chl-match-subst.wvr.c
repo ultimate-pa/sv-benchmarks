@@ -49,7 +49,7 @@ void* thread3() {
   result_11 = score_3 > score_6 ? -1 : (score_3 < score_6 ? 1 : (seq_1_start_4 + seq_2_start_5 < seq_1_start_7 + seq_2_start_8 ? -1 : (seq_1_start_4 + seq_2_start_5 > seq_1_start_7 + seq_2_start_8 ? 1 : 0)));
 }
 
-void main() {
+int main() {
   pthread_t t1, t2, t3;
   
   score_0 = __VERIFIER_nondet_int();

@@ -70,7 +70,7 @@ void* thread3() {
   v_assert = (d <= W);
 }
 
-void main() {
+int main() {
   pthread_t t1, t2, t3;
   
   W = __VERIFIER_nondet_int();

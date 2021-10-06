@@ -58,7 +58,7 @@ void* thread3() {
   }
 }
 
-void main() {
+int main() {
   pthread_t t1, t2, t3;
 
   // initialize global variables

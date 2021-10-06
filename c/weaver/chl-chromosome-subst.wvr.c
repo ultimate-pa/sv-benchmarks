@@ -77,7 +77,7 @@ void* thread3() {
   }
 }
 
-void main() {
+int main() {
   pthread_t t1, t2, t3;
   
   a1 = create_fresh_int_array(5);

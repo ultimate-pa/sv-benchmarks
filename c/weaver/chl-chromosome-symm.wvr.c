@@ -65,7 +65,7 @@ void* thread2() {
   }
 }
 
-void main() {
+int main() {
   pthread_t t1, t2;
   
   a1 = create_fresh_int_array(5);

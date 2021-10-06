@@ -82,7 +82,7 @@ void* thread6() {
   return 0;
 }
 
-void main() {
+int main() {
   pthread_t t1, t2, t3, t4, t5, t6;
 
   // initialize global variables

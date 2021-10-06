@@ -49,7 +49,7 @@ void* thread3() {
   result_8 = length_0 == 0 ? (length_4 == 0 ? 0 : 1) : (length_4 == 0 ? -1 : to_int_1 - to_int_5);
 }
 
-void main() {
+int main() {
   pthread_t t1, t2, t3;
 
   // initialize global variables

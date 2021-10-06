@@ -64,7 +64,7 @@ void* thread2() {
   }
 }
 
-void main() {
+int main() {
   pthread_t t1, t2;
   
   front = __VERIFIER_nondet_int();

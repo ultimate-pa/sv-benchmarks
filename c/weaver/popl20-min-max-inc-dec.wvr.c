@@ -78,7 +78,7 @@ void* thread5() {
   v_assert = !b1 || !b2 || min <= max + 1;
 }
 
-void main() {
+int main() {
   pthread_t t1, t2, t3, t4, t5;
   
   N = __VERIFIER_nondet_int();

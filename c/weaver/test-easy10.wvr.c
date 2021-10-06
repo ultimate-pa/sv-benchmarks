@@ -74,7 +74,7 @@ void* thread4() {
   x2 = t22;
 }
 
-void main() {
+int main() {
   pthread_t t1, t2, t3, t4;
   
   x1 = __VERIFIER_nondet_int();

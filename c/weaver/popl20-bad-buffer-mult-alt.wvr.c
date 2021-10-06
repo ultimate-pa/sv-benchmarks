@@ -80,7 +80,7 @@ void* thread4() {
   }
 }
 
-void main() {
+int main() {
   pthread_t t1, t2, t3, t4;
 
   C = __VERIFIER_nondet_int();

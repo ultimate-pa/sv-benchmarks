@@ -70,7 +70,7 @@ void* thread3() {
   ok = (queue[start] == queue[start+1]);
 }
 
-void main() {
+int main() {
   pthread_t t1, t2, t3;
   
   A = __VERIFIER_nondet_int();

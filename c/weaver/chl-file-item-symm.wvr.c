@@ -46,7 +46,7 @@ void* thread2() {
   result_7 = isNull_3 ? (isNull_0 ? 0 : 1) : (isNull_0 ? -1 : (filename_5 ? (filename_2 ? 0 : 1) : (filename_2 ? -1 : filename_4 - filename_1)));
 }
 
-void main() {
+int main() {
   pthread_t t1, t2;
   
   filename_1 = __VERIFIER_nondet_int();

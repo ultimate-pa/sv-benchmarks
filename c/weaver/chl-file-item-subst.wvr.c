@@ -50,7 +50,7 @@ void* thread3() {
   result_11 = is_null_3 ? (is_null_6 ? 0 : 1) : (is_null_6 ? -1 : (filename_is_null_5 ? (filename_is_null_8 ? 0 : 1) : (filename_is_null_8 ? -1 : filename_4 - filename_7)));
 }
 
-void main() {
+int main() {
   pthread_t t1, t2, t3;
   
   filename_1 = __VERIFIER_nondet_int();

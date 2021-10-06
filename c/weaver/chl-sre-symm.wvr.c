@@ -46,7 +46,7 @@ void* thread2() {
   result_3 = !!sponsored_1 == !!sponsored_0 ? 0 : (sponsored_0 ? -1 : 1);
 }
 
-void main() {
+int main() {
   pthread_t t1, t2;
 
   // initialize global variables

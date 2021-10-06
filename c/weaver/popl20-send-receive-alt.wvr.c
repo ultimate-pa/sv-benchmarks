@@ -69,7 +69,7 @@ void* thread2() {
   }
 }
 
-void main() {
+int main() {
   pthread_t t1, t2, t3;
   
   n = __VERIFIER_nondet_int();

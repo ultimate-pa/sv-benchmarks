@@ -46,7 +46,7 @@ void* thread2() {
   result_5 = !!sort_label_is_null_3 == !!sort_label_is_null_1 && (sort_label_is_null_3 || sort_label_is_null_1 || sort_label_2 == sort_label_0) ? 0 : (sort_label_is_null_3 ? -1 : (sort_label_is_null_1 ? 1 : sort_label_2 - sort_label_0));
 }
 
-void main() {
+int main() {
   pthread_t t1, t2;
   
   sort_label_0 = __VERIFIER_nondet_int();

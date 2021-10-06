@@ -91,7 +91,7 @@ void* thread4() {
   return 0;
 }
 
-void main() {
+int main() {
   pthread_t t1, t2, t3, t4;
 
   // initialize global variables
