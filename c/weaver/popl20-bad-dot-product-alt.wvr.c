@@ -50,6 +50,8 @@ void* thread1() {
     assume_abort_if_not(0 <= A[i] && A[i] < maxA && 0 <= B[i] && B[i] < maxB);
     res1 = res1 + mult[A[i]][B[i]];
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -57,6 +59,8 @@ void* thread2() {
     assume_abort_if_not(0 <= A[i] && A[i] < maxA && 0 <= B[i] && B[i] < maxB);
     res2 = res2 + mult[A[i]][B[i]];
   }
+
+  return 0;
 }
 
 void* thread3() {
@@ -64,6 +68,8 @@ void* thread3() {
     assume_abort_if_not(0 <= A[i] && A[i] < maxA && 0 <= B[i] && B[i] < maxB);
     res2 = res2 + mult[A[i]][B[i]];
   }
+
+  return 0;
 }
 
 int main() {
@@ -94,6 +100,8 @@ int main() {
   
   assume_abort_if_not(res1 != res2);
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

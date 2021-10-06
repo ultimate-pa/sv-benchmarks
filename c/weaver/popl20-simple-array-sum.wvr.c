@@ -48,6 +48,8 @@ void* thread1() {
   for (int i=0; i<N; i++) {
     asum = asum + A[i];
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -55,6 +57,8 @@ void* thread2() {
     C[i] = A[i] + 1;
     p = i;
   }
+
+  return 0;
 }
 
 void* thread3() {
@@ -65,6 +69,8 @@ void* thread3() {
       i++;
     }
   }
+
+  return 0;
 }
 
 int main() {
@@ -84,6 +90,8 @@ int main() {
   
   assume_abort_if_not(csum != asum + N);
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

@@ -114,4 +114,6 @@ int main() {
 
   assume_abort_if_not( x1 != x2 || x3 != x4 );
   reach_error();
+
+  return 0;
 }

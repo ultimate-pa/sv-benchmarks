@@ -91,6 +91,8 @@ int main() {
 
   assume_abort_if_not( !( ( ( result_6 < 0 ) ? ( - 1 ) : ( ( result_6 > 0 ) ? 1 : 0 ) ) == ( 0 - ( ( result_9 < 0 ) ? ( - 1 ) : ( ( result_9 > 0 ) ? 1 : 0 ) ) ) ) );
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

@@ -40,14 +40,20 @@ _Bool sponsored_0, sponsored_1, sponsored_2;
 
 void* thread1() {
   result_3 = !!sponsored_0 == !!sponsored_1 ? 0 : (sponsored_1 ? -1 : 1);
+
+  return 0;
 }
 
 void* thread2() {
   result_4 = !!sponsored_0 == !!sponsored_2 ? 0 : (sponsored_2 ? -1 : 1);
+
+  return 0;
 }
 
 void* thread3() {
   result_5 = !!sponsored_1 == !!sponsored_2 ? 0 : (sponsored_2 ? -1 : 1);
+
+  return 0;
 }
 
 int main() {
@@ -69,4 +75,6 @@ int main() {
   assume_abort_if_not(result_3 == 0);
   assume_abort_if_not((result_4 > 0) != (result_5 > 0) || (result_4 < 0) != (result_5 < 0));
   reach_error();
+
+  return 0;
 }

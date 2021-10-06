@@ -95,4 +95,6 @@ int main() {
 
   assume_abort_if_not(pos != 0);
   reach_error();
+
+  return 0;
 }

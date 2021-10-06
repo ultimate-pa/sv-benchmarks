@@ -76,6 +76,8 @@ void* thread1() {
     result_8 = ( ( !is_null_1 && is_null_5 ) ? ( 0 - 995 ) : ( ( is_null_1 && !is_null_5 ) ? 1005 : ( get_subject_3 - get_subject_7 ) ) );
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -110,6 +112,8 @@ void* thread2() {
     result_11 = ( ( !is_null_5 && is_null_1 ) ? ( 0 - 995 ) : ( ( is_null_5 && !is_null_1 ) ? 1005 : ( get_subject_7 - get_subject_3 ) ) );
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 int main() {
@@ -139,6 +143,8 @@ int main() {
 
   assume_abort_if_not( !( ( ( result_8 < 0 ) ? ( - 1 ) : ( ( result_8 > 0 ) ? 1 : 0 ) ) == ( 0 - ( ( result_11 < 0 ) ? ( - 1 ) : ( ( result_11 > 0 ) ? 1 : 0 ) ) ) ) );
   reach_error();
+
+  return 0;
 }
 
 _Bool *create_fresh_bool_array(int size) {

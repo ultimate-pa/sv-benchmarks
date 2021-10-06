@@ -52,6 +52,8 @@ void* thread3() {
   x_1 = ( temp_2 + 1 );
   temp_2 = x_1;
   x_1 = ( temp_2 + 1 );
+
+  return 0;
 }
 
 int main() {
@@ -74,4 +76,6 @@ int main() {
 
   assume_abort_if_not( x_0 != x_1 );
   reach_error();
+
+  return 0;
 }

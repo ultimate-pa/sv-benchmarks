@@ -46,6 +46,8 @@ void* thread1() {
     }
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -57,6 +59,8 @@ void* thread2() {
     }
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread3() {
@@ -66,6 +70,8 @@ void* thread3() {
     L--;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 int main() {
@@ -85,4 +91,6 @@ int main() {
   
   assume_abort_if_not(p != q);
   reach_error();
+
+  return 0;
 }

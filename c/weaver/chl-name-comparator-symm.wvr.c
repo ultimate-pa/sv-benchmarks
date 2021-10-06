@@ -125,6 +125,8 @@ int ult_7, i_8, current_9, break_10;
 
   assume_abort_if_not( !( ( ( result_3 < 0 ) ? ( - 1 ) : ( ( result_3 > 0 ) ? 1 : 0 ) ) == ( 0 - ( ( result_7 < 0 ) ? ( - 1 ) : ( ( result_7 > 0 ) ? 1 : 0 ) ) ) ) );
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

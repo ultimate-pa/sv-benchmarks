@@ -44,6 +44,8 @@ void* thread1() {
   cmp_4 = ( ora_0 - ora_2 );
   cmp_4 = ( ( cmp_4 == 0 ) ? ( volume_totale_1 - volume_totale_3 ) : cmp_4 );
   __VERIFIER_atomic_end();
+
+  return 0;
 }
 
 void* thread2() {
@@ -51,6 +53,8 @@ void* thread2() {
   cmp_5 = ( ora_2 - ora_0 );
   cmp_5 = ( ( cmp_5 == 0 ) ? ( volume_totale_3 - volume_totale_1 ) : cmp_5 );
   __VERIFIER_atomic_end();
+
+  return 0;
 }
 
 
@@ -73,4 +77,6 @@ int main() {
 
   assume_abort_if_not( !( ( ( cmp_4 < 0 ) ? ( - 1 ) : ( ( cmp_4 > 0 ) ? 1 : 0 ) ) == ( 0 - ( ( cmp_5 < 0 ) ? ( - 1 ) : ( ( cmp_5 > 0 ) ? 1 : 0 ) ) ) ) );
   reach_error();
+
+  return 0;
 }

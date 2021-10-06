@@ -100,6 +100,8 @@ int main() {
   assume_abort_if_not(i_BC == Bn || (i_BC < Cn && B[i_BC] <= C[i_BC]));
   assume_abort_if_not(!(i_AC == An || (i_AC < Cn && A[i_AC] <= C[i_AC])));
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

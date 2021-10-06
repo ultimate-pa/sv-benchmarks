@@ -49,6 +49,8 @@ void* thread1() {
   i1 = i;
   i = i1 + 1;
   n1 = 0;
+
+  return 0;
 }
 
 void* thread2() {
@@ -61,6 +63,8 @@ void* thread2() {
   i2 = i;
   i = i2 + 1;
   n2 = 0;
+
+  return 0;
 }
 
 int main() {
@@ -74,4 +78,6 @@ int main() {
 
   assume_abort_if_not(i != 2);
   reach_error();
+
+  return 0;
 }

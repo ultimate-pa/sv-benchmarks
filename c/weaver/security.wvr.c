@@ -46,6 +46,8 @@ void* thread1() {
     x1 = z1;
   }
   l1 = x1 + y;
+
+  return 0;
 }
 
 void* thread2() {
@@ -56,6 +58,8 @@ void* thread2() {
     x2 = z2;
   }
   l2 = x2 + y;
+
+  return 0;
 }
 
 int main() {
@@ -70,4 +74,6 @@ int main() {
   
   assume_abort_if_not(l1 != l2);
   reach_error();
+
+  return 0;
 }

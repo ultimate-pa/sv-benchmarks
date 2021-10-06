@@ -58,6 +58,8 @@ void* thread1() {
   q_back++;
   __VERIFIER_atomic_end();
   x = x + C;
+
+  return 0;
 }
 
 void* thread2() {
@@ -75,6 +77,8 @@ void* thread2() {
       break;
     }
   }
+
+  return 0;
 }
 
 int main() {
@@ -97,6 +101,8 @@ int main() {
   
   assume_abort_if_not(x != y || s != N);
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

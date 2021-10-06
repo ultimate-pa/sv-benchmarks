@@ -46,6 +46,8 @@ void* thread1() {
     }
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -57,6 +59,8 @@ void* thread2() {
     }
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread3() {
@@ -68,6 +72,8 @@ void* thread3() {
     u--;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 int main() {
@@ -92,4 +98,6 @@ int main() {
   
   assume_abort_if_not(m != S + T + U);
   reach_error();
+
+  return 0;
 }

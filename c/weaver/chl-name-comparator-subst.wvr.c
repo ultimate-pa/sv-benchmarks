@@ -157,6 +157,8 @@ int main() {
 
   assume_abort_if_not( !( ( result_4 != 0 ) || ( ( ( result_8 > 0 ) == ( result_12 > 0 ) ) && ( ( result_8 < 0 ) == ( result_12 < 0 ) ) ) ));
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

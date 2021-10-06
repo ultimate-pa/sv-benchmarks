@@ -57,6 +57,8 @@ void* thread1() {
     __VERIFIER_atomic_end();
     i++;
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -73,6 +75,8 @@ void* thread2() {
     __VERIFIER_atomic_end();
     j++;
   }
+
+  return 0;
 }
 
 int main() {
@@ -96,6 +100,8 @@ int main() {
   
   assume_abort_if_not(i != j);
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

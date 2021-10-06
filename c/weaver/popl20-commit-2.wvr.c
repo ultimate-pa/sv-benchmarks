@@ -86,6 +86,8 @@ void* thread1() {
     client_back++;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -102,6 +104,8 @@ void* thread2() {
     manager_back++;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread3() {
@@ -118,6 +122,8 @@ void* thread3() {
     manager_back++;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread4() {
@@ -134,6 +140,8 @@ void* thread4() {
     client_front++;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 int main() {
@@ -176,6 +184,8 @@ int main() {
   
   assume_abort_if_not(!safe);
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

@@ -45,6 +45,8 @@ void* thread1() {
   assume_abort_if_not(f11 && f21);
   t11 = y1 + 1;
   y1 = t11;
+
+  return 0;
 }
 
 void* thread2() {
@@ -54,6 +56,8 @@ void* thread2() {
   assume_abort_if_not(f11 && f21);
   t21 = x1 + 1;
   x1 = t21;
+
+  return 0;
 }
 
 void* thread3() {
@@ -63,6 +67,8 @@ void* thread3() {
   assume_abort_if_not(f12 && f22);
   t12 = y2 + 1;
   y2 = t12;
+
+  return 0;
 }
 
 void* thread4() {
@@ -72,6 +78,8 @@ void* thread4() {
   assume_abort_if_not(f12 && f22);
   t22 = x2 + 1;
   x2 = t22;
+
+  return 0;
 }
 
 int main() {
@@ -95,4 +103,6 @@ int main() {
 
   assume_abort_if_not(x1 != x2 || y1 != y2);
   reach_error();
+
+  return 0;
 }

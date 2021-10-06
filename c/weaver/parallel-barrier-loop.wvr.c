@@ -175,4 +175,6 @@ int main() {
 
   assume_abort_if_not( !( ( x_0 == x_8 ) && ( y_1 == y_9 ) ) );
   reach_error();
+
+  return 0;
 }

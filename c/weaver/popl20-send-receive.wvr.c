@@ -52,6 +52,8 @@ void* thread1() {
     front++;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -71,10 +73,14 @@ void* thread2() {
     }
     b = !b;
   }
+
+  return 0;
 }
 
 void* thread3() {
   v_assert = (0 <= sum && sum <= 1);
+
+  return 0;
 }
 
 int main() {
@@ -95,6 +101,8 @@ int main() {
   pthread_join(t3, 0);
   
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

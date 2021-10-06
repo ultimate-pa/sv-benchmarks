@@ -39,10 +39,14 @@ int length_0, to_int_1, length_2, to_int_3, result_4, result_5;
 
 void* thread1() {
   result_4 = length_0 == 0 ? (length_2 == 0 ? 0 : 1) : (length_2 == 0 ? -1 : to_int_1 - to_int_3);
+
+  return 0;
 }
 
 void* thread2() {
   result_5 = length_2 == 0 ? (length_0 == 0 ? 0 : 1) : (length_0 == 0 ? -1 : to_int_3 - to_int_1);
+
+  return 0;
 }
 
 int main() {
@@ -64,4 +68,6 @@ int main() {
   assume_abort_if_not(!(result_4 > 0 && result_5 < 0));
   assume_abort_if_not(!(result_4 == 0 && result_5 == 0));
   reach_error();
+
+  return 0;
 }

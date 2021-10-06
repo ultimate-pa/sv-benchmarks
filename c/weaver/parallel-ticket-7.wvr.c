@@ -166,4 +166,6 @@ int main() {
 
   assume_abort_if_not(b);
   reach_error();
+
+  return 0;
 }

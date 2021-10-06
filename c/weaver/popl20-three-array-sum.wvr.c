@@ -48,6 +48,8 @@ void* thread1() {
     asum = asum + A[i];
     bsum = bsum + B[i];
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -57,6 +59,8 @@ void* thread2() {
     p = i + 1;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread3() {
@@ -67,6 +71,8 @@ void* thread3() {
       i++;
     }
   }
+
+  return 0;
 }
 
 int main() {
@@ -87,6 +93,8 @@ int main() {
   
   assume_abort_if_not(csum != asum + bsum);
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

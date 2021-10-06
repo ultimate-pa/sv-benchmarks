@@ -54,6 +54,8 @@ void* thread1() {
     }
     i++;
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -66,6 +68,8 @@ void* thread2() {
     }
     i++;
   }
+
+  return 0;
 }
 
 int main() {
@@ -86,6 +90,8 @@ int main() {
   assume_abort_if_not(!(res1 > 0 && res2 < 0));
   assume_abort_if_not(!(res1 == 0 && res2 == 0));
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

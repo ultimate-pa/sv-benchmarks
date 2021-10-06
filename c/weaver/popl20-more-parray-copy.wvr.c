@@ -47,18 +47,24 @@ void* thread1() {
   for (int i=0; i<N; i++) {
     B[i] = A[i];
   }
+
+  return 0;
 }
 
 void* thread2() {
   for (int i=0; i<M; i++) {
     B[i] = A[i];
   }
+
+  return 0;
 }
 
 void* thread3() {
   for (int i=M; i<N; i++) {
     B[i] = A[i];
   }
+
+  return 0;
 }
 
 int main() {
@@ -84,6 +90,8 @@ int main() {
   assume_abort_if_not(0 <= k && k < N);
   assume_abort_if_not(A[k] != B[k]);
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

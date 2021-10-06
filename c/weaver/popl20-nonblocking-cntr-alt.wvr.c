@@ -43,6 +43,8 @@ void* thread1() {
     counter++;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -55,6 +57,8 @@ void* thread2() {
     }
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 int main() {
@@ -72,4 +76,6 @@ int main() {
   
   assume_abort_if_not(counter != M1 - M2);
   reach_error();
+
+  return 0;
 }

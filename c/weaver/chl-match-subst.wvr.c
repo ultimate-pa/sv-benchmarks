@@ -39,14 +39,20 @@ int score_0, seq_1_start_1, seq_2_start_2, score_3, seq_1_start_4, seq_2_start_5
 
 void* thread1() {
   result_9 = score_0 > score_3 ? -1 : (score_0 < score_3 ? 1 : (seq_1_start_1 + seq_2_start_2 < seq_1_start_4 + seq_2_start_5 ? -1 : (seq_1_start_1 + seq_2_start_2 > seq_1_start_4 + seq_2_start_5 ? 1 : 0)));
+
+  return 0;
 }
 
 void* thread2() {
   result_10 = score_0 > score_6 ? -1 : (score_0 < score_6 ? 1 : (seq_1_start_1 + seq_2_start_2 < seq_1_start_7 + seq_2_start_8 ? -1 : (seq_1_start_1 + seq_2_start_2 > seq_1_start_7 + seq_2_start_8 ? 1 : 0)));
+
+  return 0;
 }
 
 void* thread3() {
   result_11 = score_3 > score_6 ? -1 : (score_3 < score_6 ? 1 : (seq_1_start_4 + seq_2_start_5 < seq_1_start_7 + seq_2_start_8 ? -1 : (seq_1_start_4 + seq_2_start_5 > seq_1_start_7 + seq_2_start_8 ? 1 : 0)));
+
+  return 0;
 }
 
 int main() {
@@ -73,4 +79,6 @@ int main() {
   assume_abort_if_not(result_9 == 0);
   assume_abort_if_not((result_10 > 0) != (result_11 > 0) || (result_10 < 0) != (result_11 < 0));
   reach_error();
+
+  return 0;
 }

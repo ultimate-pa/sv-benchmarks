@@ -77,4 +77,6 @@ int main() {
 
   assume_abort_if_not( !(k1 == k2) );
   reach_error();
+
+  return 0;
 }

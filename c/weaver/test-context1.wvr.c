@@ -81,6 +81,8 @@ int main() {
 
   assume_abort_if_not(x != 5);
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

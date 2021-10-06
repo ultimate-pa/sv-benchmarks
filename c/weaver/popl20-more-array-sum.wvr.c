@@ -47,18 +47,24 @@ void* thread1() {
   for (int i=0; i<N; i++) {
     res1 = res1 + A[i] + B[i];
   }
+
+  return 0;
 }
 
 void* thread2() {
   for (int i=0; i<M; i++) {
     res2 = res2 + A[i] + B[i];
   }
+
+  return 0;
 }
 
 void* thread3() {
   for (int i=M; i<N; i++) {
     res2 = res2 + A[i] + B[i];
   }
+
+  return 0;
 }
 
 int main() {
@@ -82,6 +88,8 @@ int main() {
   
   assume_abort_if_not(res1 != res2);
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

@@ -93,6 +93,8 @@ void* thread4() {
     q2_front++;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 int main() {
@@ -123,6 +125,8 @@ int main() {
   
   assume_abort_if_not(total != 0);
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

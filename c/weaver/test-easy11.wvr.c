@@ -44,6 +44,8 @@ void* thread1() {
     x++;
   }
   Y = Y + x;
+
+  return 0;
 }
 
 void* thread2() {
@@ -53,6 +55,8 @@ void* thread2() {
     x++;
   }
   Y = Y + x;
+
+  return 0;
 }
 
 int main() {
@@ -69,4 +73,6 @@ int main() {
 
   assume_abort_if_not(Y != 20000);
   reach_error();
+
+  return 0;
 }

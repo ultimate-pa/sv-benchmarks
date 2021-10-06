@@ -44,6 +44,8 @@ void* thread1() {
   result_12 = result_12 == 0 ? cardId_2 - cardId_6 : result_12;
   result_12 = result_12 == 0 ? cardType_3 - cardType_7 : result_12;
   __VERIFIER_atomic_end();
+
+  return 0;
 }
 
 void* thread2() {
@@ -53,6 +55,8 @@ void* thread2() {
   result_13 = result_13 == 0 ? cardId_6 - cardId_10 : result_13;
   result_13 = result_13 == 0 ? cardType_7 - cardType_11 : result_13;
   __VERIFIER_atomic_end();
+
+  return 0;
 }
 
 void* thread3() {
@@ -62,6 +66,8 @@ void* thread3() {
   result_14 = result_14 == 0 ? cardId_2 - cardId_10 : result_14;
   result_14 = result_14 == 0 ? cardType_3 - cardType_11 : result_14;
   __VERIFIER_atomic_end();
+
+  return 0;
 }
 
 int main() {
@@ -90,4 +96,6 @@ int main() {
 
   assume_abort_if_not(result_12 > 0 && result_13 > 0 && result_14 <= 0);
   reach_error();
+
+  return 0;
 }

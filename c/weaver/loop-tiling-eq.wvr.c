@@ -48,6 +48,8 @@ void* thread1() {
   for (int i=0; i<L; i++) {
     A[i] = F[i];
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -56,6 +58,8 @@ void* thread2() {
       B[i][j] = F[i*M+j];
     }
   }
+
+  return 0;
 }
 
 int main() {
@@ -83,6 +87,8 @@ int main() {
   assume_abort_if_not(a >= 0 && a < N && b >= 0 && b < M);
   assume_abort_if_not(A[a*M+b] != B[a][b]);
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

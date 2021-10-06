@@ -40,14 +40,20 @@ _Bool is_null_0, is_null_3, is_null_6, filename_is_null_2, filename_is_null_5, f
 
 void* thread1() {
   result_9 = is_null_0 ? (is_null_3 ? 0 : 1) : (is_null_3 ? -1 : (filename_is_null_2 ? (filename_is_null_5 ? 0 : 1) : (filename_is_null_5 ? -1 : filename_1 - filename_4)));
+
+  return 0;
 }
 
 void* thread2() {
   result_10 = is_null_0 ? (is_null_6 ? 0 : 1) : (is_null_6 ? -1 : (filename_is_null_2 ? (filename_is_null_8 ? 0 : 1) : (filename_is_null_8 ? -1 : filename_1 - filename_7)));
+
+  return 0;
 }
 
 void* thread3() {
   result_11 = is_null_3 ? (is_null_6 ? 0 : 1) : (is_null_6 ? -1 : (filename_is_null_5 ? (filename_is_null_8 ? 0 : 1) : (filename_is_null_8 ? -1 : filename_4 - filename_7)));
+
+  return 0;
 }
 
 int main() {
@@ -74,4 +80,6 @@ int main() {
   assume_abort_if_not(result_9 == 0);
   assume_abort_if_not((result_10 > 0) != (result_11 > 0) || (result_10 < 0) != (result_11 < 0));
   reach_error();
+
+  return 0;
 }

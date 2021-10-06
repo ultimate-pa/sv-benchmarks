@@ -92,4 +92,6 @@ int main() {
 
   assume_abort_if_not( i != 2 );
   reach_error();
+
+  return 0;
 }

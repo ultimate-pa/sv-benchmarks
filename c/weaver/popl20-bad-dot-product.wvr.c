@@ -51,6 +51,8 @@ void* thread1() {
       res1 = res1 + B[j];
     }
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -60,6 +62,8 @@ void* thread2() {
       res2 = res2 + B[j];
     }
   }
+
+  return 0;
 }
 
 void* thread3() {
@@ -69,6 +73,8 @@ void* thread3() {
       res2 = res2 + B[j];
     }
   }
+
+  return 0;
 }
 
 int main() {
@@ -92,6 +98,8 @@ int main() {
   
   assume_abort_if_not(res1 != res2);
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

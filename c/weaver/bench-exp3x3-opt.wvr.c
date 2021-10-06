@@ -133,4 +133,6 @@ int main() {
 
   assume_abort_if_not( ( x1 >= n ) && ( x2 >= n ) && !( x1 == x2 ) && ( x3 >= n ) && ( x4 >= n ) && !( x3 == x4 ) && ( x5 >= n ) && ( x6 >= n ) && !( x5 == x6 ) );
   reach_error();
+
+  return 0;
 }

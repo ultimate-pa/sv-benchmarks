@@ -54,6 +54,8 @@ void* thread1() {
   assume_abort_if_not(queue[end] == x);
   end++;
   __VERIFIER_atomic_end();
+
+  return 0;
 }
 
 void* thread2() {
@@ -66,11 +68,15 @@ void* thread2() {
   assume_abort_if_not(queue[end] == x);
   end++;
   __VERIFIER_atomic_end();
+
+  return 0;
 }
 
 void* thread3() {
   assume_abort_if_not(end == start + 2 && start >= 0 && start < n-1);
   ok = (queue[start] == queue[start+1]);
+
+  return 0;
 }
 
 int main() {
@@ -93,6 +99,8 @@ int main() {
   
   assume_abort_if_not(!ok);
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

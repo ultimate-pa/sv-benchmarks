@@ -45,6 +45,8 @@ void* thread1() {
     x_0 = 2 * x_0;
   }
   x_0 = 0;
+
+  return 0;
 }
 
 void* thread2() {
@@ -53,6 +55,8 @@ void* thread2() {
     x_0 = x_0 + x_0;
   }
   x_0 = 0;
+
+  return 0;
 }
 
 void* thread3() {
@@ -62,6 +66,8 @@ void* thread3() {
     x_1 = 2 * x_1;
   }
   x_1 = 0;
+
+  return 0;
 }
 
 void* thread4() {
@@ -70,6 +76,8 @@ void* thread4() {
     x_1 = x_1 + x_1;
   }
   x_1 = 0;
+
+  return 0;
 }
 
 int main() {
@@ -89,4 +97,6 @@ int main() {
   
   assume_abort_if_not(x_0 != x_1);
   reach_error();
+
+  return 0;
 }

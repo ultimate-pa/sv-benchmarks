@@ -49,18 +49,24 @@ void* thread1() {
   for (int i=0; i<N; i++) {
     C1[i] = A[i] + B[i];
   }
+
+  return 0;
 }
 
 void* thread2() {
   for (int i=0; i<M; i++) {
     C2[i] = A[i] + B[i];
   }
+
+  return 0;
 }
 
 void* thread3() {
   for (int i=M; i<N; i++) {
     C2[i] = A[i] + B[i];
   }
+
+  return 0;
 }
 
 int main() {
@@ -88,6 +94,8 @@ int main() {
   assume_abort_if_not(0 <= k && k < N);
   assume_abort_if_not(C1[k] != C2[k]);
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

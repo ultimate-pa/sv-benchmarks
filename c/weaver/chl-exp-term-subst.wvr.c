@@ -40,14 +40,20 @@ _Bool sort_label_is_null_1, sort_label_is_null_3, sort_label_is_null_5;
 
 void* thread1() {
   result_6 = !!sort_label_is_null_1 == !!sort_label_is_null_3 && (sort_label_is_null_1 || sort_label_is_null_3 || sort_label_0 == sort_label_2) ? 0 : (sort_label_is_null_1 ? -1 : (sort_label_is_null_3 ? 1 : sort_label_0 - sort_label_2));
+
+  return 0;
 }
 
 void* thread2() {
   result_7 = !!sort_label_is_null_1 == !!sort_label_is_null_5 && (sort_label_is_null_1 || sort_label_is_null_5 || sort_label_0 == sort_label_4) ? 0 : (sort_label_is_null_1 ? -1 : (sort_label_is_null_5 ? 1 : sort_label_0 - sort_label_4));
+
+  return 0;
 }
 
 void* thread3() {
   result_8 = !!sort_label_is_null_3 == !!sort_label_is_null_5 && (sort_label_is_null_3 || sort_label_is_null_5 || sort_label_2 == sort_label_4) ? 0 : (sort_label_is_null_3 ? -1 : (sort_label_is_null_5 ? 1 : sort_label_2 - sort_label_4));
+
+  return 0;
 }
 
 int main() {
@@ -71,4 +77,6 @@ int main() {
   assume_abort_if_not(result_6 == 0);
   assume_abort_if_not((result_7 > 0) != (result_8 > 0) || (result_7 < 0) != (result_8 < 0));
   reach_error();
+
+  return 0;
 }

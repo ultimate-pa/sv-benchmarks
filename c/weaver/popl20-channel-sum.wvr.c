@@ -50,6 +50,8 @@ void* thread1() {
     front++;
     sum = sum + element;
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -65,6 +67,8 @@ void* thread2() {
     }
     flag = !flag;
   }
+
+  return 0;
 }
 
 int main() {
@@ -83,6 +87,8 @@ int main() {
   
   assume_abort_if_not(sum < 0 || sum > 1);
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

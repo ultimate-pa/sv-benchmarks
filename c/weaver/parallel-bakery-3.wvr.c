@@ -122,4 +122,6 @@ int main() {
 
   assume_abort_if_not( i != 3 );
   reach_error();
+
+  return 0;
 }

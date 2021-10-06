@@ -124,6 +124,8 @@ void* thread1() {
     result_8 = 0;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -206,6 +208,8 @@ void* thread2() {
     result_13 = 0;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 int main() {
@@ -228,6 +232,8 @@ int main() {
   
   assume_abort_if_not(!( ( ( result_8 < 0 ) ? -1 : ( ( result_8 > 0 ) ? 1 : 0 ) ) == ( 0 - ( ( result_13 < 0 ) ? -1 : ( ( result_13 > 0 ) ? 1 : 0 ) ) ) ));
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

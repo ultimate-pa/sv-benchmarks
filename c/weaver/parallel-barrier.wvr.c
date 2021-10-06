@@ -148,4 +148,6 @@ int main() {
 
   assume_abort_if_not( !( ( x_0 == x_6 ) && ( y_1 == y_7 ) ) );
   reach_error();
+
+  return 0;
 }

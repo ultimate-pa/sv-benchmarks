@@ -127,6 +127,8 @@ void* thread1() {
       result_12 = 0;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -209,6 +211,8 @@ void* thread2() {
       result_17 = 0;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void *thread3() {
@@ -291,6 +295,8 @@ void *thread3() {
       result_22 = 0;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 int main() {
@@ -335,6 +341,8 @@ int main() {
 
   assume_abort_if_not( !( !( result_12 == 0 ) || ( ( ( result_17 > 0 ) == ( result_22 > 0 ) ) && ( ( result_17 < 0 ) == ( result_22 < 0 ) ) ) ) );
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

@@ -43,6 +43,8 @@ void* thread1() {
     counter1++;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -52,6 +54,8 @@ void* thread2() {
     counter1--;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread3() {
@@ -60,6 +64,8 @@ void* thread3() {
     counter2++;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread4() {
@@ -69,6 +75,8 @@ void* thread4() {
     counter2--;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 int main() {
@@ -89,4 +97,6 @@ int main() {
   
   assume_abort_if_not(counter1 != counter2);
   reach_error();
+
+  return 0;
 }

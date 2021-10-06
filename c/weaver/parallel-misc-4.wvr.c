@@ -98,4 +98,6 @@ int main() {
   pthread_join(t3, 0);
 
   reach_error();
+
+  return 0;
 }

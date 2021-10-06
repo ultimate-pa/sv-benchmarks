@@ -41,18 +41,24 @@ void* thread1() {
   for (int i=0; i<a; i++) {
     x_1 = x_1 + c;
   }
+
+  return 0;
 }
 
 void* thread2() {
   for (int i=0; i<b; i++) {
     x_2 = x_2 + c;
   }
+
+  return 0;
 }
 
 void* thread3() {
   for (int i=0; i<a+b; i++) {
     x_3 = x_3 + c;
   }
+
+  return 0;
 }
 
 int main() {
@@ -74,4 +80,6 @@ int main() {
   
   assume_abort_if_not(x_1 + x_2 != x_3);
   reach_error();
+
+  return 0;
 }

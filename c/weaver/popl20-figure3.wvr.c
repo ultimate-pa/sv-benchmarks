@@ -41,6 +41,8 @@ void* thread1() {
   for (int i=0; i<N; i++) {
     counter = counter + c;
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -50,6 +52,8 @@ void* thread2() {
     counter = counter - c;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 int main() {
@@ -68,4 +72,6 @@ int main() {
   
   assume_abort_if_not(counter != 0);
   reach_error();
+
+  return 0;
 }

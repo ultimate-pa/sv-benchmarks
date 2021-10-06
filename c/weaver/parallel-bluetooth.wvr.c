@@ -91,4 +91,6 @@ int main() {
 
   assume_abort_if_not( !v_assert );
   reach_error();
+
+  return 0;
 }

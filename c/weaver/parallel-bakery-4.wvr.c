@@ -158,4 +158,6 @@ int main() {
 
   assume_abort_if_not( i != 4 );
   reach_error();
+
+  return 0;
 }

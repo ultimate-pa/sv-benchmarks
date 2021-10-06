@@ -52,6 +52,8 @@ void* thread1() {
     __VERIFIER_atomic_end();
     s1 = s1 + t11;
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -63,6 +65,8 @@ void* thread2() {
     __VERIFIER_atomic_end();
     s1 = s1 + t21;
   }
+
+  return 0;
 }
 
 void* thread3() {
@@ -74,6 +78,8 @@ void* thread3() {
     __VERIFIER_atomic_end();
     s2 = s2 + t12;
   }
+
+  return 0;
 }
 
 void* thread4() {
@@ -85,6 +91,8 @@ void* thread4() {
     __VERIFIER_atomic_end();
     s2 = s2 + t22;
   }
+
+  return 0;
 }
 
 int main() {
@@ -116,6 +124,8 @@ int main() {
 
   assume_abort_if_not( ( i1 == i2 && i1 == n ) && !( s1 == s2 ) );
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

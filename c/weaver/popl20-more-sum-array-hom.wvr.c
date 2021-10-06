@@ -46,18 +46,24 @@ void* thread1() {
   for (int i=0; i<N; i++) {
     sum1 = sum1 + A[i];
   }
+
+  return 0;
 }
 
 void* thread2() {
   for (int i=0; i<M; i++) {
     sum2 = sum2 + A[i];
   }
+
+  return 0;
 }
 
 void* thread3() {
   for (int i=M; i<N; i++) {
     sum3 = sum3 + A[i];
   }
+
+  return 0;
 }
 
 int main() {
@@ -80,6 +86,8 @@ int main() {
   
   assume_abort_if_not(sum1 != sum2 + sum3);
   reach_error();
+
+  return 0;
 }
 
 int *create_fresh_int_array(int size) {

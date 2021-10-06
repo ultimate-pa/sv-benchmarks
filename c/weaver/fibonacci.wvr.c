@@ -83,4 +83,6 @@ int main() {
 
   assume_abort_if_not(l_4 != l_8);
   reach_error();
+
+  return 0;
 }

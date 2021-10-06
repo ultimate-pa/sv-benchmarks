@@ -41,12 +41,16 @@ void* thread1() {
   while (x1 < 10000) {
     x1++;
   }
+
+  return 0;
 }
 
 void* thread2() {
   while (x2 < 10000) {
     x2++;
   }
+
+  return 0;
 }
 
 int main() {
@@ -64,4 +68,6 @@ int main() {
 
   assume_abort_if_not(x1 != x2);
   reach_error();
+
+  return 0;
 }
