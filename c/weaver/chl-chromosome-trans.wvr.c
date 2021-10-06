@@ -44,7 +44,6 @@ int *create_fresh_int_array(int size);
 void* thread1() {
   int i = 0;
   assume_abort_if_not(!isNull1);
-  res1 = 1;
   while (!isNull2 && i < 5) {
     res1 = a1[i] - a2[i];
     if (res1 == 0) {
