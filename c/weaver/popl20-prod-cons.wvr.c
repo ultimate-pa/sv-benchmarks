@@ -25,6 +25,9 @@ extern int pthread_create (pthread_t *__restrict __newthread,
       void *__restrict __arg) __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1, 3)));
 extern int pthread_join (pthread_t __th, void **__thread_return);
 
+typedef unsigned int size_t;
+extern void *malloc (size_t __size) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) ;
+
 extern int  __VERIFIER_nondet_int(void);
 extern _Bool __VERIFIER_nondet_bool(void);
 extern void __VERIFIER_atomic_begin(void);
