@@ -69,8 +69,8 @@ void* thread3() {
 void* thread1() {
   pthread_t t2, t3;
 
-  pthread_create(&t2, NULL, thread2, NULL);
-  pthread_create(&t3, NULL, thread3, NULL);
+  pthread_create(&t2, 0, thread2, 0);
+  pthread_create(&t3, 0, thread3, 0);
   pthread_join(t2, 0);
   pthread_join(t3, 0);
 
@@ -109,8 +109,8 @@ void* thread6() {
 void* thread4() {
   pthread_t t5, t6;
 
-  pthread_create(&t5, NULL, thread5, NULL);
-  pthread_create(&t6, NULL, thread6, NULL);
+  pthread_create(&t5, 0, thread5, 0);
+  pthread_create(&t6, 0, thread6, 0);
   pthread_join(t5, 0);
   pthread_join(t6, 0);
 
@@ -140,8 +140,8 @@ void main() {
   assume_abort_if_not(s11 == s21 && s11 == s12 && s11 == s22 && s11 == i1 && s11 == i2 && s11 == 0);
 
   // main method
-  pthread_create(&t1, NULL, thread1, NULL);
-  pthread_create(&t4, NULL, thread4, NULL);
+  pthread_create(&t1, 0, thread1, 0);
+  pthread_create(&t4, 0, thread4, 0);
   pthread_join(t1, 0);
   pthread_join(t4, 0);
 

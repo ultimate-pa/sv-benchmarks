@@ -64,9 +64,9 @@ void main() {
   filename_is_null_8 = __VERIFIER_nondet_bool();
   
   // main method
-  pthread_create(&t1, NULL, thread1, NULL);
-  pthread_create(&t2, NULL, thread2, NULL);
-  pthread_create(&t3, NULL, thread3, NULL);
+  pthread_create(&t1, 0, thread1, 0);
+  pthread_create(&t2, 0, thread2, 0);
+  pthread_create(&t3, 0, thread3, 0);
   pthread_join(t1, 0);
   pthread_join(t2, 0);
   pthread_join(t3, 0);

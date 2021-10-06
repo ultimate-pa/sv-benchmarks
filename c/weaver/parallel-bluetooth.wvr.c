@@ -84,8 +84,8 @@ void main() {
   assume_abort_if_not( stopped == 0 );
   assume_abort_if_not( v_assert == 1 );
 
-  pthread_create(&t1, NULL, thread1, NULL);
-  pthread_create(&t2, NULL, thread2, NULL);
+  pthread_create(&t1, 0, thread1, 0);
+  pthread_create(&t2, 0, thread2, 0);
   pthread_join(t1, 0);
   pthread_join(t2, 0);
 

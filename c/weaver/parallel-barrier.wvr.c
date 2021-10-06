@@ -74,8 +74,8 @@ void* thread1() {
 
   assume_abort_if_not( x_0 == y_1 && !f1_2 && !f2_3 );
 
-  pthread_create(&t2, NULL, thread2, NULL);
-  pthread_create(&t3, NULL, thread3, NULL);
+  pthread_create(&t2, 0, thread2, 0);
+  pthread_create(&t3, 0, thread3, 0);
   pthread_join(t2, 0);
   pthread_join(t3, 0);
 
@@ -113,8 +113,8 @@ void* thread4() {
 
   assume_abort_if_not( x_6 == y_7 && !f1_8 && !f2_9 );
 
-  pthread_create(&t5, NULL, thread5, NULL);
-  pthread_create(&t6, NULL, thread6, NULL);
+  pthread_create(&t5, 0, thread5, 0);
+  pthread_create(&t6, 0, thread6, 0);
   pthread_join(t5, 0);
   pthread_join(t6, 0);
 
@@ -141,8 +141,8 @@ void main() {
   // main method
   assume_abort_if_not( ( x_0 == x_6 ) && ( y_1 == y_7 ) );
 
-  pthread_create(&t1, NULL, thread1, NULL);
-  pthread_create(&t4, NULL, thread4, NULL);
+  pthread_create(&t1, 0, thread1, 0);
+  pthread_create(&t4, 0, thread4, 0);
   pthread_join(t1, 0);
   pthread_join(t4, 0);
 

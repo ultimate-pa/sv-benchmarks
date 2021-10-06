@@ -76,8 +76,8 @@ void main() {
   // main method
   assume_abort_if_not(f1_2 == f1_6 && f2_3 == f2_7);
 
-  pthread_create(&t1, NULL, thread1, NULL);
-  pthread_create(&t2, NULL, thread2, NULL);
+  pthread_create(&t1, 0, thread1, 0);
+  pthread_create(&t2, 0, thread2, 0);
   pthread_join(t1, 0);
   pthread_join(t2, 0);
 
