@@ -59,6 +59,8 @@ void* thread1() {
     state11 = update[state11];
     finished1 = done[state11];
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -73,6 +75,8 @@ void* thread2() {
     size1--;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread3() {
@@ -85,6 +89,8 @@ void* thread3() {
     state21 = update[state21];
     finished2 = done[state21];
   }
+
+  return 0;
 }
 
 int main() {

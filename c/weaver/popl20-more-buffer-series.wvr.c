@@ -54,6 +54,8 @@ void* thread1() {
     i++;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread2() {
@@ -67,6 +69,8 @@ void* thread2() {
     j++;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread3() {
@@ -77,6 +81,8 @@ void* thread3() {
     q1_front++;
     __VERIFIER_atomic_end();
   }
+
+  return 0;
 }
 
 void* thread4() {
