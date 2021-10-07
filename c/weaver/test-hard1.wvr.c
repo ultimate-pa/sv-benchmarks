@@ -26,6 +26,7 @@ extern int pthread_create (pthread_t *__restrict __newthread,
 extern int pthread_join (pthread_t __th, void **__thread_return);
 
 extern int  __VERIFIER_nondet_int(void);
+extern unsigned int  __VERIFIER_nondet_uint(void);
 extern _Bool __VERIFIER_nondet_bool(void);
 extern void __VERIFIER_atomic_begin(void);
 extern void __VERIFIER_atomic_end(void);
@@ -35,7 +36,8 @@ void assume_abort_if_not(int cond) {
   if(!cond) {abort();}
 }
 
-int p1, p2, n1, n2, m;
+unsigned int p1, p2, m;
+int n1, n2;
 
 void* thread1() {
   while (n1 > 0) {
@@ -92,11 +94,11 @@ void* thread4() {
 int main() {
   pthread_t t1, t2, t3, t4;
   
-  p1 = __VERIFIER_nondet_int();
-  p2 = __VERIFIER_nondet_int();
+  p1 = __VERIFIER_nondet_uint();
+  p2 = __VERIFIER_nondet_uint();
   n1 = __VERIFIER_nondet_int();
   n2 = __VERIFIER_nondet_int();
-  m  = __VERIFIER_nondet_int();
+  m  = __VERIFIER_nondet_uint();
   assume_abort_if_not(p1 == p2 && n1 == n2);
   
   // main method

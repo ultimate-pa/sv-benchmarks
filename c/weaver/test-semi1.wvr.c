@@ -59,6 +59,7 @@ int main() {
   
   x = __VERIFIER_nondet_int();
   y = __VERIFIER_nondet_int();
+  assume_abort_if_not(x < 2147483647);
   assume_abort_if_not(x == y);
   
   // main method
