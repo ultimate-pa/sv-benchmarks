@@ -25,14 +25,14 @@ extern int pthread_create (pthread_t *__restrict __newthread,
       void *__restrict __arg) __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1, 3)));
 extern int pthread_join (pthread_t __th, void **__thread_return);
 
-extern int  __VERIFIER_nondet_int(void);
+extern unsigned int  __VERIFIER_nondet_uint(void);
 
 extern void abort(void);
 void assume_abort_if_not(int cond) {
   if(!cond) {abort();}
 }
 
-int x1, x2, n;
+unsigned int x1, x2, n;
 
 void* thread1() {
   while (x1 < n) {
@@ -54,9 +54,9 @@ int main() {
   pthread_t t1, t2;
 
   // initialize global variables
-  x1 = __VERIFIER_nondet_int();
-  x2 = __VERIFIER_nondet_int();
-  n  = __VERIFIER_nondet_int();
+  x1 = __VERIFIER_nondet_uint();
+  x2 = __VERIFIER_nondet_uint();
+  n  = __VERIFIER_nondet_uint();
 
   // main method
   assume_abort_if_not( x1 == x2 && x1 > 0 );
