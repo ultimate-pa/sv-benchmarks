@@ -40,7 +40,7 @@ unsigned int x_0, x_1;
 
 void* thread1() {
   while (__VERIFIER_nondet_bool()) {
-    x_0 = __VERIFIER_nondet_int();
+    x_0 = __VERIFIER_nondet_uint();
     x_0 = x_0 + 3;
     x_0 = 2 * x_0;
   }
@@ -61,7 +61,7 @@ void* thread2() {
 
 void* thread3() {
   while (__VERIFIER_nondet_bool()) {
-    x_1 = __VERIFIER_nondet_int();
+    x_1 = __VERIFIER_nondet_uint();
     x_1 = x_1 + 3;
     x_1 = 2 * x_1;
   }
