@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2006 Benjamin Livshits livshits@cs.stanford.edu
+// SPDX-License-Identifier: Apache-2.0
+
 /*
    Copyright 2006 Benjamin Livshits
 
@@ -17,6 +20,8 @@
     @author Benjamin Livshits <livshits@cs.stanford.edu>
     
     $Id: Basic8.java,v 1.4 2006/04/04 20:00:40 livshits Exp $
+
+    // changed by Falk Howar: no vuln.; bitset initial bit value is false
  */
 package securibench.micro.basic;
 
@@ -30,7 +35,7 @@ import securibench.micro.MicroTestCase;
 
 /** 
  *  @servlet description="test of complex conditionals" 
- *  @servlet vuln_count = "1" 
+ *  @servlet vuln_count = "0" 
  *  */
 public class Basic8 extends BasicTestCase implements MicroTestCase {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -58,6 +63,6 @@ public class Basic8 extends BasicTestCase implements MicroTestCase {
     }
     
     public int getVulnerabilityCount() {
-        return 1;
+        return 0;
     }
 }

@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2006 Benjamin Livshits livshits@cs.stanford.edu
+// SPDX-License-Identifier: Apache-2.0
+
 /*
    Copyright 2006 Benjamin Livshits
 
@@ -79,6 +82,6 @@ public class Sanitizers2 extends BasicTestCase implements MicroTestCase {
     }
     
     public int getVulnerabilityCount() {
-        return 1;
+        return 0;
     }
 }

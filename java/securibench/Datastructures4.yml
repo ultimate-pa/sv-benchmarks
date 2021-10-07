@@ -5,7 +5,7 @@ input_files:
   - Datastructures4/
 properties:
   - property_file: ../properties/assert.prp
-    expected_verdict: false
+    expected_verdict: true
 
 options:
   language: Java

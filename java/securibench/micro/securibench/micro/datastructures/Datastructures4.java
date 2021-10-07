@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2006 Benjamin Livshits livshits@cs.stanford.edu
+// SPDX-License-Identifier: Apache-2.0
+
 /*
    Copyright 2006 Benjamin Livshits
 
@@ -18,6 +21,8 @@
     @author Benjamin Livshits <livshits@cs.stanford.edu>
     
     $Id: Datastructures4.java,v 1.1 2006/04/21 17:14:24 livshits Exp $
+
+    changed by FH: c1.next.str is constant
  */
 package securibench.micro.datastructures;
 
@@ -32,7 +37,7 @@ import securibench.micro.MicroTestCase;
 
 /** 
  *  @servlet description="simple nexted data (false positive)" 
- *  @servlet vuln_count = "1" 
+ *  @servlet vuln_count = "0" 
  *  */
 public class Datastructures4 extends BasicTestCase implements MicroTestCase {
     public class C {
@@ -66,6 +71,6 @@ public class Datastructures4 extends BasicTestCase implements MicroTestCase {
     }
     
     public int getVulnerabilityCount() {
-        return 1;
+        return 0;
     }
 }

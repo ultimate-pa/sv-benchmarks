@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2006 Benjamin Livshits livshits@cs.stanford.edu
+// SPDX-License-Identifier: Apache-2.0
+
 /*
    Copyright 2006 Benjamin Livshits
 
@@ -53,7 +56,7 @@ public class Inter11 extends BasicTestCase implements MicroTestCase {
 	}
 
 	private String foo(String s1) {
-		return s1.toUpperCase();
+		return s1.toLowerCase(); // FH: changed to make vulnerable
 	}
     
     public String getDescription() {

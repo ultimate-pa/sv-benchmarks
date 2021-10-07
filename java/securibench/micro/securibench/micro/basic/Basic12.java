@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2006 Benjamin Livshits livshits@cs.stanford.edu
+// SPDX-License-Identifier: Apache-2.0
+
 /*
    Copyright 2006 Benjamin Livshits
 
@@ -20,6 +23,8 @@
  */
 package securibench.micro.basic;
 
+import org.sosy_lab.sv_benchmarks.Verifier;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
@@ -36,7 +41,7 @@ public class Basic12 extends BasicTestCase implements MicroTestCase {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String s1 = req.getParameter("name");
         PrintWriter writer = resp.getWriter();
-        boolean choice = new Random().nextBoolean();
+        boolean choice = Verifier.nondetBoolean();
         
         if(choice) {
             writer.println(s1 + ":");   /* BAD */

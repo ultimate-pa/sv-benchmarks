@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2006 Benjamin Livshits livshits@cs.stanford.edu
+// SPDX-License-Identifier: Apache-2.0
+
 /*
    Copyright 2006 Benjamin Livshits
 
@@ -34,7 +37,7 @@ import securibench.micro.MicroTestCase;
 public class Basic7 extends BasicTestCase implements MicroTestCase {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String s1 = req.getParameter("name");
-        String s2 = s1.toUpperCase();
+        String s2 = s1.toLowerCase(); // changed by FH to keep vuln.
         StringBuffer buf = new StringBuffer(s2);
         buf.append("abcdefgh");
         buf.insert(3, 's');

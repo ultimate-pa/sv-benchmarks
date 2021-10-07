@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2006 Benjamin Livshits livshits@cs.stanford.edu
+// SPDX-License-Identifier: Apache-2.0
+
 /*
    Copyright 2006 Benjamin Livshits
 
@@ -21,9 +24,9 @@
 package securibench.micro.basic;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import mock.sql.Connection;
+import mock.sql.DriverManager;
+import mock.sql.SQLException;
 import mockx.servlet.http.HttpServletRequest;
 import mockx.servlet.http.HttpServletResponse;
 import securibench.micro.BasicTestCase;

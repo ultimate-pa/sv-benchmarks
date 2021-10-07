@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2006 Benjamin Livshits livshits@cs.stanford.edu
+// SPDX-License-Identifier: Apache-2.0
+
 /*
    Copyright 2006 Benjamin Livshits
 
@@ -17,6 +20,8 @@
     @author Benjamin Livshits <livshits@cs.stanford.edu>
     
     $Id: Collections8.java,v 1.1 2006/04/21 17:14:26 livshits Exp $
+
+    // changed by FH: nothing bad happening here (c.get(0) is constant)
  */
 package securibench.micro.collections;
 
@@ -33,7 +38,7 @@ import securibench.micro.MicroTestCase;
 
 /** 
  *  @servlet description = "collection copying" 
- *  @servlet vuln_count = "1" 
+ *  @servlet vuln_count = "0" 
  *  */
 public class Collections8 extends BasicTestCase implements MicroTestCase {
     private static final String FIELD_NAME = "name";
@@ -56,6 +61,6 @@ public class Collections8 extends BasicTestCase implements MicroTestCase {
     }
     
     public int getVulnerabilityCount() {
-        return 1;
+        return 0;
     }
 }

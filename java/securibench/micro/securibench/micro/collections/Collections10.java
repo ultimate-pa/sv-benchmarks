@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2006 Benjamin Livshits livshits@cs.stanford.edu
+// SPDX-License-Identifier: Apache-2.0
+
 /*
    Copyright 2006 Benjamin Livshits
 
@@ -34,7 +37,7 @@ import securibench.micro.MicroTestCase;
 
 /** 
  *  @servlet description = "more complex collection copying" 
- *  @servlet vuln_count = "0" 
+ *  @servlet vuln_count = "1" 
  *  */
 public class Collections10 extends BasicTestCase implements MicroTestCase {
     private static final String FIELD_NAME = "name";

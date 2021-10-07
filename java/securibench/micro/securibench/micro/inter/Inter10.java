@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2006 Benjamin Livshits livshits@cs.stanford.edu
+// SPDX-License-Identifier: Apache-2.0
+
 /*
    Copyright 2006 Benjamin Livshits
 
@@ -32,7 +35,7 @@ import securibench.micro.MicroTestCase;
 
 /** 
  *  @servlet description="more complex object sensitivity" 
- *  @servlet vuln_count = "2" 
+ *  @servlet vuln_count = "1" 
  *  */
 public class Inter10 extends BasicTestCase implements MicroTestCase {
     private static final String FIELD_NAME = "name";
