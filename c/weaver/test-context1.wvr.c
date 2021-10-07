@@ -45,8 +45,9 @@ int *create_fresh_int_array(int size);
 
 
 void* thread1() {
-  for (int i = 0; i < n; i++) {
+  while (__VERIFIER_nondet_bool()) {
     __VERIFIER_atomic_begin();
+    assume_abort_if_not(front + size >= 0 && front + size < n);
     assume_abort_if_not(queue[front + size] == 5);
     size++;
     __VERIFIER_atomic_end();
@@ -58,6 +59,7 @@ void* thread2() {
   while (__VERIFIER_nondet_bool()) {
     __VERIFIER_atomic_begin();
     assume_abort_if_not(size > 0);
+    assume_abort_if_not(front >= 0 && front < n);
     x = queue[front];
     front++;
     size--;

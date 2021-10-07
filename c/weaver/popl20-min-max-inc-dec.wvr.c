@@ -59,7 +59,7 @@ void* thread2() {
   max = A[0];
   b2 = 1;
   for (int i=0; i<N; i++) {
-    max = max > A[i] ? min : A[i];
+    max = max > A[i] ? max : A[i];
   }
 
   return 0;
