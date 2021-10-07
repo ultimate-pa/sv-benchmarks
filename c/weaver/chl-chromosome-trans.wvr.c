@@ -38,64 +38,64 @@ void assume_abort_if_not(int cond) {
   if(!cond) {abort();}
 }
 
-int *a1, *a2, *a3;
-int res1, res2, res3;
-_Bool isNull1, isNull2, isNull3;
+int *o_0, *o_2, *o_4;
+int result_7, result_10, result_13;
+_Bool isNull_1, isNull_3, isNull_5;
 
 int *create_fresh_int_array(int size);
 int minus(int a, int b);
 
 void* thread1() {
+  assume_abort_if_not(!isNull_1);
+  _Bool stop = isNull_3;
+  result_7 = 1;
   int i = 0;
-  assume_abort_if_not(!isNull1);
-  while (!isNull2 && i < 5) {
-    res1 = minus(a1[i], a2[i]);
-    if (res1 == 0) {
-      break;
-    }
+  while (!stop && i<5) {
+    result_7 = minus(o_0[i], o_2[i]);
+    stop = (result_7 != 0);
     i++;
   }
-
+  result_7 = stop ? result_7 : 0;
   return 0;
 }
 
 void* thread2() {
+  assume_abort_if_not(!isNull_3);
+  _Bool stop = isNull_5;
+  result_10 = 1;
   int i = 0;
-  assume_abort_if_not(!isNull2);
-  while (!isNull3 && i < 5) {
-    res2 = minus(a2[i], a3[i]);
-    if (res2 == 0) {
-      break;
-    }
+  while (!stop && i<5) {
+    result_10 = minus(o_2[i], o_4[i]);
+    stop = (result_10 != 0);
     i++;
   }
-
+  result_10 = stop ? result_10 : 0;
   return 0;
 }
 
 void* thread3() {
+  assume_abort_if_not(!isNull_1);
+  _Bool stop = isNull_5;
+  result_13 = 1;
   int i = 0;
-  assume_abort_if_not(!isNull1);
-  while (!isNull3 && i < 5) {
-    res3 = minus(a1[i], a3[i]);
-    if (res3 == 0) {
-      break;
-    }
+  while (!stop && i<5) {
+    result_13 = minus(o_0[i], o_4[i]);
+    stop = (result_13 != 0);
     i++;
   }
-
+  result_13 = stop ? result_13 : 0;
   return 0;
 }
 
 int main() {
   pthread_t t1, t2, t3;
   
-  a1 = create_fresh_int_array(5);
-  a2 = create_fresh_int_array(5);
-  a3 = create_fresh_int_array(5);
-  isNull1 = __VERIFIER_nondet_bool();
-  isNull2 = __VERIFIER_nondet_bool();
-  isNull3 = __VERIFIER_nondet_bool();
+  o_0 = create_fresh_int_array(5);
+  o_2 = create_fresh_int_array(5);
+  o_4 = create_fresh_int_array(5);
+  isNull_1 = __VERIFIER_nondet_bool();
+  isNull_3 = __VERIFIER_nondet_bool();
+  isNull_5 = __VERIFIER_nondet_bool();
   
   // main method
   pthread_create(&t1, 0, thread1, 0);
@@ -105,7 +105,7 @@ int main() {
   pthread_join(t2, 0);
   pthread_join(t3, 0);
 
-  assume_abort_if_not(res1 > 0 && res2 > 0 && res3 <= 0);
+  assume_abort_if_not(result_7 > 0 && result_10 > 0 && result_13 <= 0);
   reach_error();
 
   return 0;

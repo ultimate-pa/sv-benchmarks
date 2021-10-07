@@ -38,48 +38,48 @@ void assume_abort_if_not(int cond) {
   if(!cond) {abort();}
 }
 
-int *a1, *a2;
-int res1, res2;
-_Bool isNull1, isNull2;
+int *o_0, *o_2;
+int result_5, result_8;
+_Bool isNull_1, isNull_3;
 
 int *create_fresh_int_array(int size);
 int minus(int a, int b);
 
 void* thread1() {
+  assume_abort_if_not(!isNull_1);
+  _Bool stop = isNull_3;
+  result_5 = 1;
   int i = 0;
-  assume_abort_if_not(!isNull1);
-  while (!isNull2 && i < 5) {
-    res1 = minus(a1[i], a2[i]);
-    if (res1 == 0) {
-      break;
-    }
+  while (!stop && i<5) {
+    result_5 = minus(o_0[i], o_2[i]);
+    stop = (result_5 != 0);
     i++;
   }
-
+  result_5 = stop ? result_5 : 0;
   return 0;
 }
 
 void* thread2() {
+  assume_abort_if_not(!isNull_3);
+  _Bool stop = isNull_1;
+  result_8 = 1;
   int i = 0;
-  assume_abort_if_not(!isNull2);
-  while (!isNull1 && i < 5) {
-    res2 = minus(a2[i], a1[i]);
-    if (res2 == 0) {
-      break;
-    }
+  while (!stop && i<5) {
+    result_8 = minus(o_2[i], o_0[i]);
+    stop = (result_8 != 0);
     i++;
   }
-
+  result_8 = stop ? result_8 : 0;
   return 0;
 }
 
 int main() {
   pthread_t t1, t2;
   
-  a1 = create_fresh_int_array(5);
-  a2 = create_fresh_int_array(5);
-  isNull1 = __VERIFIER_nondet_bool();
-  isNull2 = __VERIFIER_nondet_bool();
+  o_0 = create_fresh_int_array(5);
+  o_2 = create_fresh_int_array(5);
+  isNull_1 = __VERIFIER_nondet_bool();
+  isNull_3 = __VERIFIER_nondet_bool();
   
   // main method
   pthread_create(&t1, 0, thread1, 0);
@@ -87,9 +87,9 @@ int main() {
   pthread_join(t1, 0);
   pthread_join(t2, 0);
 
-  assume_abort_if_not(!(res1 < 0 && res2 > 0));
-  assume_abort_if_not(!(res1 > 0 && res2 < 0));
-  assume_abort_if_not(!(res1 == 0 && res2 == 0));
+  assume_abort_if_not(!(result_5 < 0 && result_8 > 0));
+  assume_abort_if_not(!(result_5 > 0 && result_8 < 0));
+  assume_abort_if_not(!(result_5 == 0 && result_8 == 0));
   reach_error();
 
   return 0;
