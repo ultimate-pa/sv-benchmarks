@@ -67,11 +67,15 @@ int main() {
 
   // initialize global variables
   M = __VERIFIER_nondet_int();
+  assume_abort_if_not(M >= 0);
   N = __VERIFIER_nondet_int();
+  assume_abort_if_not(N >= 0);
+
+  assume_abort_if_not(N == 0 || M <= 2147483647 / N);
   L = M * N;
   A = create_fresh_int_array(L);
   F = create_fresh_int_array(L);
-  B = (int**)malloc(sizeof(int*) * N);
+  B = (int**)malloc(sizeof(int*) * (size_t)N);
   for (int i=0; i<N; i++) {
     B[i] = create_fresh_int_array(M);
   }
