@@ -25,7 +25,7 @@ extern int pthread_create (pthread_t *__restrict __newthread,
       void *__restrict __arg) __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1, 3)));
 extern int pthread_join (pthread_t __th, void **__thread_return);
 
-extern int __VERIFIER_nondet_int(void);
+extern unsigned int __VERIFIER_nondet_uint(void);
 extern _Bool __VERIFIER_nondet_bool(void);
 extern void __VERIFIER_atomic_begin();
 extern void __VERIFIER_atomic_end();
@@ -35,7 +35,7 @@ void assume_abort_if_not(int cond) {
   if(!cond) {abort();}
 }
 
-int y, x1, z1, l1, x2, z2, l2;
+unsigned int y, x1, z1, l1, x2, z2, l2;
 
 
 void* thread1() {
@@ -64,14 +64,14 @@ void* thread2() {
 
 int main() {
   pthread_t t1, t2;
-  
-  y = __VERIFIER_nondet_int();
-  
+
+  y = __VERIFIER_nondet_uint();
+
   pthread_create(&t1, 0, thread1, 0);
   pthread_create(&t2, 0, thread2, 0);
   pthread_join(t1, 0);
   pthread_join(t2, 0);
-  
+
   assume_abort_if_not(l1 != l2);
   reach_error();
 

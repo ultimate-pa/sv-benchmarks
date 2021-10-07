@@ -29,6 +29,7 @@ typedef unsigned int size_t;
 extern void *malloc (size_t __size) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) ;
 
 extern int  __VERIFIER_nondet_int(void);
+extern unsigned int  __VERIFIER_nondet_uint(void);
 extern void __VERIFIER_atomic_begin(void);
 extern void __VERIFIER_atomic_end(void);
 
@@ -38,7 +39,8 @@ void assume_abort_if_not(int cond) {
 }
 
 int *f;
-int i1, x1, i2, x2, n, size;
+int x1, x2, size;
+unsigned int i1, i2, n;
 
 int *create_fresh_int_array(int size);
 
@@ -85,7 +87,7 @@ int main() {
   pthread_t t1, t2;
 
   // initialize global variables
-  n = __VERIFIER_nondet_int();
+  n = __VERIFIER_nondet_uint();
   size = __VERIFIER_nondet_int();
   f = create_fresh_int_array(size);
 

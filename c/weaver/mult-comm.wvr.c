@@ -25,7 +25,7 @@ extern int pthread_create (pthread_t *__restrict __newthread,
       void *__restrict __arg) __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1, 3)));
 extern int pthread_join (pthread_t __th, void **__thread_return);
 
-extern int __VERIFIER_nondet_int(void);
+extern unsigned int __VERIFIER_nondet_uint(void);
 extern _Bool __VERIFIER_nondet_bool(void);
 extern void __VERIFIER_atomic_begin();
 extern void __VERIFIER_atomic_end();
@@ -35,11 +35,11 @@ void assume_abort_if_not(int cond) {
   if(!cond) {abort();}
 }
 
-int x_1, x_2, a, b;
+unsigned int x_1, x_2, a, b;
 
 
 void* thread1() {
-  for (int i=0; i<b; i++) {
+  for (unsigned int i=0; i<b; i++) {
     x_1 = x_1 + a;
   }
 
@@ -47,7 +47,7 @@ void* thread1() {
 }
 
 void* thread2() {
-  for (int i=0; i<a; i++) {
+  for (unsigned int i=0; i<a; i++) {
     x_2 = x_2 + b;
   }
 
@@ -58,16 +58,14 @@ int main() {
   pthread_t t1, t2;
 
   // initialize global variables
-  a = __VERIFIER_nondet_int();
-  b = __VERIFIER_nondet_int();
-
-  assume_abort_if_not(a >= 0 && b >= 0);
+  a = __VERIFIER_nondet_uint();
+  b = __VERIFIER_nondet_uint();
 
   pthread_create(&t1, 0, thread1, 0);
   pthread_create(&t2, 0, thread2, 0);
   pthread_join(t1, 0);
   pthread_join(t2, 0);
-  
+
   assume_abort_if_not(x_1 != x_2);
   reach_error();
 

@@ -26,13 +26,15 @@ extern int pthread_create (pthread_t *__restrict __newthread,
 extern int pthread_join (pthread_t __th, void **__thread_return);
 
 extern int __VERIFIER_nondet_int();
+extern unsigned int __VERIFIER_nondet_uint();
 
 extern void abort(void);
 void assume_abort_if_not(int cond) {
   if(!cond) {abort();}
 }
 
-int n, m, i1, i2, j1, k1, k2;
+int n, m, i1, i2, j1;
+unsigned int k1, k2;
 
 void* thread1() {
   while (i1 < n) {
@@ -63,8 +65,8 @@ int main() {
   i1 = __VERIFIER_nondet_int();
   i2 = __VERIFIER_nondet_int();
   j1 = __VERIFIER_nondet_int();
-  k1 = __VERIFIER_nondet_int();
-  k2 = __VERIFIER_nondet_int();
+  k1 = __VERIFIER_nondet_uint();
+  k2 = __VERIFIER_nondet_uint();
 
   // main method
   assume_abort_if_not( i1 == i2 && i1 == k1 && i1 == k2 && i1 == 0 );
