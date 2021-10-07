@@ -25,7 +25,7 @@ extern int pthread_create (pthread_t *__restrict __newthread,
       void *__restrict __arg) __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1, 3)));
 extern int pthread_join (pthread_t __th, void **__thread_return);
 
-extern int  __VERIFIER_nondet_int(void);
+extern unsigned int  __VERIFIER_nondet_uint(void);
 extern _Bool __VERIFIER_nondet_bool(void);
 extern void __VERIFIER_atomic_begin(void);
 extern void __VERIFIER_atomic_end(void);
@@ -35,10 +35,10 @@ void assume_abort_if_not(int cond) {
   if(!cond) {abort();}
 }
 
-int N, counter, c;
+unsigned int N, counter, c;
 
 void* thread1() {
-  for (int i=0; i<N; i++) {
+  for (unsigned int i=0; i<N; i++) {
     counter = counter + c;
   }
 
@@ -46,7 +46,7 @@ void* thread1() {
 }
 
 void* thread2() {
-  for (int i=0; i<N; i++) {
+  for (unsigned int i=0; i<N; i++) {
     __VERIFIER_atomic_begin();
     assume_abort_if_not(counter > 0);
     counter = counter - c;
@@ -57,7 +57,7 @@ void* thread2() {
 }
 
 void* thread3() {
-  for (int i=0; i<N; i++) {
+  for (unsigned int i=0; i<N; i++) {
     counter = counter + c;
   }
 
@@ -65,7 +65,7 @@ void* thread3() {
 }
 
 void* thread4() {
-  for (int i=0; i<N; i++) {
+  for (unsigned int i=0; i<N; i++) {
     __VERIFIER_atomic_begin();
     assume_abort_if_not(counter > 0);
     counter = counter - c;
@@ -78,8 +78,8 @@ void* thread4() {
 int main() {
   pthread_t t1, t2, t3, t4;
   
-  N = __VERIFIER_nondet_int();
-  c = __VERIFIER_nondet_int();
+  N = __VERIFIER_nondet_uint();
+  c = __VERIFIER_nondet_uint();
   
   assume_abort_if_not(c > 0);
   
