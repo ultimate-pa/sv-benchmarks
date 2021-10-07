@@ -91,6 +91,7 @@ int main() {
   result_15 = __VERIFIER_nondet_int();
   order1_16 = __VERIFIER_nondet_int();
   order2_17 = __VERIFIER_nondet_int();
+  assume_abort_if_not(id_0 < 2147483647 && id_3 < 2147483647 && id_6 < 2147483647);
   get_2 = create_fresh_int_array(id_0 + 1);
   get_5 = create_fresh_int_array(id_3 + 1);
   get_8 = create_fresh_int_array(id_6 + 1);

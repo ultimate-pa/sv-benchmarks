@@ -38,20 +38,22 @@ void assume_abort_if_not(int cond) {
 int filename_1, filename_4, filename_7, result_9, result_10, result_11;
 _Bool isNull_0, isNull_3, isNull_6, filename_2, filename_5, filename_8;
 
+int minus(int a, int b);
+
 void* thread1() {
-  result_9 = isNull_0 ? (isNull_3 ? 0 : 1) : (isNull_3 ? -1 : (filename_2 ? (filename_5 ? 0 : 1) : (filename_5 ? -1 : filename_1 - filename_4)));
+  result_9 = isNull_0 ? (isNull_3 ? 0 : 1) : (isNull_3 ? -1 : (filename_2 ? (filename_5 ? 0 : 1) : (filename_5 ? -1 : minus(filename_1, filename_4))));
 
   return 0;
 }
 
 void* thread2() {
-  result_10 = isNull_3 ? (isNull_6 ? 0 : 1) : (isNull_6 ? -1 : (filename_5 ? (filename_8 ? 0 : 1) : (filename_8 ? -1 : filename_4 - filename_7)));
+  result_10 = isNull_3 ? (isNull_6 ? 0 : 1) : (isNull_6 ? -1 : (filename_5 ? (filename_8 ? 0 : 1) : (filename_8 ? -1 : minus(filename_4, filename_7))));
 
   return 0;
 }
 
 void* thread3() {
-  result_11 = isNull_0 ? (isNull_6 ? 0 : 1) : (isNull_6 ? -1 : (filename_2 ? (filename_8 ? 0 : 1) : (filename_8 ? -1 : filename_1 - filename_7)));
+  result_11 = isNull_0 ? (isNull_6 ? 0 : 1) : (isNull_6 ? -1 : (filename_2 ? (filename_8 ? 0 : 1) : (filename_8 ? -1 : minus(filename_1, filename_7))));
 
   return 0;
 }
@@ -81,4 +83,10 @@ int main() {
   reach_error();
 
   return 0;
+}
+
+int minus(int a, int b) {
+  assume_abort_if_not(b <= 0 || a >= b - 2147483648);
+  assume_abort_if_not(b >= 0 || a <= b + 2147483647);
+  return a - b;
 }

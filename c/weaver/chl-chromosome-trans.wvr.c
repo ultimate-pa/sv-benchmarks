@@ -43,12 +43,13 @@ int res1, res2, res3;
 _Bool isNull1, isNull2, isNull3;
 
 int *create_fresh_int_array(int size);
+int minus(int a, int b);
 
 void* thread1() {
   int i = 0;
   assume_abort_if_not(!isNull1);
   while (!isNull2 && i < 5) {
-    res1 = a1[i] - a2[i];
+    res1 = minus(a1[i], a2[i]);
     if (res1 == 0) {
       break;
     }
@@ -62,7 +63,7 @@ void* thread2() {
   int i = 0;
   assume_abort_if_not(!isNull2);
   while (!isNull3 && i < 5) {
-    res2 = a2[i] - a3[i];
+    res2 = minus(a2[i], a3[i]);
     if (res2 == 0) {
       break;
     }
@@ -76,7 +77,7 @@ void* thread3() {
   int i = 0;
   assume_abort_if_not(!isNull1);
   while (!isNull3 && i < 5) {
-    res3 = a1[i] - a3[i];
+    res3 = minus(a1[i], a3[i]);
     if (res3 == 0) {
       break;
     }
@@ -119,4 +120,10 @@ int *create_fresh_int_array(int size) {
     arr[i] = __VERIFIER_nondet_int();
   }
   return arr;
+}
+
+int minus(int a, int b) {
+  assume_abort_if_not(b <= 0 || a >= b - 2147483648);
+  assume_abort_if_not(b >= 0 || a <= b + 2147483647);
+  return a - b;
 }

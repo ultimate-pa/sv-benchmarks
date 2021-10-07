@@ -38,11 +38,12 @@ void assume_abort_if_not(int cond) {
 int ora_0, ora_2, ora_4;
 int volume_totale_1, volume_totale_3, volume_totale_5;
 int cmp_6, cmp_7, cmp_8;
+int minus(int a, int b);
 
 void* thread1() {
   __VERIFIER_atomic_begin();
-  cmp_6 = ( ora_0 - ora_2 );
-  cmp_6 = ( ( cmp_6 == 0 ) ? ( volume_totale_1 - volume_totale_3 ) : cmp_6 );
+  cmp_6 = minus(ora_0, ora_2);
+  cmp_6 = ( ( cmp_6 == 0 ) ? minus(volume_totale_1, volume_totale_3) : cmp_6 );
   __VERIFIER_atomic_end();
 
   return 0;
@@ -50,8 +51,8 @@ void* thread1() {
 
 void* thread2() {
   __VERIFIER_atomic_begin();
-  cmp_7 = ( ora_2 - ora_4 );
-  cmp_7 = ( ( cmp_7 == 0 ) ? ( volume_totale_3 - volume_totale_5 ) : cmp_7 );
+  cmp_7 = minus(ora_2, ora_4);
+  cmp_7 = ( ( cmp_7 == 0 ) ? minus(volume_totale_3, volume_totale_5) : cmp_7 );
   __VERIFIER_atomic_end();
 
   return 0;
@@ -59,8 +60,8 @@ void* thread2() {
 
 void* thread3() {
   __VERIFIER_atomic_begin();
-  cmp_8 = ( ora_0 - ora_4 );
-  cmp_8 = ( ( cmp_8 == 0 ) ? ( volume_totale_1 - volume_totale_5 ) : cmp_8 );
+  cmp_8 = minus(ora_0, ora_4);
+  cmp_8 = ( ( cmp_8 == 0 ) ? minus(volume_totale_1, volume_totale_5) : cmp_8 );
   __VERIFIER_atomic_end();
 
   return 0;
@@ -92,4 +93,10 @@ int main() {
   reach_error();
 
   return 0;
+}
+
+int minus(int a, int b) {
+  assume_abort_if_not(b <= 0 || a >= b - 2147483648);
+  assume_abort_if_not(b >= 0 || a <= b + 2147483647);
+  return a - b;
 }

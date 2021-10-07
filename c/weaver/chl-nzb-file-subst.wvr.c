@@ -43,6 +43,7 @@ _Bool is_null_1, is_null_5, is_null_9, break_14, break_17, break_20;
 _Bool *ends_with_2, *ends_with_6, *ends_with_10;
 
 _Bool *create_fresh_bool_array(int size);
+int minus(int a, int b);
 
 void* thread1() {
   if ( __VERIFIER_nondet_bool() ) {
@@ -67,13 +68,13 @@ void* thread1() {
 
     __VERIFIER_atomic_begin();
     assume_abort_if_not( !( ( i_13 < 5 ) && !break_14 ) );
-    result_12 = ( (!break_14) ? ( filename_0 - filename_4 ) : result_12 );
+    result_12 = ( (!break_14) ? minus(filename_0, filename_4) : result_12 );
     __VERIFIER_atomic_end();
   }
   else {
     __VERIFIER_atomic_begin();
     assume_abort_if_not( !( !is_null_1 && !is_null_5 ) );
-    result_12 = ( ( !is_null_1 && is_null_5 ) ? ( 0 - 995 ) : ( ( is_null_1 && !is_null_5 ) ? 1005 : ( get_subject_3 - get_subject_7 ) ) );
+    result_12 = ( ( !is_null_1 && is_null_5 ) ? ( 0 - 995 ) : ( ( is_null_1 && !is_null_5 ) ? 1005 : minus(get_subject_3, get_subject_7) ) );
     __VERIFIER_atomic_end();
   }
 
@@ -103,13 +104,13 @@ void* thread2() {
   
     __VERIFIER_atomic_begin();
     assume_abort_if_not( !( ( i_16 < 5 ) && !break_17 ) );
-    result_15 = ( (!break_17) ? ( filename_0 - filename_8 ) : result_15 );
+    result_15 = ( (!break_17) ? minus(filename_0, filename_8) : result_15 );
     __VERIFIER_atomic_end();
   }
   else {
     __VERIFIER_atomic_begin();
     assume_abort_if_not( !( !is_null_1 && !is_null_9 ) );
-    result_15 = ( ( !is_null_1 && is_null_9 ) ? ( 0 - 995 ) : ( ( is_null_1 && !is_null_9 ) ? 1005 : ( get_subject_3 - get_subject_11 ) ) );
+    result_15 = ( ( !is_null_1 && is_null_9 ) ? ( 0 - 995 ) : ( ( is_null_1 && !is_null_9 ) ? 1005 : minus(get_subject_3, get_subject_11) ) );
     __VERIFIER_atomic_end();
   }
 
@@ -139,13 +140,13 @@ void* thread3() {
 
     __VERIFIER_atomic_begin();
     assume_abort_if_not( !( ( i_19 < 5 ) && !break_20 ) );
-    result_18 = ( (!break_20) ? ( filename_4 - filename_8 ) : result_18 );
+    result_18 = ( (!break_20) ? minus(filename_4, filename_8) : result_18 );
     __VERIFIER_atomic_end();
   }
   else {
     __VERIFIER_atomic_begin();
     assume_abort_if_not( !( !is_null_5 && !is_null_9 ) );
-    result_18 = ( ( !is_null_5 && is_null_9 ) ? ( 0 - 995 ) : ( ( is_null_5 && !is_null_9 ) ? 1005 : ( get_subject_7 - get_subject_11 ) ) );
+    result_18 = ( ( !is_null_5 && is_null_9 ) ? ( 0 - 995 ) : ( ( is_null_5 && !is_null_9 ) ? 1005 : minus(get_subject_7, get_subject_11) ) );
     __VERIFIER_atomic_end();
   }
 
@@ -201,4 +202,10 @@ _Bool *create_fresh_bool_array(int size) {
     arr[i] = __VERIFIER_nondet_bool();
   }
   return arr;
+}
+
+int minus(int a, int b) {
+  assume_abort_if_not(b <= 0 || a >= b - 2147483648);
+  assume_abort_if_not(b >= 0 || a <= b + 2147483647);
+  return a - b;
 }

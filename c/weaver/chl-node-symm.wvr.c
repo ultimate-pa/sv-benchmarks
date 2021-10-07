@@ -78,6 +78,7 @@ int main() {
   result_9 = __VERIFIER_nondet_int();
   order1_10 = __VERIFIER_nondet_int();
   order2_11 = __VERIFIER_nondet_int();
+  assume_abort_if_not(id_0 < 2147483647 && id_3 < 2147483647);
   get_2 = create_fresh_int_array(id_0 + 1);
   get_5 = create_fresh_int_array(id_3 + 1);
   contains_key_1 = create_fresh_bool_array(id_0+1);

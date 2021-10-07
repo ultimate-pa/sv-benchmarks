@@ -42,6 +42,7 @@ int* nondet_0;
 int name_1, name_2, result_3, i_4, current_5, break_6, result_7, i_8, current_9, break_10;
 
 int *create_fresh_int_array(int size);
+int minus(int a, int b);
 
 void* thread1() {
   __VERIFIER_atomic_begin();
@@ -64,7 +65,7 @@ void* thread1() {
   }
   __VERIFIER_atomic_begin();
   assume_abort_if_not( !( ( i_4 < 3 ) && !break_6 ) );
-  result_3 = ( !break_6 ) ? ( name_1 - name_2 ) : result_3;
+  result_3 = ( !break_6 ) ? minus(name_1, name_2) : result_3;
   __VERIFIER_atomic_end();
 
   return 0;
@@ -92,7 +93,7 @@ void* thread2() {
 
   __VERIFIER_atomic_begin();
   assume_abort_if_not( !( ( i_8 < 3 ) && !break_10 ) );
-  result_7 = (!break_10) ? ( name_2 - name_1 ) : result_7;
+  result_7 = (!break_10) ? minus(name_2, name_1) : result_7;
   __VERIFIER_atomic_end();
 
   return 0;
@@ -138,4 +139,10 @@ int *create_fresh_int_array(int size) {
     arr[i] = __VERIFIER_nondet_int();
   }
   return arr;
+}
+
+int minus(int a, int b) {
+  assume_abort_if_not(b <= 0 || a >= b - 2147483648);
+  assume_abort_if_not(b >= 0 || a <= b + 2147483647);
+  return a - b;
 }

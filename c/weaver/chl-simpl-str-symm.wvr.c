@@ -37,14 +37,16 @@ void assume_abort_if_not(int cond) {
 
 int length_0, to_int_1, length_2, to_int_3, result_4, result_5;
 
+int minus(int a, int b);
+
 void* thread1() {
-  result_4 = length_0 == 0 ? (length_2 == 0 ? 0 : 1) : (length_2 == 0 ? -1 : to_int_1 - to_int_3);
+  result_4 = length_0 == 0 ? (length_2 == 0 ? 0 : 1) : (length_2 == 0 ? -1 : minus(to_int_1, to_int_3));
 
   return 0;
 }
 
 void* thread2() {
-  result_5 = length_2 == 0 ? (length_0 == 0 ? 0 : 1) : (length_0 == 0 ? -1 : to_int_3 - to_int_1);
+  result_5 = length_2 == 0 ? (length_0 == 0 ? 0 : 1) : (length_0 == 0 ? -1 : to_int_3, to_int_1));
 
   return 0;
 }
@@ -70,4 +72,10 @@ int main() {
   reach_error();
 
   return 0;
+}
+
+int minus(int a, int b) {
+  assume_abort_if_not(b <= 0 || a >= b - 2147483648);
+  assume_abort_if_not(b >= 0 || a <= b + 2147483647);
+  return a - b;
 }

@@ -37,11 +37,14 @@ void assume_abort_if_not(int cond) {
 
 int n_0, f1_2, f2_3, l_4, f1_6, f2_7, l_8;
 
+int minus(int a, int b);
+int plus(int a, int b);
+
 void* thread1() {
   for (int i=0; i<n_0; i++) {
     __VERIFIER_atomic_begin();
-    f1_2 = f1_2 + f2_3;
-    f2_3 = f1_2 - f2_3;
+    f1_2 = plus(f1_2, f2_3);
+    f2_3 = minus(f1_2, f2_3);
     __VERIFIER_atomic_end();
   }
   l_4 = (f1_2 > 0) ? 1 : 0;
@@ -52,8 +55,8 @@ void* thread1() {
 void* thread2() {
   for (int i=0; i<n_0; i++) {
     __VERIFIER_atomic_begin();
-    f1_6 = f1_6 + f2_7;
-    f2_7 = f1_6 - f2_7;
+    f1_6 = plus(f1_6, f2_7);
+    f2_7 = minus(f1_6, f2_7);
     __VERIFIER_atomic_end();
   }
   l_8 = (f1_6 > 0) ? 1 : 0;
@@ -85,4 +88,16 @@ int main() {
   reach_error();
 
   return 0;
+}
+
+int minus(int a, int b) {
+  assume_abort_if_not(b <= 0 || a >= b - 2147483648);
+  assume_abort_if_not(b >= 0 || a <= b + 2147483647);
+  return a - b;
+}
+
+int plus(a, b) {
+  assume_abort_if_not(b >= 0 || a >= -2147483648 - b);
+  assume_abort_if_not(b <= 0 || a <= 2147483647 - b);
+  return a + b;
 }

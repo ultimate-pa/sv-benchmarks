@@ -43,6 +43,7 @@ _Bool is_null_1, is_null_5, break_10, break_13;
 _Bool *ends_with_2, *ends_with_6;
 
 _Bool *create_fresh_bool_array(int size);
+int minus(int a, int b);
 
 void* thread1() {
   if ( __VERIFIER_nondet_bool() ) {
@@ -67,13 +68,13 @@ void* thread1() {
 
     __VERIFIER_atomic_begin();
     assume_abort_if_not( !( ( i_9 < 5 ) && !break_10 ) );
-    result_8 = ( (!break_10) ? ( filename_0 - filename_4 ) : result_8 );
+    result_8 = ( (!break_10) ? minus(filename_0, filename_4) : result_8 );
     __VERIFIER_atomic_end();
   }
   else {
     __VERIFIER_atomic_begin();
     assume_abort_if_not( !( !is_null_1 && !is_null_5 ) );
-    result_8 = ( ( !is_null_1 && is_null_5 ) ? ( 0 - 995 ) : ( ( is_null_1 && !is_null_5 ) ? 1005 : ( get_subject_3 - get_subject_7 ) ) );
+    result_8 = ( ( !is_null_1 && is_null_5 ) ? ( 0 - 995 ) : ( ( is_null_1 && !is_null_5 ) ? 1005 : minus(get_subject_3, get_subject_7) ) );
     __VERIFIER_atomic_end();
   }
 
@@ -103,13 +104,13 @@ void* thread2() {
   
     __VERIFIER_atomic_begin();
     assume_abort_if_not( !( ( i_12 < 5 ) && !break_13 ) );
-    result_11 = ( (!break_13) ? ( filename_4 - filename_0 ) : result_11 );
+    result_11 = ( (!break_13) ? minus(filename_4, filename_0) : result_11 );
     __VERIFIER_atomic_end();
   }
   else {
     __VERIFIER_atomic_begin();
     assume_abort_if_not( !( !is_null_5 && !is_null_1 ) );
-    result_11 = ( ( !is_null_5 && is_null_1 ) ? ( 0 - 995 ) : ( ( is_null_5 && !is_null_1 ) ? 1005 : ( get_subject_7 - get_subject_3 ) ) );
+    result_11 = ( ( !is_null_5 && is_null_1 ) ? ( 0 - 995 ) : ( ( is_null_5 && !is_null_1 ) ? 1005 : minus(get_subject_7, get_subject_3) ) );
     __VERIFIER_atomic_end();
   }
 
@@ -156,4 +157,10 @@ _Bool *create_fresh_bool_array(int size) {
     arr[i] = __VERIFIER_nondet_bool();
   }
   return arr;
+}
+
+int minus(int a, int b) {
+  assume_abort_if_not(b <= 0 || a >= b - 2147483648);
+  assume_abort_if_not(b >= 0 || a <= b + 2147483647);
+  return a - b;
 }

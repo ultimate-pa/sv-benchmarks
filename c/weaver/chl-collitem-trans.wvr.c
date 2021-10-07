@@ -37,12 +37,14 @@ void assume_abort_if_not(int cond) {
 
 int cardSet_0, cardRarity_1, cardId_2, cardType_3, cardSet_4, cardRarity_5, cardId_6, cardType_7, cardSet_8, cardRarity_9, cardId_10, cardType_11, result_12, result_13, result_14;
 
+int minus(int a, int b);
+
 void* thread1() {
   __VERIFIER_atomic_begin();
-  result_12 = cardSet_0 - cardSet_4;
-  result_12 = result_12 == 0 ? cardRarity_1 - cardRarity_5 : result_12;
-  result_12 = result_12 == 0 ? cardId_2 - cardId_6 : result_12;
-  result_12 = result_12 == 0 ? cardType_3 - cardType_7 : result_12;
+  result_12 = minus(cardSet_0, cardSet_4);
+  result_12 = result_12 == 0 ? minus(cardRarity_1, cardRarity_5) : result_12;
+  result_12 = result_12 == 0 ? minus(cardId_2, cardId_6) : result_12;
+  result_12 = result_12 == 0 ? minus(cardType_3, cardType_7) : result_12;
   __VERIFIER_atomic_end();
 
   return 0;
@@ -50,10 +52,10 @@ void* thread1() {
 
 void* thread2() {
   __VERIFIER_atomic_begin();
-  result_13 = cardSet_4 - cardSet_8;
-  result_13 = result_13 == 0 ? cardRarity_5 - cardRarity_9 : result_13;
-  result_13 = result_13 == 0 ? cardId_6 - cardId_10 : result_13;
-  result_13 = result_13 == 0 ? cardType_7 - cardType_11 : result_13;
+  result_13 = minus(cardSet_4, cardSet_8);
+  result_13 = result_13 == 0 ? minus(cardRarity_5, cardRarity_9) : result_13;
+  result_13 = result_13 == 0 ? minus(cardId_6, cardId_10) : result_13;
+  result_13 = result_13 == 0 ? minus(cardType_7, cardType_11) : result_13;
   __VERIFIER_atomic_end();
 
   return 0;
@@ -61,10 +63,10 @@ void* thread2() {
 
 void* thread3() {
   __VERIFIER_atomic_begin();
-  result_14 = cardSet_0 - cardSet_8;
-  result_14 = result_14 == 0 ? cardRarity_1 - cardRarity_9 : result_14;
-  result_14 = result_14 == 0 ? cardId_2 - cardId_10 : result_14;
-  result_14 = result_14 == 0 ? cardType_3 - cardType_11 : result_14;
+  result_14 = minus(cardSet_0, cardSet_8);
+  result_14 = result_14 == 0 ? minus(cardRarity_1, cardRarity_9) : result_14;
+  result_14 = result_14 == 0 ? minus(cardId_2, cardId_10) : result_14;
+  result_14 = result_14 == 0 ? minus(cardType_3, cardType_11) : result_14;
   __VERIFIER_atomic_end();
 
   return 0;
@@ -98,4 +100,10 @@ int main() {
   reach_error();
 
   return 0;
+}
+
+int minus(int a, int b) {
+  assume_abort_if_not(b <= 0 || a >= b - 2147483648);
+  assume_abort_if_not(b >= 0 || a <= b + 2147483647);
+  return a - b;
 }

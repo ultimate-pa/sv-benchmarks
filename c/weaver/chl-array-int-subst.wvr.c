@@ -42,13 +42,14 @@ int *a1, *a2, *a3;
 int res1, res2, res3, n1, n2, n3;
 
 int *create_fresh_int_array(int size);
+int minus(int a, int b);
 
 void* thread1() {
   int i = 0;
   res1 = n1 - n2;
   while (i < n1 && i < n2) {
     if (a1[i] != a2[i]) {
-      res1 = a1[i] - a2[i];
+      res1 = minus(a1[i], a2[i]);
       break;
     }
     i++;
@@ -62,7 +63,7 @@ void* thread2() {
   res2 = n1 - n3;
   while (i < n1 && i < n3) {
     if (a1[i] != a3[i]) {
-      res2 = a1[i] - a3[i];
+      res2 = minus(a1[i], a3[i]);
       break;
     }
     i++;
@@ -76,7 +77,7 @@ void* thread3() {
   res3 = n2 - n3;
   while (i < n2 && i < n3) {
     if (a2[i] != a3[i]) {
-      res3 = a2[i] - a3[i];
+      res3 = minus(a2[i], a3[i]);
       break;
     }
     i++;
@@ -119,4 +120,10 @@ int *create_fresh_int_array(int size) {
     arr[i] = __VERIFIER_nondet_int();
   }
   return arr;
+}
+
+int minus(int a, int b) {
+  assume_abort_if_not(b <= 0 || a >= b - 2147483648);
+  assume_abort_if_not(b >= 0 || a <= b + 2147483647);
+  return a - b;
 }
