@@ -149,8 +149,9 @@ int main() {
 
 _Bool *create_fresh_bool_array(int size) {
   assume_abort_if_not(size >= 0);
+  assume_abort_if_not(size <= (((size_t) 4294967295) / sizeof(_Bool)));
 
-  _Bool* arr = (_Bool*)malloc(sizeof(_Bool) * size);
+  _Bool* arr = (_Bool*)malloc(sizeof(_Bool) * (size_t)size);
   for (int i = 0; i < size; i++) {
     arr[i] = __VERIFIER_nondet_bool();
   }

@@ -131,8 +131,9 @@ int ult_7, i_8, current_9, break_10;
 
 int *create_fresh_int_array(int size) {
   assume_abort_if_not(size >= 0);
+  assume_abort_if_not(size <= (((size_t) 4294967295) / sizeof(int)));
 
-  int* arr = (int*)malloc(sizeof(int) * size);
+  int* arr = (int*)malloc(sizeof(int) * (size_t)size);
   for (int i = 0; i < size; i++) {
     arr[i] = __VERIFIER_nondet_int();
   }
