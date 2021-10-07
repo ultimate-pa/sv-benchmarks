@@ -25,7 +25,7 @@ extern int pthread_create (pthread_t *__restrict __newthread,
       void *__restrict __arg) __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1, 3)));
 extern int pthread_join (pthread_t __th, void **__thread_return);
 
-extern int   __VERIFIER_nondet_int(void);
+extern unsigned int __VERIFIER_nondet_uint(void);
 extern _Bool __VERIFIER_nondet_bool(void);
 extern void  __VERIFIER_atomic_begin();
 extern void  __VERIFIER_atomic_end();
@@ -35,7 +35,7 @@ void assume_abort_if_not(int cond) {
   if(!cond) {abort();}
 }
 
-int pos, i1, i2, N;
+unsigned int pos, i1, i2, N;
 _Bool d1, d2;
 
 void* thread1() {
@@ -78,10 +78,10 @@ int main() {
   pthread_t t1, t2;
 
   // initialize global variables
-  pos = __VERIFIER_nondet_int();
-  i1  = __VERIFIER_nondet_int();
-  i2  = __VERIFIER_nondet_int();
-  N   = __VERIFIER_nondet_int();
+  pos = __VERIFIER_nondet_uint();
+  i1  = __VERIFIER_nondet_uint();
+  i2  = __VERIFIER_nondet_uint();
+  N   = __VERIFIER_nondet_uint();
   d1  = __VERIFIER_nondet_bool();
   d2  = __VERIFIER_nondet_bool();
 

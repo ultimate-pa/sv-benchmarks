@@ -25,7 +25,7 @@ extern int pthread_create (pthread_t *__restrict __newthread,
       void *__restrict __arg) __attribute__ ((__nothrow__)) __attribute__ ((__nonnull__ (1, 3)));
 extern int pthread_join (pthread_t __th, void **__thread_return);
 
-extern int   __VERIFIER_nondet_int(void);
+extern unsigned int __VERIFIER_nondet_uint(void);
 extern _Bool __VERIFIER_nondet_bool(void);
 extern void  __VERIFIER_atomic_begin();
 extern void  __VERIFIER_atomic_end();
@@ -35,9 +35,9 @@ void assume_abort_if_not(int cond) {
   if(!cond) {abort();}
 }
 
-int x_0, y_1, x_8, y_9;
+unsigned int x_0, y_1, x_8, y_9;
 _Bool f1_2, f2_3, f1_10, f2_11;
-int temp_4, temp_5, temp_6, temp_7, temp_12, temp_13, temp_14, temp_15;
+unsigned int temp_4, temp_5, temp_6, temp_7, temp_12, temp_13, temp_14, temp_15;
 
 
 void* thread2() {
@@ -148,18 +148,18 @@ int main() {
   pthread_t t1, t4;
 
   // initialize global variables
-  x_0 = __VERIFIER_nondet_int();
-  y_1 = __VERIFIER_nondet_int();
-  x_8 = __VERIFIER_nondet_int();
-  y_9 = __VERIFIER_nondet_int();
-  temp_4  = __VERIFIER_nondet_int();
-  temp_5  = __VERIFIER_nondet_int();
-  temp_6  = __VERIFIER_nondet_int();
-  temp_7  = __VERIFIER_nondet_int();
-  temp_12 = __VERIFIER_nondet_int();
-  temp_13 = __VERIFIER_nondet_int();
-  temp_14 = __VERIFIER_nondet_int();
-  temp_15 = __VERIFIER_nondet_int();
+  x_0 = __VERIFIER_nondet_uint();
+  y_1 = __VERIFIER_nondet_uint();
+  x_8 = __VERIFIER_nondet_uint();
+  y_9 = __VERIFIER_nondet_uint();
+  temp_4  = __VERIFIER_nondet_uint();
+  temp_5  = __VERIFIER_nondet_uint();
+  temp_6  = __VERIFIER_nondet_uint();
+  temp_7  = __VERIFIER_nondet_uint();
+  temp_12 = __VERIFIER_nondet_uint();
+  temp_13 = __VERIFIER_nondet_uint();
+  temp_14 = __VERIFIER_nondet_uint();
+  temp_15 = __VERIFIER_nondet_uint();
   f1_2  = __VERIFIER_nondet_bool();
   f2_3  = __VERIFIER_nondet_bool();
   f1_10 = __VERIFIER_nondet_bool();
