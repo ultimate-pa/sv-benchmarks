@@ -44,7 +44,7 @@ unsigned int* C;
 unsigned int asum, csum;
 int p, N;
 
-int *create_fresh_int_array(int size);
+unsigned int *create_fresh_uint_array(int size);
 
 void* thread1() {
   for (int i=0; i<N; i++) {
@@ -100,7 +100,7 @@ unsigned int *create_fresh_uint_array(int size) {
   assume_abort_if_not(size >= 0);
   assume_abort_if_not(size <= (((size_t) 4294967295) / sizeof(unsigned int)));
 
-  unsigned int* arr = (int*)malloc(sizeof(unsigned int) * (size_t)size);
+  unsigned int* arr = (unsigned int*)malloc(sizeof(unsigned int) * (size_t)size);
   for (int i = 0; i < size; i++) {
     arr[i] = __VERIFIER_nondet_uint();
   }
