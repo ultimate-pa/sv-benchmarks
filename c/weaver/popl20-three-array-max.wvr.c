@@ -42,6 +42,7 @@ int *A, *B, *C;
 int maxa, maxb, maxc, N, p;
 
 int *create_fresh_int_array(int size);
+int plus(int a, int b);
 
 void* thread1() {
   for (int i=1; i<N; i++) {
@@ -59,7 +60,7 @@ void* thread1() {
 void* thread2() {
   for (int i=1; i<N; i++) {
     __VERIFIER_atomic_begin();
-    C[i] = A[i] + B[i];
+    C[i] = plus(A[i], B[i]);
     p = i + 1;
     __VERIFIER_atomic_end();
   }
@@ -94,7 +95,7 @@ int main() {
   
   maxa = A[0];
   maxb = B[0];
-  maxc = A[0] + B[0];
+  maxc = plus(A[0], B[0]);
   
   // main method
   pthread_create(&t1, 0, thread1, 0);
@@ -119,4 +120,10 @@ int *create_fresh_int_array(int size) {
     arr[i] = __VERIFIER_nondet_int();
   }
   return arr;
+}
+
+int plus(int a, int b) {
+  assume_abort_if_not(b >= 0 || a >= -2147483648 - b);
+  assume_abort_if_not(b <= 0 || a <= 2147483647 - b);
+  return a + b;
 }

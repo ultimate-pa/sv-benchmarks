@@ -29,6 +29,7 @@ typedef unsigned int size_t;
 extern void *malloc (size_t __size) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) ;
 
 extern int  __VERIFIER_nondet_int(void);
+extern unsigned int  __VERIFIER_nondet_uint(void);
 extern _Bool __VERIFIER_nondet_bool(void);
 extern void __VERIFIER_atomic_begin(void);
 extern void __VERIFIER_atomic_end(void);
@@ -38,9 +39,10 @@ void assume_abort_if_not(int cond) {
   if(!cond) {abort();}
 }
 
-int* A;
-int* C;
-int asum, csum, p, N;
+unsigned int* A;
+unsigned int* C;
+unsigned int asum, csum;
+int p, N;
 
 int *create_fresh_int_array(int size);
 
@@ -75,11 +77,11 @@ void* thread3() {
 
 int main() {
   pthread_t t1, t2, t3;
-  
+
   N = __VERIFIER_nondet_int();
-  A = create_fresh_int_array(N);
-  C = create_fresh_int_array(N);
-  
+  A = create_fresh_uint_array(N);
+  C = create_fresh_uint_array(N);
+
   // main method
   pthread_create(&t1, 0, thread1, 0);
   pthread_create(&t2, 0, thread2, 0);
@@ -94,13 +96,13 @@ int main() {
   return 0;
 }
 
-int *create_fresh_int_array(int size) {
+unsigned int *create_fresh_uint_array(int size) {
   assume_abort_if_not(size >= 0);
-  assume_abort_if_not(size <= (((size_t) 4294967295) / sizeof(int)));
+  assume_abort_if_not(size <= (((size_t) 4294967295) / sizeof(unsigned int)));
 
-  int* arr = (int*)malloc(sizeof(int) * (size_t)size);
+  unsigned int* arr = (int*)malloc(sizeof(unsigned int) * (size_t)size);
   for (int i = 0; i < size; i++) {
-    arr[i] = __VERIFIER_nondet_int();
+    arr[i] = __VERIFIER_nondet_uint();
   }
   return arr;
 }
