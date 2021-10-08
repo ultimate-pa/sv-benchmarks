@@ -81,6 +81,7 @@ int main() {
   i   = __VERIFIER_nondet_int();
   j   = __VERIFIER_nondet_int();
   N   = __VERIFIER_nondet_int();
+  assume_abort_if_not(N > 0);
   b1 = __VERIFIER_nondet_bool();
   b2 = __VERIFIER_nondet_bool();
   v_assert = __VERIFIER_nondet_bool();

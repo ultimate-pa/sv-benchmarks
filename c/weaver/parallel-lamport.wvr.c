@@ -97,7 +97,7 @@ int main() {
 
   // main method
   assume_abort_if_not( i == j );
-  assume_abort_if_not( i < n );
+  assume_abort_if_not( 0 <= i && i < n );
 
   e1 = 0;
   e2 = 0;
