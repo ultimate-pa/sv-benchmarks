@@ -8,7 +8,8 @@ SPDX-FileCopyrightText: 2014-2020 The SV-Benchmarks Community
 SPDX-License-Identifier: LicenseRef-BSD-3-Clause-Attribution-CMU
 -->
 
-Contributed by: [HCCPS](http://www.sei.cmu.edu/cyber-physical/research/high-confidence) project
+Contributed by: Carnegie Mellon University HCCPS project
+([Overview](https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=553135))
 
 The verification tasks should have the following convention:
 
