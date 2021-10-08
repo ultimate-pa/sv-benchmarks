@@ -79,6 +79,7 @@ int main() {
   // initialize global variables
   n = __VERIFIER_nondet_uint();
   size = __VERIFIER_nondet_int();
+  assume_abort_if_not(size > 0);
   f = create_fresh_int_array(size);
 
   // main method
