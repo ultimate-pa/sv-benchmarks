@@ -46,7 +46,7 @@ void* thread1() {
 }
 
 void* thread2() {
-  result_5 = length_2 == 0 ? (length_0 == 0 ? 0 : 1) : (length_0 == 0 ? -1 : to_int_3, to_int_1));
+  result_5 = length_2 == 0 ? (length_0 == 0 ? 0 : 1) : (length_0 == 0 ? -1 : minus(to_int_3, to_int_1));
 
   return 0;
 }

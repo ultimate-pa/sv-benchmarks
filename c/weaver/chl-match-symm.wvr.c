@@ -79,7 +79,7 @@ int main() {
   return 0;
 }
 
-int plus(a, b) {
+int plus(int a, int b) {
   assume_abort_if_not(b >= 0 || a >= -2147483648 - b);
   assume_abort_if_not(b <= 0 || a <= 2147483647 - b);
   return a + b;
