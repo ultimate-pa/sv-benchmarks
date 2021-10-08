@@ -44,10 +44,11 @@ int* C;
 int asum, bsum, csum, N;
 
 int *create_fresh_int_array(int size);
+int plus(int a, int b);
 
 void* thread1() {
   for (int i=0; i<N; i++) {
-    asum = asum + A[i];
+    asum = plus(asum, A[i]);
   }
 
   return 0;
@@ -55,7 +56,7 @@ void* thread1() {
 
 void* thread2() {
   for (int i=0; i<N; i++) {
-    bsum = bsum + B[i];
+    bsum = plus(bsum, B[i]);
   }
 
   return 0;
@@ -63,8 +64,8 @@ void* thread2() {
 
 void* thread3() {
   for (int i=0; i<N; i++) {
-    C[i] = A[i] + B[i];
-    csum = csum + C[i];
+    C[i] = plus(A[i], B[i]);
+    csum = plus(csum, C[i]);
   }
 
   return 0;
@@ -86,7 +87,7 @@ int main() {
   pthread_join(t2, 0);
   pthread_join(t3, 0);
   
-  assume_abort_if_not(csum != asum + bsum);
+  assume_abort_if_not(csum != plus(asum, bsum));
   reach_error();
 
   return 0;
@@ -101,4 +102,10 @@ int *create_fresh_int_array(int size) {
     arr[i] = __VERIFIER_nondet_int();
   }
   return arr;
+}
+
+int plus(int a, int b) {
+  assume_abort_if_not(b >= 0 || a >= -2147483648 - b);
+  assume_abort_if_not(b <= 0 || a <= 2147483647 - b);
+  return a + b;
 }

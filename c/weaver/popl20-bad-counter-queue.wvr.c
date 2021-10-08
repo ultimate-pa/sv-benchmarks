@@ -42,10 +42,12 @@ int* A;
 int counter, N;
 
 int *create_fresh_int_array(int size);
+int minus(int a, int b);
+int plus(int a, int b);
 
 void* thread1() {
   for (int i=0; i<N; i++) {
-    counter = counter + A[i];
+    counter = plus(counter, A[i]);
   }
 
   return 0;
@@ -53,7 +55,7 @@ void* thread1() {
 
 void* thread2() {
   for (int i=0; i<N; i++) {
-    counter = counter - A[i];
+    counter = minus(counter, A[i]);
   }
 
   return 0;
@@ -86,4 +88,16 @@ int *create_fresh_int_array(int size) {
     arr[i] = __VERIFIER_nondet_int();
   }
   return arr;
+}
+
+int minus(int a, int b) {
+  assume_abort_if_not(b <= 0 || a >= b - 2147483648);
+  assume_abort_if_not(b >= 0 || a <= b + 2147483647);
+  return a - b;
+}
+
+int plus(int a, int b) {
+  assume_abort_if_not(b >= 0 || a >= -2147483648 - b);
+  assume_abort_if_not(b <= 0 || a <= 2147483647 - b);
+  return a + b;
 }

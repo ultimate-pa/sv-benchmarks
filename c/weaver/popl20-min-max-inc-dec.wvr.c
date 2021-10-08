@@ -68,6 +68,7 @@ void* thread2() {
 void* thread3() {
   for (int i=0; i<N; i++) {
     __VERIFIER_atomic_begin();
+    assume_abort_if_not(A[i] < 2147483647);
     A[i]++;
     __VERIFIER_atomic_end();
   }
@@ -78,6 +79,7 @@ void* thread3() {
 void* thread4() {
   for (int i=0; i<N; i++) {
     __VERIFIER_atomic_begin();
+    assume_abort_if_not(max > -2147483648);
     A[i]--;
     __VERIFIER_atomic_end();
   }
@@ -86,6 +88,7 @@ void* thread4() {
 }
 
 void* thread5() {
+  assume_abort_if_not(max < 2147483647);
   v_assert = !b1 || !b2 || min <= max + 1;
 
   return 0;

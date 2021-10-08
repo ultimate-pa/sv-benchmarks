@@ -42,11 +42,13 @@ int* q2;
 int i, j, total, C, N, M, q1_front, q1_back, q2_front, q2_back, n1, n2;
 
 int *create_fresh_int_array(int size);
+int plus(int a, int b);
 
 void* thread1() {
   while (i < N) {
     __VERIFIER_atomic_begin();
     assume_abort_if_not(q1_back >= 0 && q1_back < n1 && q1[q1_back] == C);
+    assume_abort_if_not(q1_back < 2147483647);
     q1_back++;
     __VERIFIER_atomic_end();
     i++;
@@ -59,6 +61,7 @@ void* thread2() {
   while (j < M) {
     __VERIFIER_atomic_begin();
     assume_abort_if_not(q2_back >= 0 && q2_back < n2 && q2[q2_back] == -C);
+    assume_abort_if_not(q2_back < 2147483647);
     q2_back++;
     __VERIFIER_atomic_end();
     j++;
@@ -71,7 +74,7 @@ void* thread3() {
   while (i < N || q1_front < q1_back) {
     __VERIFIER_atomic_begin();
     assume_abort_if_not(q1_front >= 0 && q1_front < n1 && q1_front < q1_back);
-    total = total + q1[q1_front];
+    total = plus(total, q1[q1_front]);
     q1_front++;
     __VERIFIER_atomic_end();
   }
@@ -83,7 +86,7 @@ void* thread4() {
   while (j < M || q2_front < q2_back) {
     __VERIFIER_atomic_begin();
     assume_abort_if_not(q2_front >= 0 && q2_front < n2 && q2_front < q2_back);
-    total = total + q2[q2_front];
+    total = plus(total, q2[q2_front]);
     q2_front++;
     __VERIFIER_atomic_end();
   }
@@ -135,4 +138,10 @@ int *create_fresh_int_array(int size) {
     arr[i] = __VERIFIER_nondet_int();
   }
   return arr;
+}
+
+int plus(int a, int b) {
+  assume_abort_if_not(b >= 0 || a >= -2147483648 - b);
+  assume_abort_if_not(b <= 0 || a <= 2147483647 - b);
+  return a + b;
 }

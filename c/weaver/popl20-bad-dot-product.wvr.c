@@ -43,12 +43,13 @@ int* B;
 int res1, res2, N, M, size;
 
 int *create_fresh_int_array(int size);
+int plus(int a, int b);
 
 void* thread1() {
   for (int i=0; i<N; i++) {
     assume_abort_if_not(A[i] < size);
     for (int j=0; j<A[i]; j++) {
-      res1 = res1 + B[j];
+      res1 = plus(res1, B[j]);
     }
   }
 
@@ -59,7 +60,7 @@ void* thread2() {
   for (int i=0; i<M; i++) {
     assume_abort_if_not(A[i] < size);
     for (int j=0; j<A[i]; j++) {
-      res2 = res2 + B[j];
+      res2 = plus(res2, B[j]);
     }
   }
 
@@ -70,7 +71,7 @@ void* thread3() {
   for (int i=M; i<N; i++) {
     assume_abort_if_not(A[i] < size);
     for (int j=0; j<A[i]; j++) {
-      res2 = res2 + B[j];
+      res2 = plus(res2, B[j]);
     }
   }
 
@@ -111,4 +112,10 @@ int *create_fresh_int_array(int size) {
     arr[i] = __VERIFIER_nondet_int();
   }
   return arr;
+}
+
+int plus(int a, int b) {
+  assume_abort_if_not(b >= 0 || a >= -2147483648 - b);
+  assume_abort_if_not(b <= 0 || a <= 2147483647 - b);
+  return a + b;
 }
