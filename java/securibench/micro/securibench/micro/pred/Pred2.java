@@ -33,7 +33,7 @@ import securibench.micro.MicroTestCase;
 
 /**
  * @servlet description="simple correlated tests"
- * @servlet vuln_count = "0"
+ * @servlet vuln_count = "1"
  */
 public class Pred2 extends BasicTestCase implements MicroTestCase {
   private static final String FIELD_NAME = "name";
