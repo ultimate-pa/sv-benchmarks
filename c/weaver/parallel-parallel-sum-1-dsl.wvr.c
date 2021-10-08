@@ -42,6 +42,7 @@ int* X_0;
 int n_1, s_2, i_3, t_4, t_5, s_6, i_7, t_8, t_9;
 
 int *create_fresh_int_array(int size);
+int plus(int a, int b);
 
 void* thread2() {
   while ( __VERIFIER_nondet_bool() ) {
@@ -50,7 +51,7 @@ void* thread2() {
     i_3++;
     t_4 = X_0[i_3];
     __VERIFIER_atomic_end();
-    s_2 = ( s_2 + t_4 );
+    s_2 = plus(s_2, t_4);
   }
   assume_abort_if_not( !( i_3 < n_1 ) );
 
@@ -64,7 +65,7 @@ void* thread3() {
     i_3++;
     t_5 = X_0[i_3];
     __VERIFIER_atomic_end();
-    s_2 = ( s_2 + t_5 );
+    s_2 = plus(s_2, t_5);
   }
   assume_abort_if_not( !( i_3 < n_1 ) );
 
@@ -94,7 +95,7 @@ void* thread5() {
     i_7++;
     t_8 = X_0[i_7];
     __VERIFIER_atomic_end();
-    s_6 = ( s_6 + t_8 );
+    s_6 = plus(s_6, t_8);
   }
   assume_abort_if_not( !( i_7 < n_1 ) );
 
@@ -108,7 +109,7 @@ void* thread6() {
     i_7++;
     t_9 = X_0[i_7];
     __VERIFIER_atomic_end();
-    s_6 = ( s_6 + t_9 );
+    s_6 = plus(s_6, t_9);
   }
   assume_abort_if_not( !( i_7 < n_1 ) );
 
@@ -144,6 +145,7 @@ int main() {
   i_7 = __VERIFIER_nondet_int();
   t_8 = __VERIFIER_nondet_int();
   t_9 = __VERIFIER_nondet_int();
+  assume_abort_if_not(n_1 < 2147483647);
   X_0 = create_fresh_int_array(n_1 + 1);
 
   // main method
@@ -167,4 +169,10 @@ int *create_fresh_int_array(int size) {
     arr[i] = __VERIFIER_nondet_int();
   }
   return arr;
+}
+
+int plus(int a, int b) {
+  assume_abort_if_not(b >= 0 || a >= -2147483648 - b);
+  assume_abort_if_not(b <= 0 || a <= 2147483647 - b);
+  return a + b;
 }

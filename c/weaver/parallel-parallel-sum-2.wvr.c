@@ -42,6 +42,7 @@ int* x;
 int i1, i2, t11, t21, t12, t22, s11, s21, s12, s22, x1, x2, n;
 
 int *create_fresh_int_array(int size);
+int plus(int a, int b);
 
 void* thread2() {
   while ( __VERIFIER_nondet_bool() ) {
@@ -50,7 +51,7 @@ void* thread2() {
     i1++;
     t11 = x[i1];
     __VERIFIER_atomic_end();
-    s11 = ( s11 + t11 );
+    s11 = plus(s11, t11);
   }
 
   return 0;
@@ -63,7 +64,7 @@ void* thread3() {
     i1++;
     t21 = x[i1];
     __VERIFIER_atomic_end();
-    s21 = ( s21 + t21 );
+    s21 = plus(s21, t21);
   }
 
   return 0;
@@ -90,7 +91,7 @@ void* thread5() {
     i2++;
     t12 = x[i2];
     __VERIFIER_atomic_end();
-    s12 = ( s12 + t12 );
+    s12 = plus(s12, t12);
   }
 
   return 0;
@@ -103,7 +104,7 @@ void* thread6() {
     i2++;
     t22 = x[i2];
     __VERIFIER_atomic_end();
-    s22 = ( s22 + t22 );
+    s22 = plus(s22, t22);
   }
 
   return 0;
@@ -139,6 +140,7 @@ int main() {
   x1  = __VERIFIER_nondet_int();
   x2  = __VERIFIER_nondet_int();
   n   = __VERIFIER_nondet_int();
+  assume_abort_if_not(n < 2147483647);
   x = create_fresh_int_array(n + 1);
   assume_abort_if_not(s11 == s21 && s11 == s12 && s11 == s22 && s11 == i1 && s11 == i2 && s11 == 0);
 
@@ -163,4 +165,10 @@ int *create_fresh_int_array(int size) {
     arr[i] = __VERIFIER_nondet_int();
   }
   return arr;
+}
+
+int plus(int a, int b) {
+  assume_abort_if_not(b >= 0 || a >= -2147483648 - b);
+  assume_abort_if_not(b <= 0 || a <= 2147483647 - b);
+  return a + b;
 }

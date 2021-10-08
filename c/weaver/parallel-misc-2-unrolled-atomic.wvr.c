@@ -73,6 +73,7 @@ int main() {
 
   // main method
   assume_abort_if_not( pos == i1 && pos == i2 && pos == 0 );
+  assume_abort_if_not(N >= 0 && N <= 2147483647 / 2);
 
   pthread_create(&t1, 0, thread1, 0);
   pthread_create(&t2, 0, thread2, 0);

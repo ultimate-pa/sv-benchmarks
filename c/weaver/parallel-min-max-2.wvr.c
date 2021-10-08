@@ -68,6 +68,7 @@ void* thread2() {
 
 void* thread3() {
   while (( k < N )) {
+    assume_abort_if_not(A[k] < 2147483647);
     A[ k ] = ( A[ k ] + 1 );
     k = ( k + 1 );
   }
@@ -77,6 +78,7 @@ void* thread3() {
 
 void* thread4() {
   while (( l < N )) {
+    assume_abort_if_not(A[l] > -2147483648);
     A[ l ] = ( A[ l ] - 1 );
     l = ( l + 1 );
   }
@@ -85,6 +87,7 @@ void* thread4() {
 }
 
 void* thread5() {
+  assume_abort_if_not(max < 2147483647);
   v_assert = ( !b1 || !b2  || ( min <= max + 1 ) );
 
   return 0;

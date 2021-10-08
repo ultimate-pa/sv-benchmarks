@@ -40,38 +40,39 @@ int* A;
 int bag1, bag2, cap1, cap2, sum1, sum2, i, j, N;
 
 int *create_fresh_int_array(int size);
+int plus(int a, int b);
 
 void* thread1() {
   while (( i < N )) {
-    if (( ( bag1 + A[i] ) < cap1 )) {
-      bag1 = ( bag1 + A[i] );
+    if (plus(bag1, A[i]) < cap1) {
+      bag1 = plus(bag1, A[i]);
 
     }
     else {
-      sum1 = ( sum1 + bag1 );
+      sum1 = plus(sum1, bag1);
       bag1 = A[i];
 
     }
     i++;
   }
-  sum1 = ( sum1 + bag1 );
+  sum1 = plus(sum1, bag1);
   return 0;
 }
 
 void* thread2() {
   while (( j < N )) {
-    if (( ( bag2 + A[j] ) < cap2 )) {
-      bag2 = ( bag2 + A[j] );
+    if (plus(bag2, A[j]) < cap2) {
+      bag2 = plus(bag2, A[j]);
 
     }
     else {
-      sum2 = ( sum2 + bag2 );
+      sum2 = plus(sum2, bag2);
       bag2 = A[j];
 
     }
     j++;
   }
-  sum2 = ( sum2 + bag2 );
+  sum2 = plus(sum2, bag2);
   return 0;
 }
 
@@ -113,4 +114,10 @@ int *create_fresh_int_array(int size) {
     arr[i] = __VERIFIER_nondet_int();
   }
   return arr;
+}
+
+int plus(int a, int b) {
+  assume_abort_if_not(b >= 0 || a >= -2147483648 - b);
+  assume_abort_if_not(b <= 0 || a <= 2147483647 - b);
+  return a + b;
 }
