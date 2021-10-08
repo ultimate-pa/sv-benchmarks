@@ -44,7 +44,7 @@ unsigned int* C1;
 unsigned int* C2;
 int M, N;
 
-int *create_fresh_int_array(int size);
+unsigned int *create_fresh_uint_array(int size);
 
 void* thread1() {
   for (int i=0; i<N; i++) {
@@ -99,7 +99,7 @@ int main() {
   return 0;
 }
 
-unsigned int *create_fresh_int_array(int size) {
+unsigned int *create_fresh_uint_array(int size) {
   assume_abort_if_not(size >= 0);
   assume_abort_if_not(size <= (((size_t) 4294967295) / sizeof(unsigned int)));
 
