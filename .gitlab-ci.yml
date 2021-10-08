@@ -126,10 +126,8 @@ java-format:
 
 check-links:
     stage: checks
-    image:
-        name: ghcr.io/tcort/markdown-link-check:stable
-        entrypoint: [""]
-    script: "find . -name '*.md' | xargs -n 1 /src/markdown-link-check"
+    image: "$CI_REGISTRY/sosy-lab/benchmarking/sv-benchmarks/ci/link-checks:latest"
+    script: "FAIL=0; for md in $(find . -name '*.md'); do pandoc -t html5 \"$md\" -o \"$md\".html; echo -e \"\\n\\nFILE: $md\"; linkchecker --check-extern --config .linkchecker.config  \"$md\".html; FAIL=$((FAIL += $?)); rm \"$md\".html; done; exit $FAIL" 
 
 .build-docker:
   image:
@@ -177,6 +175,13 @@ build-docker:java:latest:
   variables:
     DOCKERFILE: java/.Dockerfile
     IMAGE: ci/java:latest
+
+build-docker:link-checks:latest:
+  extends: .build-docker
+  stage: images
+  variables:
+    DOCKERFILE: .Dockerfile.link-checks
+    IMAGE: ci/link-checks:latest
 
 
 # check license declarations etc.
