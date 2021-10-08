@@ -40,61 +40,58 @@ void assume_abort_if_not(int cond) {
 
 int *f;
 int x1, x2, size;
-unsigned int i1, i2, n;
+unsigned int n;
 
 int *create_fresh_int_array(int size);
 
-
 void* thread1() {
-  while (i1 < n) {
-    __VERIFIER_atomic_begin();
-    x1 = f[x1];
+  unsigned int i = 0;
+  while (i < n) {
     assume_abort_if_not(x1 >= 0 && x1 < size);
-    i1++;
-    __VERIFIER_atomic_end();
+    x1 = f[x1];
+    i++;
   }
   return 0;
 }
 
 void* thread2() {
-  while (i2 < n - 4) {
-    __VERIFIER_atomic_begin();
-    x2 = f[x2];
+  unsigned int i = 0;
+  while (i < n - 4) {
     assume_abort_if_not(x2 >= 0 && x2 < size);
-    i2++;
     x2 = f[x2];
+    i++;
     assume_abort_if_not(x2 >= 0 && x2 < size);
-    i2++;
     x2 = f[x2];
+    i++;
     assume_abort_if_not(x2 >= 0 && x2 < size);
-    i2++;
     x2 = f[x2];
+    i++;
     assume_abort_if_not(x2 >= 0 && x2 < size);
-    i2++;
     x2 = f[x2];
+    i++;
     assume_abort_if_not(x2 >= 0 && x2 < size);
-    i2++;
-    __VERIFIER_atomic_end();
+    x2 = f[x2];
+    i++;
   }
-  if (i2 < n - 3) {
-    x2 = f[x2];
+  if (i < n - 3) {
     assume_abort_if_not(x2 >= 0 && x2 < size);
-    i2++;
+    x2 = f[x2];
+    i++;
   }
-  if (i2 < n - 2) {
-    x2 = f[x2];
+  if (i < n - 2) {
     assume_abort_if_not(x2 >= 0 && x2 < size);
-    i2++;
+    x2 = f[x2];
+    i++;
   }
-  if (i2 < n - 1) {
-    x2 = f[x2];
+  if (i < n - 1) {
     assume_abort_if_not(x2 >= 0 && x2 < size);
-    i2++;
+    x2 = f[x2];
+    i++;
   }
-  if (i2 < n) {
-    x2 = f[x2];
+  if (i < n) {
     assume_abort_if_not(x2 >= 0 && x2 < size);
-    i2++;
+    x2 = f[x2];
+    i++;
   }
   return 0;
 }

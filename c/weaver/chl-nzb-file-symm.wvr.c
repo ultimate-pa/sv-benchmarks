@@ -47,14 +47,11 @@ int minus(int a, int b);
 
 void* thread1() {
   if ( __VERIFIER_nondet_bool() ) {
-    __VERIFIER_atomic_begin();
     assume_abort_if_not( !is_null_1 && !is_null_5 );
     i_9 = 0;
     break_10 = 0;
-    __VERIFIER_atomic_end();
  
     while ( __VERIFIER_nondet_bool() ) {
-      __VERIFIER_atomic_begin();
       assume_abort_if_not( ( i_9 < 5 ) && !break_10 );
       result_8 = ( ( ends_with_2[i_9] && ends_with_6[i_9] ) ? 0 : result_8 );
       break_10 = ( ( ends_with_2[i_9] && ends_with_6[i_9] ) ? 1 : break_10 );
@@ -63,19 +60,13 @@ void* thread1() {
       result_8 = ( ( !break_10 && ends_with_6[i_9] ) ? ( 1000 + i_9 ) : result_8 );
       break_10 = ( ( !break_10 && ends_with_6[i_9] ) ? 1 : break_10 );
       i_9++;
-      __VERIFIER_atomic_end();
     }
-
-    __VERIFIER_atomic_begin();
     assume_abort_if_not( !( ( i_9 < 5 ) && !break_10 ) );
     result_8 = ( (!break_10) ? minus(filename_0, filename_4) : result_8 );
-    __VERIFIER_atomic_end();
   }
   else {
-    __VERIFIER_atomic_begin();
     assume_abort_if_not( !( !is_null_1 && !is_null_5 ) );
     result_8 = ( ( !is_null_1 && is_null_5 ) ? ( 0 - 995 ) : ( ( is_null_1 && !is_null_5 ) ? 1005 : minus(get_subject_3, get_subject_7) ) );
-    __VERIFIER_atomic_end();
   }
 
   return 0;
@@ -83,14 +74,11 @@ void* thread1() {
 
 void* thread2() {
   if ( __VERIFIER_nondet_bool() ) {
-    __VERIFIER_atomic_begin();
     assume_abort_if_not( !is_null_5 && !is_null_1 );
     i_12 = 0;
     break_13 = 0;
-    __VERIFIER_atomic_end();
 
     while ( __VERIFIER_nondet_bool() ) {
-      __VERIFIER_atomic_begin();
       assume_abort_if_not( ( i_12 < 5 ) && !break_13 );
       result_11 = ( ( ends_with_6[i_12] && ends_with_2[i_12] ) ? 0 : result_11 );
       break_13  = ( ( ends_with_6[i_12] && ends_with_2[i_12] ) ? 1 : break_13 );
@@ -99,19 +87,13 @@ void* thread2() {
       result_11 = ( ( !break_13 && ends_with_2[i_12] ) ? ( 1000 + i_12 ) : result_11 );
       break_13  = ( ( !break_13 && ends_with_2[i_12] ) ? 1 : break_13 );
       i_12++;
-      __VERIFIER_atomic_end();
     }
-  
-    __VERIFIER_atomic_begin();
     assume_abort_if_not( !( ( i_12 < 5 ) && !break_13 ) );
     result_11 = ( (!break_13) ? minus(filename_4, filename_0) : result_11 );
-    __VERIFIER_atomic_end();
   }
   else {
-    __VERIFIER_atomic_begin();
     assume_abort_if_not( !( !is_null_5 && !is_null_1 ) );
     result_11 = ( ( !is_null_5 && is_null_1 ) ? ( 0 - 995 ) : ( ( is_null_5 && !is_null_1 ) ? 1005 : minus(get_subject_7, get_subject_3) ) );
-    __VERIFIER_atomic_end();
   }
 
   return 0;

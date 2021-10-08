@@ -38,66 +38,48 @@ void assume_abort_if_not(int cond) {
 unsigned int x1, x2, x3, x4, x5, x6, n;
 
 void* thread1() {
-  while (__VERIFIER_nondet_bool()) {
-    __VERIFIER_atomic_begin();
-    assume_abort_if_not( x1 < n );
+  while (x1 < n) {
     x1 = x1 + x1;
-    __VERIFIER_atomic_end();
   }
 
   return 0;
 }
 
 void* thread2() {
-  while (__VERIFIER_nondet_bool()) {
-    __VERIFIER_atomic_begin();
-    assume_abort_if_not( x2 < n );
+  while (x2 < n) {
     x2 = x2 + x2;
-    __VERIFIER_atomic_end();
   }
 
   return 0;
 }
 
 void* thread3() {
-  while (__VERIFIER_nondet_bool()) {
-    __VERIFIER_atomic_begin();
-    assume_abort_if_not( x3 < n );
+  while (x3 < n) {
     x3 = x3 + x3;
-    __VERIFIER_atomic_end();
   }
 
   return 0;
 }
 
 void* thread4() {
-  while (__VERIFIER_nondet_bool()) {
-    __VERIFIER_atomic_begin();
-    assume_abort_if_not( x4 < n );
+  while (x4 < n) {
     x4 = x4 + x4;
-    __VERIFIER_atomic_end();
   }
 
   return 0;
 }
 
 void* thread5() {
-  while (__VERIFIER_nondet_bool()) {
-    __VERIFIER_atomic_begin();
-    assume_abort_if_not( x5 < n );
+  while (x5 < n) {
     x5 = x5 + x5;
-    __VERIFIER_atomic_end();
   }
 
   return 0;
 }
 
 void* thread6() {
-  while (__VERIFIER_nondet_bool()) {
-    __VERIFIER_atomic_begin();
-    assume_abort_if_not( x6 < n );
+  while (x6 < n) {
     x6 = x6 + x6;
-    __VERIFIER_atomic_end();
   }
 
   return 0;

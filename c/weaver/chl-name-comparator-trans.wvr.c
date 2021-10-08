@@ -45,15 +45,12 @@ int *create_fresh_int_array(int size);
 int minus(int a, int b);
 
 void* thread1() {
-  __VERIFIER_atomic_begin();
   i_5 = 0;
   break_7 = 0;
   result_4 = ( name_1 == name_2 ) ? 0 : result_4;
   break_7 = ( name_1 == name_2 ) ? 1 : break_7;
-  __VERIFIER_atomic_end();
 
   while ( __VERIFIER_nondet_bool() ) {
-    __VERIFIER_atomic_begin();
     assume_abort_if_not( ( i_5 < 3 ) && !break_7 );
     current_6 = nondet_0[i_5];
     result_4 = ( current_6 == name_1 ) ? 1 : result_4;
@@ -61,26 +58,20 @@ void* thread1() {
     result_4 = ( !break_7 && ( current_6 == name_2 ) ) ? ( 0 - 1 ) : result_4;
     break_7  = ( !break_7 && ( current_6 == name_2 ) ) ? 1 : break_7;
     i_5++;
-    __VERIFIER_atomic_end();
   }
-  __VERIFIER_atomic_begin();
   assume_abort_if_not( !( ( i_5 < 3 ) && !break_7 ) );
   result_4 = ( !break_7 ) ? minus(name_1, name_2) : result_4;
-  __VERIFIER_atomic_end();
 
   return 0;
 }
 
 void* thread2() {
-  __VERIFIER_atomic_begin();
   i_9 = 0;
   break_11 = 0;
   result_8 = ( name_2 == name_3 ) ? 0 : result_8;
   break_11 = ( name_2 == name_3 ) ? 1 : break_11;
-  __VERIFIER_atomic_end();
 
   while ( __VERIFIER_nondet_bool() ) {
-    __VERIFIER_atomic_begin();
     assume_abort_if_not( ( i_9 < 3 ) && !break_11 );
     current_10 = nondet_0[i_9];
     result_8 = ( current_10 == name_2 ) ? 1 : result_8;
@@ -88,27 +79,21 @@ void* thread2() {
     result_8 = ( !break_11 && ( current_10 == name_3 ) ) ? ( 0 - 1 ) : result_8;
     break_11 = ( !break_11 && ( current_10 == name_3 ) ) ? 1 : break_11;
     i_9++;
-    __VERIFIER_atomic_end();
   }
 
-  __VERIFIER_atomic_begin();
   assume_abort_if_not( !( ( i_9 < 3 ) && !break_11 ) );
   result_8 = (!break_11) ? minus(name_2, name_3) : result_8;
-  __VERIFIER_atomic_end();
 
   return 0;
 }
 
 void* thread3() {
-  __VERIFIER_atomic_begin();
   i_13 = 0;
   break_15 = 0;
   result_12 = ( name_1 == name_3 ) ? 0 : result_12;
   break_15  = ( name_1 == name_3 ) ? 1 : break_15;
-  __VERIFIER_atomic_end();
 
   while ( __VERIFIER_nondet_bool() ) {
-    __VERIFIER_atomic_begin();
     assume_abort_if_not( ( i_13 < 3 ) && !break_15 );
     current_14 = nondet_0[i_13];
     result_12 = ( current_14 == name_1 ) ? 1 : result_12;
@@ -116,13 +101,10 @@ void* thread3() {
     result_12 = ( !break_15 && ( current_14 == name_3 ) ) ? ( 0 - 1 ) : result_12;
     break_15  = ( !break_15 && ( current_14 == name_3 ) ) ? 1 : break_15;
     i_13++;
-    __VERIFIER_atomic_end();
   }
 
-  __VERIFIER_atomic_begin();
   assume_abort_if_not( !( ( i_13 < 3 ) && !break_15 ) );
   result_12 = (!break_15) ? minus(name_1, name_3) : result_12;
-  __VERIFIER_atomic_end();
 
   return 0;
 }

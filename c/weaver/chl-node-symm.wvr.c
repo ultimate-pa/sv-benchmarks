@@ -46,21 +46,17 @@ int *create_fresh_int_array(int size);
 _Bool *create_fresh_bool_array(int size);
 
 void* thread1() {
-  __VERIFIER_atomic_begin();
   order1_7 = get_2[id_0];
   order2_8 = get_5[id_3];
   result_6 = ( ( contains_key_1[id_0] && contains_key_4[id_3] ) ? ( ( order1_7 < order2_8 ) ? ( 0 - 1 ) : ( ( order1_7 > order2_8 ) ? 1 : 0 ) ) : ( get_2[id_0] - get_5[id_3] ) );
-  __VERIFIER_atomic_end();
 
   return 0;
 }
 
 void* thread2() {
-  __VERIFIER_atomic_begin();
   order1_10 = get_5[id_3];
   order2_11 = get_2[id_0];
   result_9 = ( ( contains_key_4[id_3] && contains_key_1[id_0] ) ? ( ( order1_10 < order2_11 ) ? ( 0 - 1 ) : ( ( order1_10 > order2_11 ) ? 1 : 0 ) ) : ( get_5[id_3] - get_2[id_0] ) );
-  __VERIFIER_atomic_end();
 
   return 0;
 }
