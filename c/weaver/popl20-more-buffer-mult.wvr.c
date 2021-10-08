@@ -113,8 +113,8 @@ int main() {
   q2_back = q2_front;
   q1 = create_fresh_int_array(n1);
   q2 = create_fresh_int_array(n2);
-  
-  assume_abort_if_not(N >= 0);
+
+  assume_abort_if_not(C > -2147483648 && N >= 0);
   
   // main method
   pthread_create(&t1, 0, thread1, 0);

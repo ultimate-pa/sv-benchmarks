@@ -111,6 +111,7 @@ int main() {
   q1 = create_fresh_int_array(n1);
   q2 = create_fresh_int_array(n2);
   
+  assume_abort_if_not(C > -2147483648);
   assume_abort_if_not(N > M && M >= 0 && C > 0 && q1_front == q1_back && q2_front == q2_back);
   
   // main method
