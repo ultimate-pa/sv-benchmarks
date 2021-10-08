@@ -113,7 +113,7 @@ void* thread4() {
   e4 = 0;
 
   assume_abort_if_not(!e1);
-  assume_abort_if_not( !( ( n1 != 0 ) && ( ( n1 < n4 ) || ( ( n1 == n3 ) && ( 1 < 4 ) ) ) ) );
+  assume_abort_if_not( !( ( n1 != 0 ) && ( ( n1 < n4 ) || ( ( n1 == n4 ) && ( 1 < 4 ) ) ) ) );
   assume_abort_if_not(!e2);
   assume_abort_if_not( !( ( n2 != 0 ) && ( ( n2 < n4 ) || ( ( n2 == n4 ) && ( 2 < 4 ) ) ) ) );
   assume_abort_if_not(!e3);
