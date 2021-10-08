@@ -47,7 +47,7 @@ int *create_fresh_int_array(int size);
 void* thread1() {
   min = A[0];
   b1 = 1;
-  while (( ( 0 < i ) && ( i < N ) )) {
+  while (( ( 0 <= i ) && ( i < N ) )) {
     min = ( min < A[i] ) ? min : A[i];
     i = ( i + 1 );
   }
@@ -58,7 +58,7 @@ void* thread1() {
 void* thread2() {
   max = A[0];
   b2 = 1;
-  while (( ( 0 < j ) && ( j < N ) )) {
+  while (( ( 0 <= j ) && ( j < N ) )) {
     max = ( max > A[j] ) ? max : A[j];
     j = ( j + 1 );
   }
