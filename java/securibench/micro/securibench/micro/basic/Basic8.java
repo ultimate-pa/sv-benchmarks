@@ -2,26 +2,24 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /*
-   Copyright 2006 Benjamin Livshits
+  Copyright 2006 Benjamin Livshits
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+      http://www.apache.org/licenses/LICENSE-2.0
 
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
- */
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+*/
 /**
-    @author Benjamin Livshits <livshits@cs.stanford.edu>
-    
-    $Id: Basic8.java,v 1.4 2006/04/04 20:00:40 livshits Exp $
-
-    // changed by Falk Howar: no vuln.; bitset initial bit value is false
+ * @author Benjamin Livshits <livshits@cs.stanford.edu>
+ *     <p>$Id: Basic8.java,v 1.4 2006/04/04 20:00:40 livshits Exp $
+ *     <p>// changed by Falk Howar: no vuln.; bitset initial bit value is false
  */
 package securibench.micro.basic;
 
@@ -33,36 +31,35 @@ import mockx.servlet.http.HttpServletResponse;
 import securibench.micro.BasicTestCase;
 import securibench.micro.MicroTestCase;
 
-/** 
- *  @servlet description="test of complex conditionals" 
- *  @servlet vuln_count = "0" 
- *  */
+/**
+ * @servlet description="test of complex conditionals"
+ * @servlet vuln_count = "0"
+ */
 public class Basic8 extends BasicTestCase implements MicroTestCase {
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        String str = req.getParameter("name");
-        BitSet bs = new BitSet(10);
-        
-        if(bs.get(0)) {
-            if(bs.get(1)) {
-                if(bs.get(2)) {
-                    if(bs.get(3)) {
-                        if(bs.get(4)) {
-                            
-                        }
-                    } else {
-                        PrintWriter writer = resp.getWriter();
-                        writer.println(str);    /* BAD */
-                    }
-                }
-            }
+  public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    String str = req.getParameter("name");
+    BitSet bs = new BitSet(10);
+
+    if (bs.get(0)) {
+      if (bs.get(1)) {
+        if (bs.get(2)) {
+          if (bs.get(3)) {
+            if (bs.get(4)) {}
+
+          } else {
+            PrintWriter writer = resp.getWriter();
+            writer.println(str); /* BAD */
+          }
         }
+      }
     }
-    
-    public String getDescription() {
-        return "test of complex conditionals";
-    }
-    
-    public int getVulnerabilityCount() {
-        return 0;
-    }
+  }
+
+  public String getDescription() {
+    return "test of complex conditionals";
+  }
+
+  public int getVulnerabilityCount() {
+    return 0;
+  }
 }

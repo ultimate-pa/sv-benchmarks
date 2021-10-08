@@ -2,24 +2,23 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /*
-   Copyright 2006 Benjamin Livshits
+  Copyright 2006 Benjamin Livshits
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+      http://www.apache.org/licenses/LICENSE-2.0
 
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
- */
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+*/
 /**
-    @author Benjamin Livshits <livshits@cs.stanford.edu>
-    
-    $Id: Basic7.java,v 1.4 2006/04/04 20:00:40 livshits Exp $
+ * @author Benjamin Livshits <livshits@cs.stanford.edu>
+ *     <p>$Id: Basic7.java,v 1.4 2006/04/04 20:00:40 livshits Exp $
  */
 package securibench.micro.basic;
 
@@ -30,29 +29,29 @@ import mockx.servlet.http.HttpServletResponse;
 import securibench.micro.BasicTestCase;
 import securibench.micro.MicroTestCase;
 
-/** 
- *  @servlet description="complex test of derived strings involving a string buffer" 
- *  @servlet vuln_count = "1" 
- *  */
+/**
+ * @servlet description="complex test of derived strings involving a string buffer"
+ * @servlet vuln_count = "1"
+ */
 public class Basic7 extends BasicTestCase implements MicroTestCase {
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        String s1 = req.getParameter("name");
-        String s2 = s1.toLowerCase(); // changed by FH to keep vuln.
-        StringBuffer buf = new StringBuffer(s2);
-        buf.append("abcdefgh");
-        buf.insert(3, 's');
-        String s3 = buf.toString();
-        
-        PrintWriter writer = resp.getWriter();
-        
-        writer.println(s3);    /* BAD */
-    }
-    
-    public String getDescription() {
-        return "complex test of derived strings involving a string buffer";
-    }
-    
-    public int getVulnerabilityCount() {
-        return 1;
-    }
+  public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    String s1 = req.getParameter("name");
+    String s2 = s1.toLowerCase(); // changed by FH to keep vuln.
+    StringBuffer buf = new StringBuffer(s2);
+    buf.append("abcdefgh");
+    buf.insert(3, 's');
+    String s3 = buf.toString();
+
+    PrintWriter writer = resp.getWriter();
+
+    writer.println(s3); /* BAD */
+  }
+
+  public String getDescription() {
+    return "complex test of derived strings involving a string buffer";
+  }
+
+  public int getVulnerabilityCount() {
+    return 1;
+  }
 }

@@ -3,5 +3,4 @@
 
 package mock.sql;
 
-public class SQLException extends Exception {
-}
+public class SQLException extends Exception {}

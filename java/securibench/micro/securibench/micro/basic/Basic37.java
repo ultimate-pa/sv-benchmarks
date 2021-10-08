@@ -2,24 +2,23 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /*
-   Copyright 2006 Benjamin Livshits
+  Copyright 2006 Benjamin Livshits
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+      http://www.apache.org/licenses/LICENSE-2.0
 
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
- */
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+*/
 /**
-   @author Benjamin Livshits <livshits@cs.stanford.edu>
-   
-   $Id: Basic37.java,v 1.2 2006/04/04 20:00:40 livshits Exp $
+ * @author Benjamin Livshits <livshits@cs.stanford.edu>
+ *     <p>$Id: Basic37.java,v 1.2 2006/04/04 20:00:40 livshits Exp $
  */
 package securibench.micro.basic;
 
@@ -36,22 +35,22 @@ import securibench.micro.MicroTestCase;
  * @servlet vuln_count = "1"
  */
 public class Basic37 extends BasicTestCase implements MicroTestCase {
-    private static final String FIELD_NAME = "name";
-      
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        String name = req.getParameter(FIELD_NAME);
-        StringTokenizer tok = new StringTokenizer(name, "\t");
-        while(tok.hasMoreTokens()) {
-            PrintWriter writer = resp.getWriter();        
-            writer.println(tok.nextToken());              /* BAD */    
-        }
-    }
+  private static final String FIELD_NAME = "name";
 
-    public String getDescription() {
-        return "StringTokenizer test";
+  public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    String name = req.getParameter(FIELD_NAME);
+    StringTokenizer tok = new StringTokenizer(name, "\t");
+    while (tok.hasMoreTokens()) {
+      PrintWriter writer = resp.getWriter();
+      writer.println(tok.nextToken()); /* BAD */
     }
+  }
 
-    public int getVulnerabilityCount() {
-        return 1;
-    }
+  public String getDescription() {
+    return "StringTokenizer test";
+  }
+
+  public int getVulnerabilityCount() {
+    return 1;
+  }
 }
