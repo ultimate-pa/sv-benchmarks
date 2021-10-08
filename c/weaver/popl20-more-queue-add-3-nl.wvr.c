@@ -29,6 +29,7 @@ typedef unsigned int size_t;
 extern void *malloc (size_t __size) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) ;
 
 extern int  __VERIFIER_nondet_int(void);
+extern unsigned int  __VERIFIER_nondet_uint(void);
 extern _Bool __VERIFIER_nondet_bool(void);
 extern void __VERIFIER_atomic_begin(void);
 extern void __VERIFIER_atomic_end(void);
@@ -39,7 +40,8 @@ void assume_abort_if_not(int cond) {
 }
 
 int *q1, *q2;
-int q1_front, q1_back, n1, q2_front, q2_back, n2, x, y, z, s, t, C, N;
+int q1_front, q1_back, n1, q2_front, q2_back, n2, s, t, N;
+unsigned int x, y, z, C;
 
 int *create_fresh_int_array(int size);
 
@@ -107,8 +109,8 @@ void* thread3() {
 
 int main() {
   pthread_t t1, t2, t3;
-  
-  C = __VERIFIER_nondet_int();
+
+  C = __VERIFIER_nondet_uint();
   N = __VERIFIER_nondet_int();
   n1 = __VERIFIER_nondet_int();
   n2 = __VERIFIER_nondet_int();
@@ -118,9 +120,9 @@ int main() {
   q2_back = q2_front;
   q1 = create_fresh_int_array(n1);
   q2 = create_fresh_int_array(n2);
-  
+
   assume_abort_if_not(N >= 0);
-  
+
   // main method
   pthread_create(&t1, 0, thread1, 0);
   pthread_create(&t2, 0, thread2, 0);
@@ -128,7 +130,7 @@ int main() {
   pthread_join(t1, 0);
   pthread_join(t2, 0);
   pthread_join(t3, 0);
-  
+
   assume_abort_if_not(x != y || x != z || t != N);
   reach_error();
 

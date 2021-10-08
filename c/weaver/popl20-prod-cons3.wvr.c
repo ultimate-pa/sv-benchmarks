@@ -102,6 +102,7 @@ int main() {
   pthread_t t1, t2, t3, t4;
   
   W = __VERIFIER_nondet_int();
+  assume_abort_if_not(W < 2147483647/2);
   n1 = __VERIFIER_nondet_int();
   n2 = __VERIFIER_nondet_int();
   front1 = __VERIFIER_nondet_int();

@@ -95,13 +95,13 @@ void* thread3() {
 
 int main() {
   pthread_t t1, t2, t3;
-  
+
   front1 = __VERIFIER_nondet_int();
   state11 = __VERIFIER_nondet_int();
   state21 = state11;
   state12 = __VERIFIER_nondet_int();
   state22 = state12;
-  
+
   n_queue = __VERIFIER_nondet_int();
   n_produce = __VERIFIER_nondet_int();
   n_update = __VERIFIER_nondet_int();
@@ -112,11 +112,13 @@ int main() {
   update = create_fresh_int_array(n_update);
   queue1 = create_fresh_int_array(n_queue);
   done = create_fresh_bool_array(n_update);
-  consume = (int**)malloc(sizeof(int*) * n1);
+  assume_abort_if_not(n1 >= 0);
+  assume_abort_if_not(n1 <= (((size_t) 4294967295) / sizeof(int*)));
+  consume = (int**)malloc(sizeof(int*) * (size_t)n1);
   for (int i=0; i<n1; i++) {
     consume[i] = create_fresh_int_array(n2);
   }
-  
+
   // main method
   pthread_create(&t1, 0, thread1, 0);
   pthread_create(&t2, 0, thread2, 0);
@@ -124,7 +126,7 @@ int main() {
   pthread_join(t1, 0);
   pthread_join(t2, 0);
   pthread_join(t3, 0);
-  
+
   assume_abort_if_not(state12 != state22);
   reach_error();
 

@@ -29,6 +29,7 @@ typedef unsigned int size_t;
 extern void *malloc (size_t __size) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) ;
 
 extern int  __VERIFIER_nondet_int(void);
+extern unsigned int  __VERIFIER_nondet_uint(void);
 extern void __VERIFIER_atomic_begin(void);
 extern void __VERIFIER_atomic_end(void);
 
@@ -37,11 +38,11 @@ void assume_abort_if_not(int cond) {
   if(!cond) {abort();}
 }
 
-int* A;
-int* B;
-int* C1;
-int* C2;
-int sum1, sum2, sum3, M, N;
+unsigned int* A;
+unsigned int* B;
+unsigned int* C1;
+unsigned int* C2;
+int M, N;
 
 int *create_fresh_int_array(int size);
 
@@ -75,10 +76,10 @@ int main() {
   // initialize global variables
   M = __VERIFIER_nondet_int();
   N = __VERIFIER_nondet_int();
-  A = create_fresh_int_array(N);
-  B = create_fresh_int_array(N);
-  C1 = create_fresh_int_array(N);
-  C2 = create_fresh_int_array(N);
+  A = create_fresh_uint_array(N);
+  B = create_fresh_uint_array(N);
+  C1 = create_fresh_uint_array(N);
+  C2 = create_fresh_uint_array(N);
   
   assume_abort_if_not(M >= 0 && M <= N);
   
@@ -98,13 +99,13 @@ int main() {
   return 0;
 }
 
-int *create_fresh_int_array(int size) {
+unsigned int *create_fresh_int_array(int size) {
   assume_abort_if_not(size >= 0);
-  assume_abort_if_not(size <= (((size_t) 4294967295) / sizeof(int)));
+  assume_abort_if_not(size <= (((size_t) 4294967295) / sizeof(unsigned int)));
 
-  int* arr = (int*)malloc(sizeof(int) * (size_t)size);
+  unsigned int* arr = (unsigned int*)malloc(sizeof(unsigned int) * (size_t)size);
   for (int i = 0; i < size; i++) {
-    arr[i] = __VERIFIER_nondet_int();
+    arr[i] = __VERIFIER_nondet_uint();
   }
   return arr;
 }

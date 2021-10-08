@@ -41,10 +41,11 @@ int*  A;
 int mts1, mts2, mts3, sum, M, N;
 
 int *create_fresh_int_array(int size);
+int plus(int a, int b);
 
 void* thread1() {
   for (int i=0; i<N; i++) {
-    mts1 = mts1 + A[i] < 0 ? 0 : mts1 + A[i];
+    mts1 = plus(mts1, A[i]) < 0 ? 0 : mts1 + A[i];
   }
 
   return 0;
@@ -52,7 +53,7 @@ void* thread1() {
 
 void* thread2() {
   for (int i=0; i<M; i++) {
-    mts2 = mts2 + A[i] < 0 ? 0 : mts2 + A[i];
+    mts2 = plus(mts2, A[i]) < 0 ? 0 : mts2 + A[i];
   }
 
   return 0;
@@ -61,8 +62,8 @@ void* thread2() {
 void* thread3() {
   for (int i=M; i<N; i++) {
     __VERIFIER_atomic_begin();
-    mts3 = mts3 + A[i] < 0 ? 0 : mts3 + A[i];
-    sum = sum + A[i];
+    mts3 = plus(mts3, A[i]) < 0 ? 0 : mts3 + A[i];
+    sum = plus(sum, A[i]);
     __VERIFIER_atomic_end();
   }
 
@@ -102,4 +103,10 @@ int *create_fresh_int_array(int size) {
     arr[i] = __VERIFIER_nondet_int();
   }
   return arr;
+}
+
+int plus(int a, int b) {
+  assume_abort_if_not(b >= 0 || a >= -2147483648 - b);
+  assume_abort_if_not(b <= 0 || a <= 2147483647 - b);
+  return a + b;
 }
