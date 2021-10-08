@@ -103,17 +103,9 @@ java:
   stage: checks
   image: registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/java:latest
   script:
-      # unset variables to not leak their content through result files
-    - "unset $(compgen -v CI) $(compgen -v GIT)"
-    - "sudo -u benchexec java/check-compile.sh"
-  artifacts:
-    paths:
-      - "java/results/*logfiles*"
-      - "java/results/*.results.Werror.xml*"
-      - "java/results/*.html"
-    when: always
-  tags:
-    - privileged
+    - "cd java"
+    - "javac -version"
+    - "./check-compile.py"
 
 java-format:
   stage: checks
