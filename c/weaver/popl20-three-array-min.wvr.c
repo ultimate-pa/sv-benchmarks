@@ -85,6 +85,7 @@ int main() {
   pthread_t t1, t2, t3;
 
   N = __VERIFIER_nondet_int();
+  assume_abort_if_not(N > 0);
   A = create_fresh_int_array(N);
   B = create_fresh_int_array(N);
   C = create_fresh_int_array(N);

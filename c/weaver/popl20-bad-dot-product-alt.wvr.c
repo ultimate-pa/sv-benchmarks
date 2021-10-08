@@ -83,7 +83,8 @@ int main() {
   
   maxA = __VERIFIER_nondet_int();
   maxB = __VERIFIER_nondet_int();
-  mult = (int**)malloc(sizeof(int*) * maxA);
+  assume_abort_if_not((size_t)maxA <= (size_t)4294967295 / sizeof(int*));
+  mult = (int**)malloc(sizeof(int*) * (size_t)maxA);
   for (int i=0; i<maxA; i++) {
     mult[i] = create_fresh_int_array(maxB);
   }

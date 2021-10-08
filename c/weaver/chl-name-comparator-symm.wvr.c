@@ -102,9 +102,6 @@ void* thread2() {
 int main() {
   pthread_t t1, t2, t3;
 
-int* nondet_0;
-int ult_7, i_8, current_9, break_10;
-
   // initialize global variables
   name_1 = __VERIFIER_nondet_int();
   name_2 = __VERIFIER_nondet_int();
