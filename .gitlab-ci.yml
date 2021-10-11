@@ -9,28 +9,51 @@ stages:
   - images
   - checks
 
+# have CI for both branches and merge requests, but no duplicates
+# (i.e., do not run branch CI if there is a MR open)
+# https://docs.gitlab.com/ee/ci/yaml/index.html#switch-between-branch-pipelines-and-merge-request-pipelines
+workflow:
+  rules:
+    - if: '$CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS && $CI_PIPELINE_SOURCE == "push"'
+      when: never
+    - when: always
+
 sanity-checks:
   stage: checks
-  image: registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/sanity-checks:latest
+  image: registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/sanity-checks:latest
   script: "c/check.py"
+
+# for jobs that should only be executed on branches (and MRs)
+.branch-rules:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH'
+
+# for jobs that should not be executed on branches and MRs, but for main, tags, schedules, etc.
+.main-rules:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+    - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH'
+      when: never
+    - when: always
 
 .branch-compile-check: &branch-compile-check
   stage: checks
-  except: 
-    refs:
-      - master
+  rules:
+    - !reference [.branch-rules, rules]
   script:
     - "${CC} -v --version"
     - "cd c"
     - "./diff_ci.sh 'make -j2 -C'"
 
 .clang-3-9: &clang-3-9
-  image: registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/clang:3.9
+  image: registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/clang:3.9
   variables:
     CC: clang-3.9
 
 .gcc-5: &gcc-5
-  image: registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/gcc:5
+  image: registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/gcc:5
   variables:
     CC: gcc-5 
     
@@ -42,58 +65,54 @@ branch-compile-gcc:5:
   <<: *branch-compile-check
   <<: *gcc-5
 
-.master-compile-check: &master-compile-check
+.main-compile-check: &main-compile-check
   stage: checks
-  only: 
-    refs:
-      - master
+  rules:
+    - !reference [.main-rules, rules]
   script:
     - "${CC} -v --version"
     - "cd c"
     - "make -j2"
     
-.master-compile-check-juliet: &master-compile-check-juliet
+.main-compile-check-juliet: &main-compile-check-juliet
   stage: checks
-  only: 
-    refs:
-      - master
+  rules:
+    - !reference [.main-rules, rules]
   script:
     - "${CC} -v --version"
     - "cd c/Juliet_Test"
     - "make -j2"    
 
-master-compile-clang:3.9:
-  <<: *master-compile-check
+main-compile-clang:3.9:
+  <<: *main-compile-check
   <<: *clang-3-9
 
-master-compile-gcc:5:
-  <<: *master-compile-check
+main-compile-gcc:5:
+  <<: *main-compile-check
   <<: *gcc-5    
     
-master-compile-clang:3.9-juliet:
-  <<: *master-compile-check-juliet
+main-compile-clang:3.9-juliet:
+  <<: *main-compile-check-juliet
   <<: *clang-3-9
 
-master-compile-gcc:5-juliet:
-  <<: *master-compile-check-juliet
+main-compile-gcc:5-juliet:
+  <<: *main-compile-check-juliet
   <<: *gcc-5
 
 branch-preprocessing-consistency:
   stage: checks
-  except: 
-    refs:
-      - master
-  image: registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/preprocessing-consistency:latest
+  rules:
+    - !reference [.branch-rules, rules]
+  image: registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/preprocessing-consistency:latest
   script:
     - "cd c"
     - "./diff_ci.sh './compare.py --keep-going --skip-large --directory'"
 
-master-preprocessing-consistency:
+main-preprocessing-consistency:
   stage: checks
-  only: 
-    refs:
-      - master
-  image: registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/preprocessing-consistency:latest
+  rules:
+    - !reference [.main-rules, rules]
+  image: registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/preprocessing-consistency:latest
   script:
     - "goto-diff --version"
     - "cd c"
@@ -101,19 +120,11 @@ master-preprocessing-consistency:
 
 java:
   stage: checks
-  image: registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/java:latest
+  image: registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/java:latest
   script:
-      # unset variables to not leak their content through result files
-    - "unset $(compgen -v CI) $(compgen -v GIT)"
-    - "sudo -u benchexec java/check-compile.sh"
-  artifacts:
-    paths:
-      - "java/results/*logfiles*"
-      - "java/results/*.results.Werror.xml*"
-      - "java/results/*.html"
-    when: always
-  tags:
-    - privileged
+    - "cd java"
+    - "javac -version"
+    - "./check-compile.py"
 
 java-format:
   stage: checks
@@ -126,10 +137,8 @@ java-format:
 
 check-links:
     stage: checks
-    image:
-        name: ghcr.io/tcort/markdown-link-check:stable
-        entrypoint: [""]
-    script: "find . -name '*.md' | xargs -n 1 /src/markdown-link-check"
+    image: "$CI_REGISTRY/sosy-lab/benchmarking/sv-benchmarks/ci/link-checks:latest"
+    script: "FAIL=0; for md in $(find . -name '*.md'); do pandoc -t html5 \"$md\" -o \"$md\".html; echo -e \"\\n\\nFILE: $md\"; linkchecker --check-extern --config .linkchecker.config  \"$md\".html; FAIL=$((FAIL += $?)); rm \"$md\".html; done; exit $FAIL" 
 
 .build-docker:
   image:
@@ -139,9 +148,9 @@ check-links:
     - mkdir -p /root/.docker
     - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
     - /kaniko/executor --dockerfile $CI_PROJECT_DIR/$DOCKERFILE --destination $CI_REGISTRY_IMAGE/$IMAGE
-  only:
-    - schedules
-    - web
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
 
 build-docker:clang:3.9:
   extends: .build-docker
@@ -177,6 +186,13 @@ build-docker:java:latest:
   variables:
     DOCKERFILE: java/.Dockerfile
     IMAGE: ci/java:latest
+
+build-docker:link-checks:latest:
+  extends: .build-docker
+  stage: images
+  variables:
+    DOCKERFILE: .Dockerfile.link-checks
+    IMAGE: ci/link-checks:latest
 
 
 # check license declarations etc.
