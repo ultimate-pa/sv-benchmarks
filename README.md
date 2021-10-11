@@ -7,8 +7,6 @@ SPDX-FileCopyrightText: 2011-2020 The SV-Benchmarks Community
 SPDX-License-Identifier: Apache-2.0
 -->
 
-[![Build Status](https://travis-ci.org/sosy-lab/sv-benchmarks.svg?branch=master)](https://travis-ci.org/sosy-lab/sv-benchmarks)
-
 # Collection of Verification Tasks
 
 ## Repository Description
@@ -143,7 +141,7 @@ The parameters of a verification task are needed to make additional information
 about the verification task available to the verification run.
 The most prominent parameter is the machine model;
 currently, there are verification tasks for the ILP32 (32-bit) and the LP64 (64-bit) architecture
-(cf. http://www.unix.org/whitepapers/64bit.html).
+(cf. https://www.unix.org/whitepapers/64bit.html).
 
 ### Task Definitions
 
@@ -165,13 +163,13 @@ For each program, the repository contains a .yml file that specifies the followi
   - `options`: parameters that are relevant for verification or give extra information:
     - `language`: programming language that the program is written in (`C` or `Java`)
     - `data_model` data model of the computer architecture
-      (`ILP32`, `LP64`, see http://www.unix.org/whitepapers/64bit.html, only for `C` programs)
+      (`ILP32`, `LP64`, see https://www.unix.org/whitepapers/64bit.html, only for `C` programs)
 
 Optional items are explicitly marked as optional, all other items are mandatory.
 The dictionary `options` can contain additional data that are not mentioned above.
 
-[C-props]: https://github.com/sosy-lab/sv-benchmarks/tree/master/c/properties
-[Java-props]: https://github.com/sosy-lab/sv-benchmarks/tree/master/java/properties
+[C-props]: https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks/-/tree/main/c/properties
+[Java-props]: https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks/-/tree/main/java/properties
 
 The [SV-COMP 2019 report] has documented the first version of the repository's task-definition format 1.0,
 and contains a description of the format with an example in Sect. 4 and Fig. 3.
