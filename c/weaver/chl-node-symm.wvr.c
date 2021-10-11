@@ -44,11 +44,12 @@ _Bool *contains_key_1, *contains_key_4;
 
 int *create_fresh_int_array(int size);
 _Bool *create_fresh_bool_array(int size);
+int minus(int a, int b);
 
 void* thread1() {
   order1_7 = get_2[id_0];
   order2_8 = get_5[id_3];
-  result_6 = ( ( contains_key_1[id_0] && contains_key_4[id_3] ) ? ( ( order1_7 < order2_8 ) ? ( 0 - 1 ) : ( ( order1_7 > order2_8 ) ? 1 : 0 ) ) : ( get_2[id_0] - get_5[id_3] ) );
+  result_6 = ( ( contains_key_1[id_0] && contains_key_4[id_3] ) ? ( ( order1_7 < order2_8 ) ? -1 : ( ( order1_7 > order2_8 ) ? 1 : 0 ) ) : minus(get_2[id_0], get_5[id_3]) );
 
   return 0;
 }
@@ -56,7 +57,7 @@ void* thread1() {
 void* thread2() {
   order1_10 = get_5[id_3];
   order2_11 = get_2[id_0];
-  result_9 = ( ( contains_key_4[id_3] && contains_key_1[id_0] ) ? ( ( order1_10 < order2_11 ) ? ( 0 - 1 ) : ( ( order1_10 > order2_11 ) ? 1 : 0 ) ) : ( get_5[id_3] - get_2[id_0] ) );
+  result_9 = ( ( contains_key_4[id_3] && contains_key_1[id_0] ) ? ( ( order1_10 < order2_11 ) ? -1 : ( ( order1_10 > order2_11 ) ? 1 : 0 ) ) : minus(get_5[id_3], get_2[id_0]) );
 
   return 0;
 }
@@ -114,4 +115,10 @@ _Bool *create_fresh_bool_array(int size) {
     arr[i] = __VERIFIER_nondet_bool();
   }
   return arr;
+}
+
+int minus(int a, int b) {
+  assume_abort_if_not(b <= 0 || a >= b - 2147483648);
+  assume_abort_if_not(b >= 0 || a <= b + 2147483647);
+  return a - b;
 }

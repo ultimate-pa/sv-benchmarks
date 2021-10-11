@@ -87,8 +87,10 @@ void* thread4() {
 }
 
 void* thread5() {
+  __VERIFIER_atomic_begin();
   assume_abort_if_not(max < 2147483647);
   v_assert = ( !b1 || !b2  || ( min <= max + 1 ) );
+  __VERIFIER_atomic_begin();
 
   return 0;
 }
