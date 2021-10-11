@@ -20,7 +20,7 @@ public class Main {
     }
   }
 
-  static void main(String[] args) {
+  public static void main(String[] args) {
     int x = Verifier.nondetInt();
     int result = fibonacci(x);
     if (x != 5 || result == 3) {
