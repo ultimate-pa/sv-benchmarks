@@ -51,7 +51,9 @@ void* thread2() {
     i1++;
     t11 = x[i1];
     __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     s11 = plus(s11, t11);
+    __VERIFIER_atomic_end();
   }
 
   return 0;
@@ -64,7 +66,9 @@ void* thread3() {
     i1++;
     t21 = x[i1];
     __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     s21 = plus(s21, t21);
+    __VERIFIER_atomic_end();
   }
 
   return 0;
@@ -79,7 +83,9 @@ void* thread1() {
   pthread_join(t3, 0);
 
   assume_abort_if_not( i1 == n );
-  x1 = s11 + s21;
+  __VERIFIER_atomic_begin();
+  x1 = plus(s11, s21);
+  __VERIFIER_atomic_end();
 
   return 0;
 }
@@ -91,7 +97,9 @@ void* thread5() {
     i2++;
     t12 = x[i2];
     __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     s12 = plus(s12, t12);
+    __VERIFIER_atomic_end();
   }
 
   return 0;
@@ -104,7 +112,9 @@ void* thread6() {
     i2++;
     t22 = x[i2];
     __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     s22 = plus(s22, t22);
+    __VERIFIER_atomic_end();
   }
 
   return 0;
@@ -119,7 +129,9 @@ void* thread4() {
   pthread_join(t6, 0);
 
   assume_abort_if_not ( i2 == n );
-  x2 = s12 + s22;
+  __VERIFIER_atomic_begin();
+  x2 = plus(s12, s22);
+  __VERIFIER_atomic_end();
 
   return 0;
 }
