@@ -81,6 +81,8 @@ int main() {
   size = __VERIFIER_nondet_int();
   assume_abort_if_not(size > 0);
   f = create_fresh_int_array(size);
+  
+  assume_abort_if_not(n < 4294967296 / 4);
 
   // main method
   pthread_create(&t1, 0, thread1, 0);
