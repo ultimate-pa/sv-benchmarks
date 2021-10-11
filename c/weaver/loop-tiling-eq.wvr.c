@@ -75,7 +75,7 @@ int main() {
   L = M * N;
   A = create_fresh_int_array(L);
   F = create_fresh_int_array(L);
-  assume_abort_if_not(size <= (((size_t) 4294967295) / sizeof(int*)));
+  assume_abort_if_not(N <= (((size_t) 4294967295) / sizeof(int*)));
   B = (int**)malloc(sizeof(int*) * (size_t)N);
   for (int i=0; i<N; i++) {
     B[i] = create_fresh_int_array(M);
