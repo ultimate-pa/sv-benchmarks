@@ -75,8 +75,11 @@ int main() {
 
   // initialize global variables
   id_0 = __VERIFIER_nondet_int();
+  assume_abort_if_not(id_0 >= 0);
   id_3 = __VERIFIER_nondet_int();
+  assume_abort_if_not(id_3 >= 0);
   id_6 = __VERIFIER_nondet_int();
+  assume_abort_if_not(id_6 >= 0);
   result_9 = __VERIFIER_nondet_int();
   order1_10 = __VERIFIER_nondet_int();
   order2_11 = __VERIFIER_nondet_int();

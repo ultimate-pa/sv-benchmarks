@@ -53,7 +53,7 @@ void* thread1() {
   assume_abort_if_not( ( n2 == 0 ) || ( n2 >= n1 ) );
   i1 = i;
   i = f[i1];
-  assume_abort_if_not(i < n);
+  assume_abort_if_not(0 <= i && i < n);
   n1 = 0;
 
   return 0;
@@ -68,7 +68,7 @@ void* thread2() {
   assume_abort_if_not ( ( n1 == 0 ) || ( n1 > n2 ) );
   i2 = i;
   i = f[i2];
-  assume_abort_if_not(i < n);
+  assume_abort_if_not(0 <= i && i < n);
   n2 = 0;
 
   return 0;
@@ -76,7 +76,7 @@ void* thread2() {
 
 void* thread3() {
   j = f[j];
-  assume_abort_if_not(j < n);
+  assume_abort_if_not(0 <= j && j < n);
   j = f[j];
 
   return 0;
