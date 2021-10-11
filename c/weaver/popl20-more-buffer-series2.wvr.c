@@ -18,7 +18,7 @@ typedef union pthread_attr_t pthread_attr_t;
 extern void __assert_fail(const char *__assertion, const char *__file,
       unsigned int __line, const char *__function)
      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
-void reach_error() { __assert_fail("0", "buffer-series.wvr.c", 21, __extension__ __PRETTY_FUNCTION__); }
+void reach_error() { __assert_fail("0", "buffer-series2.wvr.c", 21, __extension__ __PRETTY_FUNCTION__); }
 extern int pthread_create (pthread_t *__restrict __newthread,
       const pthread_attr_t *__restrict __attr,
       void *(*__start_routine) (void *),
@@ -51,8 +51,6 @@ void* thread1() {
     assume_abort_if_not(q1[q1_back] == f[i]);
     assume_abort_if_not(q1_back < 2147483647);
     q1_back++;
-    __VERIFIER_atomic_end();
-    __VERIFIER_atomic_begin();
     i++;
     __VERIFIER_atomic_end();
   }
@@ -68,8 +66,6 @@ void* thread2() {
     assume_abort_if_not(q2[q2_back] == -f[j]);
     assume_abort_if_not(q2_back < 2147483647);
     q2_back++;
-    __VERIFIER_atomic_end();
-    __VERIFIER_atomic_begin();
     j++;
     __VERIFIER_atomic_end();
   }

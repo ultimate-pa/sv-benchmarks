@@ -18,7 +18,7 @@ typedef union pthread_attr_t pthread_attr_t;
 extern void __assert_fail(const char *__assertion, const char *__file,
       unsigned int __line, const char *__function)
      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
-void reach_error() { __assert_fail("0", "buffer-series.wvr.c", 21, __extension__ __PRETTY_FUNCTION__); }
+void reach_error() { __assert_fail("0", "buffer-mult-alt2.wvr.c", 21, __extension__ __PRETTY_FUNCTION__); }
 extern int pthread_create (pthread_t *__restrict __newthread,
       const pthread_attr_t *__restrict __attr,
       void *(*__start_routine) (void *),
@@ -29,7 +29,6 @@ typedef unsigned int size_t;
 extern void *malloc (size_t __size) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) ;
 
 extern int  __VERIFIER_nondet_int(void);
-extern _Bool __VERIFIER_nondet_bool(void);
 extern void __VERIFIER_atomic_begin(void);
 extern void __VERIFIER_atomic_end(void);
 
@@ -38,8 +37,9 @@ void assume_abort_if_not(int cond) {
   if(!cond) {abort();}
 }
 
-int *q1, *q2, *f;
-int q1_front, q1_back, q2_front, q2_back, i, j, n1, n2, N, total;
+int* q1;
+int* q2;
+int i, j, total, C, N, M, q1_front, q1_back, q2_front, q2_back, n1, n2;
 
 int *create_fresh_int_array(int size);
 int plus(int a, int b);
@@ -47,12 +47,9 @@ int plus(int a, int b);
 void* thread1() {
   while (i < N) {
     __VERIFIER_atomic_begin();
-    assume_abort_if_not(q1_back >= 0 && q1_back < n1);
-    assume_abort_if_not(q1[q1_back] == f[i]);
+    assume_abort_if_not(q1_back >= 0 && q1_back < n1 && q1[q1_back] == C);
     assume_abort_if_not(q1_back < 2147483647);
     q1_back++;
-    __VERIFIER_atomic_end();
-    __VERIFIER_atomic_begin();
     i++;
     __VERIFIER_atomic_end();
   }
@@ -61,15 +58,11 @@ void* thread1() {
 }
 
 void* thread2() {
-  while (j < N) {
+  while (j < M) {
     __VERIFIER_atomic_begin();
-    assume_abort_if_not(q2_back >= 0 && q2_back < n2);
-    assume_abort_if_not(f[j] > -2147483648);
-    assume_abort_if_not(q2[q2_back] == -f[j]);
+    assume_abort_if_not(q2_back >= 0 && q2_back < n2 && q2[q2_back] == -C);
     assume_abort_if_not(q2_back < 2147483647);
     q2_back++;
-    __VERIFIER_atomic_end();
-    __VERIFIER_atomic_begin();
     j++;
     __VERIFIER_atomic_end();
   }
@@ -80,7 +73,7 @@ void* thread2() {
 void* thread3() {
   while (i < N || q1_front < q1_back) {
     __VERIFIER_atomic_begin();
-    assume_abort_if_not(q1_front < q1_back && q1_front >= 0 && q1_front < n1);
+    assume_abort_if_not(q1_front >= 0 && q1_front < n1 && q1_front < q1_back);
     total = plus(total, q1[q1_front]);
     q1_front++;
     __VERIFIER_atomic_end();
@@ -90,9 +83,9 @@ void* thread3() {
 }
 
 void* thread4() {
-  while (j < N || q2_front < q2_back) {
+  while (j < M || q2_front < q2_back) {
     __VERIFIER_atomic_begin();
-    assume_abort_if_not(q2_front < q2_back && q2_front >= 0 && q2_front < n2);
+    assume_abort_if_not(q2_front >= 0 && q2_front < n2 && q2_front < q2_back);
     total = plus(total, q2[q2_front]);
     q2_front++;
     __VERIFIER_atomic_end();
@@ -103,19 +96,23 @@ void* thread4() {
 
 int main() {
   pthread_t t1, t2, t3, t4;
-  
+
+  C = __VERIFIER_nondet_int();
+  M = __VERIFIER_nondet_int();
   N = __VERIFIER_nondet_int();
+  
+  q1_front = __VERIFIER_nondet_int();
+  q1_back  = __VERIFIER_nondet_int();
+  q2_front = __VERIFIER_nondet_int();
+  q2_back  = __VERIFIER_nondet_int();
+  
   n1 = __VERIFIER_nondet_int();
   n2 = __VERIFIER_nondet_int();
-  q1_front = __VERIFIER_nondet_int();
-  q1_back = q1_front;
-  q2_front = __VERIFIER_nondet_int();
-  q2_back = q2_front;
   q1 = create_fresh_int_array(n1);
   q2 = create_fresh_int_array(n2);
-  f = create_fresh_int_array(N);
   
-  assume_abort_if_not(N >= 0);
+  assume_abort_if_not(C > -2147483648);
+  assume_abort_if_not(N > M && M >= 0 && C > 0 && q1_front == q1_back && q2_front == q2_back);
   
   // main method
   pthread_create(&t1, 0, thread1, 0);
@@ -127,7 +124,7 @@ int main() {
   pthread_join(t3, 0);
   pthread_join(t4, 0);
   
-  assume_abort_if_not(total != 0);
+  assume_abort_if_not(total <= 0);
   reach_error();
 
   return 0;
