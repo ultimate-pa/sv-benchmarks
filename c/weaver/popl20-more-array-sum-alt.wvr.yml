@@ -4,7 +4,7 @@ input_files: 'popl20-more-array-sum-alt.wvr.c'
 
 properties:
   - property_file: ../properties/unreach-call.prp
-    expected_verdict: true
+    expected_verdict: false
 
 options:
   language: C
