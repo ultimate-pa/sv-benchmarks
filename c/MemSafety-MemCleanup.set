@@ -9,3 +9,17 @@ memsafety-bftpd/*.yml
 verifythis/tree_max.yml
 verifythis/tree_del_iter.yml
 verifythis/tree_del_rec.yml
+# Should be kept in sync with MemSafety-Juliet.set
+# because we do not use all Juliet tasks yet.
+Juliet_Test/CWE415*.yml
+Juliet_Test/CWE476*_int*.yml
+Juliet_Test/CWE476*_long*.yml
+Juliet_Test/CWE476*_struct*.yml
+Juliet_Test/CWE121*rand*.yml
+Juliet_Test/CWE121*fgets*.yml
+Juliet_Test/CWE121*large*.yml
+Juliet_Test/CWE401*__int*.yml
+Juliet_Test/CWE401*__struct*.yml
+Juliet_Test/CWE401*__twoIntsStruct*.yml
+Juliet_Test/CWE590*.yml
+
