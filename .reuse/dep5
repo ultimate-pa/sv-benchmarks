@@ -103,7 +103,6 @@ Files:
  c/nla-digbench
  c/nla-digbench-scaling
  c/openbsd-6.2
- c/product-lines
  c/psyco
  c/pthread-C-DAC
  c/pthread-atomic
