@@ -3,7 +3,7 @@
 # This file is part of the SV-Benchmarks collection of verification tasks:
 # https://github.com/sosy-lab/sv-benchmarks
 # SPDX-FileCopyrightText: 2020 The SV-Benchmarks Community
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-License-Identifier: Apache-2.0
 
 # Running this script the .c files in each CWE directory are preprocessed
 # and a _bad.i , _good.i and .yml file are created for each .c file.
