@@ -118,7 +118,6 @@ Files:
  c/recursive-with-pointer
  c/reducercommutativity
  c/regression
- c/seq-mthreaded-reduced
  c/signedintegeroverflow-regression
  c/sqlite
  c/termination-15
