@@ -1,3 +1,12 @@
+// This file is part of the SV-Benchmarks collection of verification tasks:
+// https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks
+//
+// SPDX-FileCopyrightText: 2013 Carnegie Mellon University
+// SPDX-FileCopyrightText: 2014-2021 The SV-Benchmarks Community
+// SPDX-FileCopyrightText: 2018 Marie-Christine Jakobs, LMU Munich
+//
+// SPDX-License-Identifier: LicenseRef-BSD-3-Clause-Attribution-CMU-LMU
+
 int __return_main;
 void abort(void);
 extern void __assert_fail(const char *, const char *, unsigned int, const char *) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
