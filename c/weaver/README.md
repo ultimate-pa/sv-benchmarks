@@ -10,8 +10,8 @@ Concurrent programs intended to challenge automated verification. Based on progr
 
 The original programs were referenced and described in the following papers:
 
-  * Azadeh Farzan, Anthony Vandikas: "Automated Hypersafety Verification", CAV 2019
+  * Azadeh Farzan, Anthony Vandikas: "Automated Hypersafety Verification", CAV 2019. https://doi.org/10.1007/978-3-030-25540-4_11
 
-  * Azadeh Farzan, Anthony Vandikas: "Reductions for safety proofs", POPL 2020
+  * Azadeh Farzan, Anthony Vandikas: "Reductions for safety proofs", POPL 2020. https://doi.org/10.1145/3371081 (Artifact: https://doi.org/10.1145/3373099)
 
 You may use and redistribute them according to the license that is shipped with these examples.
