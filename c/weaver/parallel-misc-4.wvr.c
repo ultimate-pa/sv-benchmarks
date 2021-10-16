@@ -59,12 +59,14 @@ void* thread1() {
 void* thread2() {
   while (v_assert) {
     if (d2) {
+      __VERIFIER_atomic_begin();
       pos = ( pos + 2 );
-
+      __VERIFIER_atomic_end();
     }
     else {
+      __VERIFIER_atomic_begin();
       pos = ( pos - 2 );
-
+      __VERIFIER_atomic_end();
     }
     d2 = !d2;
   }
@@ -73,7 +75,9 @@ void* thread2() {
 }
 
 void* thread3() {
+  __VERIFIER_atomic_begin();
   v_assert = (pos >= 0);
+  __VERIFIER_atomic_end();
 
   return 0;
 }

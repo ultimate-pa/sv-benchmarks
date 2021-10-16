@@ -63,9 +63,13 @@ void* thread1() {
 void* thread2() {
   while (g2) {
     if (d2) {
+      __VERIFIER_atomic_begin();
       pos = ( pos + 2 );
+      __VERIFIER_atomic_end();
     } else {
+      __VERIFIER_atomic_begin();
       pos = ( pos - 2 );
+      __VERIFIER_atomic_end();
     }
     d2 = !d2;
     if (d2) {
