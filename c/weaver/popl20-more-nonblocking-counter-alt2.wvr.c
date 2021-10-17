@@ -39,7 +39,9 @@ unsigned int M, counter, C;
 
 void* thread1() {
   for (unsigned int i=0; i<M; i++) {
+    __VERIFIER_atomic_begin();
     counter = counter + C;
+    __VERIFIER_atomic_end();
   }
 
   return 0;
