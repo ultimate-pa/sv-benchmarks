@@ -13,3 +13,4 @@ MinePump/*.yml
 algorithms/*.yml
 juliet-java/*.yml
 jdart-regression/*.yml
+securibench/*.yml
