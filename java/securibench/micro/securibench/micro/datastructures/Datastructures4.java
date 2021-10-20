@@ -1,27 +1,16 @@
 // SPDX-FileCopyrightText: 2006 Benjamin Livshits livshits@cs.stanford.edu
 // SPDX-License-Identifier: Apache-2.0
 
+// This file is part of the SV-Benchmarks collection of verification tasks:
+// https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks
+
 /*
-  Copyright 2006 Benjamin Livshits
+   @author Benjamin Livshits <livshits@cs.stanford.edu>
 
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
+   $Id: Datastructures4.java,v 1.1 2006/04/21 17:14:24 livshits Exp $
 
-      http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
+   changed by FH: c1.next.str is constant
 */
-
-/**
- * @author Benjamin Livshits <livshits@cs.stanford.edu>
- *     <p>$Id: Datastructures4.java,v 1.1 2006/04/21 17:14:24 livshits Exp $
- *     <p>changed by FH: c1.next.str is constant
- */
 package securibench.micro.datastructures;
 
 import java.io.IOException;
