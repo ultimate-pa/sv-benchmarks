@@ -39,45 +39,93 @@ unsigned int x1, x2, y1, y2;
 _Bool t11, t12, t21, t22, f11, f12, f21, f22;
 
 void* thread1() {
+  __VERIFIER_atomic_begin();
   t11 = x1 + 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   x1 = t11;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   f11 = 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   assume_abort_if_not(f11 && f21);
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   t11 = y1 + 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   y1 = t11;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
 
 void* thread2() {
+  __VERIFIER_atomic_begin();
   t21 = y1 + 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   y1 = t21;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   f21 = 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   assume_abort_if_not(f11 && f21);
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   t21 = x1 + 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   x1 = t21;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
 
 void* thread3() {
+  __VERIFIER_atomic_begin();
   t12 = x2 + 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   x2 = t12;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   f12 = 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   assume_abort_if_not(f12 && f22);
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   t12 = y2 + 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   y2 = t12;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
 
 void* thread4() {
+  __VERIFIER_atomic_begin();
   t22 = y2 + 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   y2 = t22;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   f22 = 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   assume_abort_if_not(f12 && f22);
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   t22 = x2 + 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   x2 = t22;
+  __VERIFIER_atomic_end();
 
   return 0;
 }

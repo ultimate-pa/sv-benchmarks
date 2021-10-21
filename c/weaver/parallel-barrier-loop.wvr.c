@@ -42,17 +42,33 @@ unsigned int temp_4, temp_5, temp_6, temp_7, temp_12, temp_13, temp_14, temp_15;
 
 void* thread2() {
   while ( __VERIFIER_nondet_bool() ) {
+    __VERIFIER_atomic_begin();
     temp_4 = x_0;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     x_0 = temp_4 + 1;
+    __VERIFIER_atomic_end();
 
+    __VERIFIER_atomic_begin();
     f1_2 = 1;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     assume_abort_if_not(f2_3);
+    __VERIFIER_atomic_end();
 
+    __VERIFIER_atomic_begin();
     temp_5 = y_1;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     y_1 = temp_5 + 1;
+    __VERIFIER_atomic_end();
 
+    __VERIFIER_atomic_begin();
     f1_2 = 0;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     assume_abort_if_not(!f2_3);
+    __VERIFIER_atomic_end();
   }
 
   return 0;
@@ -60,17 +76,33 @@ void* thread2() {
 
 void* thread3() {
   while ( __VERIFIER_nondet_bool() ) {
+    __VERIFIER_atomic_begin();
     temp_6 = y_1;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     y_1 = temp_6 + 1;
+    __VERIFIER_atomic_end();
 
+    __VERIFIER_atomic_begin();
     f2_3 = 1;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     assume_abort_if_not(f1_2);
+    __VERIFIER_atomic_end();
 
+    __VERIFIER_atomic_begin();
     temp_7 = x_0;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     x_0 = temp_7 + 1;
+    __VERIFIER_atomic_end();
 
+    __VERIFIER_atomic_begin();
     f2_3 = 0;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     assume_abort_if_not(!f1_2);
+    __VERIFIER_atomic_end();
   }
 
   return 0;
@@ -94,17 +126,33 @@ void* thread1() {
 
 void* thread5() {
   while ( __VERIFIER_nondet_bool() ) {
+    __VERIFIER_atomic_begin();
     temp_12 = x_8;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     x_8 = temp_12 + 1;
+    __VERIFIER_atomic_end();
  
+    __VERIFIER_atomic_begin();
     f1_10 = 1;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     assume_abort_if_not(f2_11);
+    __VERIFIER_atomic_end();
 
+    __VERIFIER_atomic_begin();
     temp_13 = y_9;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     y_9 = temp_13 + 1;
+    __VERIFIER_atomic_end();
 
+    __VERIFIER_atomic_begin();
     f1_10 = 0;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     assume_abort_if_not(!f2_11);
+    __VERIFIER_atomic_end();
   }
 
   return 0;
@@ -112,17 +160,33 @@ void* thread5() {
 
 void* thread6() {
   while ( __VERIFIER_nondet_bool() ) {
+    __VERIFIER_atomic_begin();
     temp_14 = y_9;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     y_9 = temp_14 + 1;
+    __VERIFIER_atomic_end();
 
+    __VERIFIER_atomic_begin();
     f2_11 = 1;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     assume_abort_if_not(f1_10);
+    __VERIFIER_atomic_end();
 
+    __VERIFIER_atomic_begin();
     temp_15 = x_8;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     x_8 = temp_15 + 1;
+    __VERIFIER_atomic_end();
 
+    __VERIFIER_atomic_begin();
     f2_11 = 0;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     assume_abort_if_not(!f1_10);
+    __VERIFIER_atomic_end();
   }
 
   return 0;

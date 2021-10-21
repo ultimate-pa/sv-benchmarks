@@ -44,27 +44,51 @@ int temp_10, temp_11;
 int y_7;
 
 void* thread2() {
+  __VERIFIER_atomic_begin();
   temp_4 = x_0;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   x_0 = temp_4 + 1;
+  __VERIFIER_atomic_end();
 
+  __VERIFIER_atomic_begin();
   f1_2 = 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   assume_abort_if_not( f1_2 && f2_3 );
+  __VERIFIER_atomic_end();
 
+  __VERIFIER_atomic_begin();
   temp_4 = y_1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   y_1 = temp_4 + 1;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
 
 void* thread3() {
+  __VERIFIER_atomic_begin();
   temp_5 = y_1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   y_1 = temp_5 + 1;
+  __VERIFIER_atomic_end();
 
+  __VERIFIER_atomic_begin();
   f2_3 = 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   assume_abort_if_not( f1_2 && f2_3 );
+  __VERIFIER_atomic_end();
 
+  __VERIFIER_atomic_begin();
   temp_5 = x_0;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   x_0 = temp_5 + 1;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
@@ -83,27 +107,51 @@ void* thread1() {
 }
 
 void* thread5() {
+  __VERIFIER_atomic_begin();
   temp_10 = x_6;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   x_6 = temp_10 + 1;
+  __VERIFIER_atomic_end();
 
+  __VERIFIER_atomic_begin();
   f1_8 = 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   assume_abort_if_not( f1_8 && f2_9 );
+  __VERIFIER_atomic_end();
 
+  __VERIFIER_atomic_begin();
   temp_10 = y_7;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   y_7 = temp_10 + 1;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
 
 void* thread6() {
+  __VERIFIER_atomic_begin();
   temp_11 = y_7;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   y_7 = temp_11 + 1;
+  __VERIFIER_atomic_end();
 
+  __VERIFIER_atomic_begin();
   f2_9 = 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   assume_abort_if_not( f1_8 && f2_9 );
+  __VERIFIER_atomic_end();
 
+  __VERIFIER_atomic_begin();
   temp_11 = x_6;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   x_6 = temp_11 + 1;
+  __VERIFIER_atomic_end();
 
   return 0;
 }

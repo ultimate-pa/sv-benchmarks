@@ -40,42 +40,70 @@ unsigned int x_0, x_1;
 
 void* thread1() {
   while (__VERIFIER_nondet_bool()) {
+    __VERIFIER_atomic_begin();
     x_0 = __VERIFIER_nondet_uint();
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     x_0 = x_0 + 3;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     x_0 = 2 * x_0;
+    __VERIFIER_atomic_end();
   }
+  __VERIFIER_atomic_begin();
   x_0 = 0;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
 
 void* thread2() {
   while (__VERIFIER_nondet_bool()) {
+    __VERIFIER_atomic_begin();
     x_0 = x_0 * 10;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     x_0 = x_0 + x_0;
+    __VERIFIER_atomic_end();
   }
+  __VERIFIER_atomic_begin();
   x_0 = 0;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
 
 void* thread3() {
   while (__VERIFIER_nondet_bool()) {
+    __VERIFIER_atomic_begin();
     x_1 = __VERIFIER_nondet_uint();
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     x_1 = x_1 + 3;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     x_1 = 2 * x_1;
+    __VERIFIER_atomic_end();
   }
+  __VERIFIER_atomic_begin();
   x_1 = 0;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
 
 void* thread4() {
   while (__VERIFIER_nondet_bool()) {
+    __VERIFIER_atomic_begin();
     x_1 = x_1 * 10;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     x_1 = x_1 + x_1;
+    __VERIFIER_atomic_end();
   }
+  __VERIFIER_atomic_begin();
   x_1 = 0;
+  __VERIFIER_atomic_end();
 
   return 0;
 }

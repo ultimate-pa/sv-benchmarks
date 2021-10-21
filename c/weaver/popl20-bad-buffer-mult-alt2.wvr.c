@@ -45,12 +45,17 @@ int *create_fresh_int_array(int size);
 int plus(int a, int b);
 
 void* thread1() {
-  while (i < N) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = i < N;
+  __VERIFIER_atomic_end();
+  while (cond) {
     __VERIFIER_atomic_begin();
     assume_abort_if_not(q1_back >= 0 && q1_back < n1 && q1[q1_back] == C);
-    assume_abort_if_not(q1_back < 2147483647);
     q1_back++;
     i++;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    cond = i < N;
     __VERIFIER_atomic_end();
   }
 
@@ -58,12 +63,17 @@ void* thread1() {
 }
 
 void* thread2() {
-  while (j < M) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = j < M;
+  __VERIFIER_atomic_end();
+  while (cond) {
     __VERIFIER_atomic_begin();
     assume_abort_if_not(q2_back >= 0 && q2_back < n2 && q2[q2_back] == -C);
-    assume_abort_if_not(q2_back < 2147483647);
     q2_back++;
     j++;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    cond = j < M;
     __VERIFIER_atomic_end();
   }
 
@@ -71,11 +81,17 @@ void* thread2() {
 }
 
 void* thread3() {
-  while (i < N || q1_front < q1_back) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = i < N || q1_front < q1_back;
+  __VERIFIER_atomic_end();
+  while (cond) {
     __VERIFIER_atomic_begin();
     assume_abort_if_not(q1_front >= 0 && q1_front < n1 && q1_front < q1_back);
     total = plus(total, q1[q1_front]);
     q1_front++;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    cond = i < N || q1_front < q1_back;
     __VERIFIER_atomic_end();
   }
 
@@ -83,11 +99,17 @@ void* thread3() {
 }
 
 void* thread4() {
-  while (j < M || q2_front < q2_back) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = j < M || q2_front < q2_back;
+  __VERIFIER_atomic_end();
+  while (cond) {
     __VERIFIER_atomic_begin();
     assume_abort_if_not(q2_front >= 0 && q2_front < n2 && q2_front < q2_back);
     total = plus(total, q2[q2_front]);
     q2_front++;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    cond = j < M || q2_front < q2_back;
     __VERIFIER_atomic_end();
   }
 

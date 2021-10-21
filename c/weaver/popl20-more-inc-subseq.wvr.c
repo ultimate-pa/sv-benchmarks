@@ -63,7 +63,10 @@ void* thread1() {
 }
 
 void* thread2() {
-  while (i < N || start < end) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = i < N || start < end;
+  __VERIFIER_atomic_end();
+  while (cond) {
     __VERIFIER_atomic_begin();
     assume_abort_if_not(start < end && start >= 0 && start < n);
     new = queue[start];
@@ -71,6 +74,9 @@ void* thread2() {
     __VERIFIER_atomic_end();
     ok = ok && (v_old <= new);
     v_old = new;
+    __VERIFIER_atomic_begin();
+    cond = i < N || start < end;
+    __VERIFIER_atomic_end();
   }
 
   return 0;

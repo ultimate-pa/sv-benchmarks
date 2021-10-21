@@ -71,10 +71,15 @@ void* thread2() {
 void* thread3() {
   int i = 1;
   while (i < N) {
-    if (i < p) {
+    __VERIFIER_atomic_begin();
+    _Bool cond = i < p;
+    __VERIFIER_atomic_end();
+    if (cond) {
+      __VERIFIER_atomic_begin();
       if (minc >= C[i]) {
         minc = C[i];
       }
+      __VERIFIER_atomic_end();
       i++;
     }
   }

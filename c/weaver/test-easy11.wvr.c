@@ -43,7 +43,9 @@ void* thread1() {
   while (x < 10000) {
     x++;
   }
+  __VERIFIER_atomic_begin();
   Y = Y + x;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
@@ -54,7 +56,9 @@ void* thread2() {
   while (x < 10000) {
     x++;
   }
+  __VERIFIER_atomic_begin();
   Y = Y + x;
+  __VERIFIER_atomic_end();
 
   return 0;
 }

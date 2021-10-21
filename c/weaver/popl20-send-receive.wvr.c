@@ -45,11 +45,17 @@ _Bool v_assert;
 int *create_fresh_int_array(int size);
 
 void* thread1() {
-  while (v_assert) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = v_assert;
+  __VERIFIER_atomic_end();
+  while (cond) {
     __VERIFIER_atomic_begin();
     assume_abort_if_not(back > front && front >= 0 && front < n);
     sum = sum + queue[front];
     front++;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    cond = v_assert;
     __VERIFIER_atomic_end();
   }
 
@@ -58,7 +64,10 @@ void* thread1() {
 
 void* thread2() {
   _Bool b = 1;
-  while (v_assert) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = v_assert;
+  __VERIFIER_atomic_end();
+  while (cond) {
     assume_abort_if_not(back >= 0 && back < n);
     if (b) {
       __VERIFIER_atomic_begin();
@@ -72,13 +81,18 @@ void* thread2() {
       __VERIFIER_atomic_end();
     }
     b = !b;
+    __VERIFIER_atomic_begin();
+    cond = v_assert;
+    __VERIFIER_atomic_end();
   }
 
   return 0;
 }
 
 void* thread3() {
+  __VERIFIER_atomic_begin();
   v_assert = (0 <= sum && sum <= 1);
+  __VERIFIER_atomic_end();
 
   return 0;
 }

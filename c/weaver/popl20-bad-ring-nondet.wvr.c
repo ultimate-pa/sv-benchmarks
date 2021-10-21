@@ -51,12 +51,15 @@ void* thread1() {
   int l;
   while (i < N) {
     assume_abort_if_not(q1_back >= 0 && q1_back < n1);
+    __VERIFIER_atomic_begin();
+    _Bool cond = q3_back > q3_front;
+    __VERIFIER_atomic_end();
     if (q1[q1_back] == 2) {
       __VERIFIER_atomic_begin();
       q1_back++;
       i++;
       __VERIFIER_atomic_end();
-    } else if (q3_back > q3_front){
+    } else if (cond){
       __VERIFIER_atomic_begin();
       assume_abort_if_not(q3_front >= 0 && q3_front < n3);
       l = q3[q3_front];

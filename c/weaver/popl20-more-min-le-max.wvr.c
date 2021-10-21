@@ -68,7 +68,9 @@ void* thread2() {
 }
 
 void* thread3() {
+  __VERIFIER_atomic_begin();
   v_assert = min <= max;
+  __VERIFIER_atomic_end();
 
   return 0;
 }

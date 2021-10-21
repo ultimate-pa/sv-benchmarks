@@ -49,7 +49,9 @@ unsigned int *create_fresh_uint_array(int size);
 void* thread1() {
   unsigned int x = 0;
   for (unsigned int i=0; i<A; i++) {
+    __VERIFIER_atomic_begin();
     x = x + B;
+    __VERIFIER_atomic_end();
   }
   __VERIFIER_atomic_begin();
   assume_abort_if_not(end >= 0 && end < n);
@@ -63,7 +65,9 @@ void* thread1() {
 void* thread2() {
   unsigned int x = 0;
   for (unsigned int i=0; i<A; i++) {
+    __VERIFIER_atomic_begin();
     x = x + B;
+    __VERIFIER_atomic_end();
   }
   __VERIFIER_atomic_begin();
   assume_abort_if_not(end >= 0 && end < n);
@@ -75,8 +79,10 @@ void* thread2() {
 }
 
 void* thread3() {
+  __VERIFIER_atomic_begin();
   assume_abort_if_not(start >= 0 && start < n-1);
   assume_abort_if_not(end == start + 2);
+  __VERIFIER_atomic_end();
   ok = (queue[start] == queue[start+1]);
 
   return 0;

@@ -49,7 +49,9 @@ void* thread1() {
   for (int i=0; i<N; i++) {
     assume_abort_if_not(A[i] < size);
     for (int j=0; j<A[i]; j++) {
+      __VERIFIER_atomic_begin();
       res1 = plus(res1, B[j]);
+      __VERIFIER_atomic_end();
     }
   }
 
@@ -60,7 +62,9 @@ void* thread2() {
   for (int i=0; i<M; i++) {
     assume_abort_if_not(A[i] < size);
     for (int j=0; j<A[i]; j++) {
+      __VERIFIER_atomic_begin();
       res2 = plus(res2, B[j]);
+      __VERIFIER_atomic_end();
     }
   }
 
@@ -71,7 +75,9 @@ void* thread3() {
   for (int i=M; i<N; i++) {
     assume_abort_if_not(A[i] < size);
     for (int j=0; j<A[i]; j++) {
+      __VERIFIER_atomic_begin();
       res2 = plus(res2, B[j]);
+      __VERIFIER_atomic_end();
     }
   }
 

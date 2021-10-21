@@ -46,7 +46,10 @@ int *create_fresh_int_array(int size);
 
 void* thread1() {
   for (int w=W; w>0; w--) {
-    if (!v_assert) {
+    __VERIFIER_atomic_begin();
+    _Bool cond = v_assert;
+    __VERIFIER_atomic_end();
+    if (!cond) {
       break;
     }
     __VERIFIER_atomic_begin();
@@ -61,20 +64,30 @@ void* thread1() {
 
 void* thread2() {
   int temp;
-  while (v_assert) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = v_assert;
+  __VERIFIER_atomic_end();
+  while (cond) {
     __VERIFIER_atomic_begin();
     assume_abort_if_not(front < back && front >= 0 && front < n);
     temp = queue[front];
     front++;
     __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     d = d + temp;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    cond = v_assert;
+    __VERIFIER_atomic_end();
   }
 
   return 0;
 }
 
 void* thread3() {
+  __VERIFIER_atomic_begin();
   v_assert = (d <= W);
+  __VERIFIER_atomic_end();
 
   return 0;
 }
