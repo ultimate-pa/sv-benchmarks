@@ -39,7 +39,10 @@ int pos, c1, c2;
 _Bool v_assert;
 
 void* thread1() {
-  while (v_assert) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = v_assert;
+  __VERIFIER_atomic_end();
+  while (cond) {
     if (__VERIFIER_nondet_bool()) {
       __VERIFIER_atomic_begin();
       pos++;
@@ -53,13 +56,19 @@ void* thread1() {
       c1--;
       __VERIFIER_atomic_end();
     }
+    __VERIFIER_atomic_begin();
+    cond = v_assert;
+    __VERIFIER_atomic_end();
   }
 
   return 0;
 }
 
 void* thread2() {
-  while (v_assert) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = v_assert;
+  __VERIFIER_atomic_end();
+  while (cond) {
     if (__VERIFIER_nondet_bool()) {
       __VERIFIER_atomic_begin();
       pos++;
@@ -73,13 +82,18 @@ void* thread2() {
       c2--;
       __VERIFIER_atomic_end();
     }
+    __VERIFIER_atomic_begin();
+    cond = v_assert;
+    __VERIFIER_atomic_end();
   }
 
   return 0;
 }
 
 void* thread3() {
+  __VERIFIER_atomic_begin();
   v_assert = (pos >= 0);
+  __VERIFIER_atomic_end();
 
   return 0;
 }

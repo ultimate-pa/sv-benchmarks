@@ -44,23 +44,45 @@ void* thread1() {
   v_assert = ( sFlag || !stopped );
   __VERIFIER_atomic_end();
 
+  __VERIFIER_atomic_begin();
   count--;
-  if (( count == 0 )) {
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
+  _Bool cond = count == 0;
+  __VERIFIER_atomic_end();
+  if (cond) {
+    __VERIFIER_atomic_begin();
     sEvent = 1;
+    __VERIFIER_atomic_end();
   }
 
   return 0;
 }
 
 void* thread2() {
+  __VERIFIER_atomic_begin();
   sFlag = 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   count--;
-  if (( count == 0 )) {
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
+  count--;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
+  _Bool cond = count == 0;
+  __VERIFIER_atomic_end();
+  if (cond) {
+    __VERIFIER_atomic_begin();
     sEvent = 1;
-
+    __VERIFIER_atomic_end();
   }
+  __VERIFIER_atomic_begin();
   assume_abort_if_not(sEvent);
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   stopped = 1;
+  __VERIFIER_atomic_end();
 
   return 0;
 }

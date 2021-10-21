@@ -44,10 +44,18 @@ void* thread1() {
   t++;
   __VERIFIER_atomic_end();
 
+  __VERIFIER_atomic_begin();
   assume_abort_if_not( m1 <= s );
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   x = 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   x = 0;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   s++;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
@@ -58,9 +66,15 @@ void* thread2() {
   t++;
   __VERIFIER_atomic_end();
 
+  __VERIFIER_atomic_begin();
   assume_abort_if_not( m2 <= s );
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   b = b || x == 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   s++;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
@@ -71,9 +85,15 @@ void* thread3() {
   t++;
   __VERIFIER_atomic_end();
 
+  __VERIFIER_atomic_begin();
   assume_abort_if_not( m3 <= s );
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   b = b || x == 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   s++;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
@@ -84,9 +104,15 @@ void* thread4() {
   t++;
   __VERIFIER_atomic_end();
 
+  __VERIFIER_atomic_begin();
   assume_abort_if_not( m4 <= s );
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   b = b || x == 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   s++;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
@@ -97,9 +123,15 @@ void* thread5() {
   t++;
   __VERIFIER_atomic_end();
 
+  __VERIFIER_atomic_begin();
   assume_abort_if_not( m5 <= s );
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   b = b || x == 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   s++;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
@@ -110,9 +142,15 @@ void* thread6() {
   t++;
   __VERIFIER_atomic_end();
 
+  __VERIFIER_atomic_begin();
   assume_abort_if_not( m6 <= s );
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   b = b || x == 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   s++;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
@@ -123,9 +161,15 @@ void* thread7() {
   t++;
   __VERIFIER_atomic_end();
 
+  __VERIFIER_atomic_begin();
   assume_abort_if_not( m7 <= s );
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   b = b || x == 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   s++;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
@@ -136,9 +180,15 @@ void* thread8() {
   t++;
   __VERIFIER_atomic_end();
 
+  __VERIFIER_atomic_begin();
   assume_abort_if_not( m8 <= s );
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   b = b || x == 1;
+  __VERIFIER_atomic_end();
+  __VERIFIER_atomic_begin();
   s++;
+  __VERIFIER_atomic_end();
 
   return 0;
 }

@@ -39,7 +39,9 @@ unsigned int N, counter, c;
 
 void* thread1() {
   for (unsigned int i=0; i<N; i++) {
+    __VERIFIER_atomic_begin();
     counter = counter + c;
+    __VERIFIER_atomic_end();
   }
 
   return 0;
@@ -58,7 +60,9 @@ void* thread2() {
 
 void* thread3() {
   for (unsigned int i=0; i<N; i++) {
+    __VERIFIER_atomic_begin();
     counter = counter + c;
+    __VERIFIER_atomic_end();
   }
 
   return 0;

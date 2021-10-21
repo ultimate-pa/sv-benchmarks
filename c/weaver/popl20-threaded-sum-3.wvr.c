@@ -38,12 +38,18 @@ void assume_abort_if_not(int cond) {
 unsigned int s, t, m, c, T, S, u, U;
 
 void* thread1() {
-  while (s > 0 || t > 0 || u > 0) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = s > 0 || t > 0 || u > 0;
+  __VERIFIER_atomic_end();
+  while (cond) {
     __VERIFIER_atomic_begin();
     if (s > 0) {
       s--;
       m++;    
     }
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    cond = s > 0 || t > 0 || u > 0;
     __VERIFIER_atomic_end();
   }
 
@@ -51,12 +57,18 @@ void* thread1() {
 }
 
 void* thread2() {
-  while (t > 0 || u > 0) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = t > 0 || u > 0;
+  __VERIFIER_atomic_end();
+  while (cond) {
     __VERIFIER_atomic_begin();
     if (t > 0) {
       t--;
       s++;    
     }
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    cond = t > 0 || u > 0;
     __VERIFIER_atomic_end();
   }
 
@@ -64,12 +76,18 @@ void* thread2() {
 }
 
 void* thread3() {
-  while (u > 0) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = u > 0;
+  __VERIFIER_atomic_end();
+  while (cond) {
     __VERIFIER_atomic_begin();
     t++;
     __VERIFIER_atomic_end();
     __VERIFIER_atomic_begin();
     u--;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    cond = u > 0;
     __VERIFIER_atomic_end();
   }
 

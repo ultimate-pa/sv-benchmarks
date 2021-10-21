@@ -46,7 +46,10 @@ int *create_fresh_int_array(int size);
 
 void* thread1() {
   for (int w=W; w>0; w--) {
-    if (!v_assert) {
+    __VERIFIER_atomic_begin();
+    _Bool cond = v_assert;
+    __VERIFIER_atomic_end();
+    if (!cond) {
       break;
     }
     __VERIFIER_atomic_begin();
@@ -61,7 +64,10 @@ void* thread1() {
 
 void* thread2() {
   int temp;
-  while (v_assert) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = v_assert;
+  __VERIFIER_atomic_end();
+  while (cond) {
     __VERIFIER_atomic_begin();
     assume_abort_if_not(front1 < back1 && front1 >= 0 && front1 < n1);
     temp = queue1[front1];
@@ -72,7 +78,12 @@ void* thread2() {
     assume_abort_if_not(queue2[back2] == temp + 1);
     back2++;
     __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     d1 = d1 + temp;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    cond = v_assert;
+    __VERIFIER_atomic_end();
   }
 
   return 0;
@@ -80,20 +91,30 @@ void* thread2() {
 
 void* thread3() {
   int temp;
-  while (v_assert) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = v_assert;
+  __VERIFIER_atomic_end();
+  while (cond) {
     __VERIFIER_atomic_begin();
     assume_abort_if_not(front2 < back2 && front2 >= 0 && front2 < n2);
     temp = queue2[front2];
     front2++;
     __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
     d2 = d2 + temp;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    cond = v_assert;
+    __VERIFIER_atomic_end();
   }
 
   return 0;
 }
 
 void* thread4() {
+  __VERIFIER_atomic_begin();
   v_assert = (d2 <= 2*W);
+  __VERIFIER_atomic_end();
 
   return 0;
 }

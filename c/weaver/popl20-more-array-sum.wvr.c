@@ -46,7 +46,12 @@ int plus(int a, int b);
 
 void* thread1() {
   for (int i=0; i<N; i++) {
-    res1 = plus(res1, plus(A[i], B[i]));
+    __VERIFIER_atomic_begin();
+    int tmp = plus(res1, plus(A[i], B[i]));
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    res1 = tmp;
+    __VERIFIER_atomic_end();
   }
 
   return 0;
@@ -54,7 +59,12 @@ void* thread1() {
 
 void* thread2() {
   for (int i=0; i<M; i++) {
-    res2 = plus(res2, plus(A[i], B[i]));
+    __VERIFIER_atomic_begin();
+    int tmp = plus(res2, plus(A[i], B[i]));
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    res2 = tmp;
+    __VERIFIER_atomic_end();
   }
 
   return 0;
@@ -62,7 +72,12 @@ void* thread2() {
 
 void* thread3() {
   for (int i=M; i<N; i++) {
-    res2 = plus(res2, plus(A[i], B[i]));
+    __VERIFIER_atomic_begin();
+    int tmp = plus(res2, plus(A[i], B[i]));
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    res2 = tmp;
+    __VERIFIER_atomic_end();
   }
 
   return 0;

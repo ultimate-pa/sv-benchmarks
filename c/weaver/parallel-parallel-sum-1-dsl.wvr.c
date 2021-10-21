@@ -55,7 +55,9 @@ void* thread2() {
     s_2 = plus(s_2, t_4);
     __VERIFIER_atomic_end();
   }
+  __VERIFIER_atomic_begin();
   assume_abort_if_not( !( i_3 < n_1 ) );
+  __VERIFIER_atomic_end();
 
   return 0;
 }
@@ -71,7 +73,9 @@ void* thread3() {
     s_2 = plus(s_2, t_5);
     __VERIFIER_atomic_end();
   }
+  __VERIFIER_atomic_begin();
   assume_abort_if_not( !( i_3 < n_1 ) );
+  __VERIFIER_atomic_end();
 
   return 0;
 }
@@ -103,7 +107,9 @@ void* thread5() {
     s_6 = plus(s_6, t_8);
     __VERIFIER_atomic_end();
   }
+  __VERIFIER_atomic_begin();
   assume_abort_if_not( !( i_7 < n_1 ) );
+  __VERIFIER_atomic_end();
 
   return 0;
 }
@@ -119,7 +125,9 @@ void* thread6() {
     s_6 = plus(s_6, t_9);
     __VERIFIER_atomic_end();
   }
+  __VERIFIER_atomic_begin();
   assume_abort_if_not( !( i_7 < n_1 ) );
+  __VERIFIER_atomic_end();
 
   return 0;
 }

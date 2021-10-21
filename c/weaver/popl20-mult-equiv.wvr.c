@@ -38,12 +38,18 @@ void assume_abort_if_not(int cond) {
 unsigned int L, M, N, p, q;
 
 void* thread1() {
-  while (N > 0) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = N > 0;
+  __VERIFIER_atomic_end();
+  while (cond) {
     __VERIFIER_atomic_begin();
     if (N > 0) {
       p = p + M;
       N--;
     }
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    cond = N > 0;
     __VERIFIER_atomic_end();
   }
 
@@ -51,12 +57,18 @@ void* thread1() {
 }
 
 void* thread2() {
-  while (N > 1) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = N > 1;
+  __VERIFIER_atomic_end();
+  while (cond) {
     __VERIFIER_atomic_begin();
     if (N > 1) {
       p = p + M + M;
       N = N - 2;
     }
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    cond = N > 1;
     __VERIFIER_atomic_end();
   }
 

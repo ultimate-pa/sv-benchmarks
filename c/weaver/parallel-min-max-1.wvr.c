@@ -39,35 +39,51 @@ void assume_abort_if_not(int cond) {
 }
 
 int* A;
-int min, max, i, j, N;
+int min, max, N;
 _Bool v_assert, b1, b2;
 
 int *create_fresh_int_array(int size);
 
 void* thread1() {
+  __VERIFIER_atomic_begin();
   min = A[0];
+  __VERIFIER_atomic_end();
+  
+  __VERIFIER_atomic_begin();
   b1 = 1;
-  while (( ( 0 <= i ) && ( i < N ) )) {
-    min = ( min < A[i] ) ? min : A[i];
-    i = ( i + 1 );
+  __VERIFIER_atomic_end();
+  
+  for (int i=0; i<N; i++) {
+    __VERIFIER_atomic_begin();
+    min = min < A[i] ? min : A[i];
+    __VERIFIER_atomic_end();
   }
 
   return 0;
 }
 
 void* thread2() {
+  __VERIFIER_atomic_begin();
   max = A[0];
+  __VERIFIER_atomic_end();
+  
+  __VERIFIER_atomic_begin();
   b2 = 1;
-  while (( ( 0 <= j ) && ( j < N ) )) {
-    max = ( max > A[j] ) ? max : A[j];
-    j = ( j + 1 );
+  __VERIFIER_atomic_end();
+  
+  for (int i=0; i<N; i++) {
+    __VERIFIER_atomic_begin();
+    max = max > A[i] ? max : A[i];
+    __VERIFIER_atomic_end();
   }
 
   return 0;
 }
 
 void* thread3() {
-  v_assert = ( !b1 || !b2  || ( min <= max ) );
+  __VERIFIER_atomic_begin();
+  v_assert = !b1 || !b2 || min <= max;
+  __VERIFIER_atomic_end();
 
   return 0;
 }
@@ -78,8 +94,6 @@ int main() {
   // initialize global variables
   min = __VERIFIER_nondet_int();
   max = __VERIFIER_nondet_int();
-  i   = __VERIFIER_nondet_int();
-  j   = __VERIFIER_nondet_int();
   N   = __VERIFIER_nondet_int();
   assume_abort_if_not(N > 0);
   b1 = __VERIFIER_nondet_bool();
@@ -88,7 +102,7 @@ int main() {
   A = create_fresh_int_array(N);
 
   // main method
-  assume_abort_if_not( ( i == j && i == 0 ) && ( min == max && min == A[0] ) && ( v_assert == b1 && v_assert == b2 && v_assert == 0 ) );
+  assume_abort_if_not( ( min == max && min == A[0] ) && ( v_assert == b1 && v_assert == b2 && v_assert == 0 ) );
 
   pthread_create(&t1, 0, thread1, 0);
   pthread_create(&t2, 0, thread2, 0);

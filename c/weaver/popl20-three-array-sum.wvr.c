@@ -68,8 +68,13 @@ void* thread2() {
 void* thread3() {
   int i = 0;
   while (i < N) {
-    if (i < p) {
+    __VERIFIER_atomic_begin();
+    _Bool cond = i < p;
+    __VERIFIER_atomic_end();
+    if (cond) {
+      __VERIFIER_atomic_begin();
       csum = csum + C[i];
+      __VERIFIER_atomic_end();
       i++;
     }
   }

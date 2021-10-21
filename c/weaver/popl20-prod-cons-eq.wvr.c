@@ -57,14 +57,19 @@ void* thread1() {
     __VERIFIER_atomic_end();
     assume_abort_if_not(state11 >= 0 && state11 < n_update);
     state11 = update[state11];
+    __VERIFIER_atomic_begin();
     finished1 = done[state11];
+    __VERIFIER_atomic_end();
   }
 
   return 0;
 }
 
 void* thread2() {
-  while (!finished1 || size1 > 0) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = !finished1 || size1 > 0;
+  __VERIFIER_atomic_end();
+  while (cond) {
     __VERIFIER_atomic_begin();
     assume_abort_if_not(size1 > 0);
     assume_abort_if_not(state12 >= 0 && state12 < n1);
@@ -73,6 +78,9 @@ void* thread2() {
     state12 = consume[state12][queue1[front1]];
     front1++;
     size1--;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    cond = !finished1 || size1 > 0;
     __VERIFIER_atomic_end();
   }
 

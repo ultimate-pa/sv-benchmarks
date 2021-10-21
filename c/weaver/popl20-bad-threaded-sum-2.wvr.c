@@ -38,25 +38,37 @@ void assume_abort_if_not(int cond) {
 unsigned int s, t, m, T, S;
 
 void* thread1() {
-  while (s > 0 || t > 0) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = s > 0 || t > 0;
+  __VERIFIER_atomic_end();
+  while (cond) {
+    __VERIFIER_atomic_begin();
     if (s > 0) {
-      __VERIFIER_atomic_begin();
       s--;
       m++;
-      __VERIFIER_atomic_end();
     }
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    cond = s > 0 || t > 0;
+    __VERIFIER_atomic_end();
   }
 
   return 0;
 }
 
 void* thread2() {
-  while (t > 0) {
+  __VERIFIER_atomic_begin();
+  _Bool cond = t > 0;
+  __VERIFIER_atomic_end();
+  while (cond) {
     __VERIFIER_atomic_begin();
     s++;
     __VERIFIER_atomic_end();
     __VERIFIER_atomic_begin();
     t--;
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    cond = t > 0;
     __VERIFIER_atomic_end();
   }
 

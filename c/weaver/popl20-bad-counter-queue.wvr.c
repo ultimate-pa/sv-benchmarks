@@ -47,7 +47,12 @@ int plus(int a, int b);
 
 void* thread1() {
   for (int i=0; i<N; i++) {
-    counter = plus(counter, A[i]);
+    __VERIFIER_atomic_begin();
+    int tmp = plus(counter, A[i]);
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    counter = tmp;
+    __VERIFIER_atomic_end();
   }
 
   return 0;
@@ -55,7 +60,12 @@ void* thread1() {
 
 void* thread2() {
   for (int i=0; i<N; i++) {
-    counter = minus(counter, A[i]);
+    __VERIFIER_atomic_begin();
+    int tmp = minus(counter, A[i]);
+    __VERIFIER_atomic_end();
+    __VERIFIER_atomic_begin();
+    counter = tmp;
+    __VERIFIER_atomic_end();
   }
 
   return 0;

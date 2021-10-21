@@ -53,9 +53,13 @@ void* thread1() {
 
 void* thread2() {
   while (( i2 < ( 2 * N ) )) {
+    __VERIFIER_atomic_begin();
     pos = ( pos + 2 );
+    __VERIFIER_atomic_end();
     i2++;
+    __VERIFIER_atomic_begin();
     pos = ( pos - 2 );
+    __VERIFIER_atomic_end();
     i2++;
   }
 
