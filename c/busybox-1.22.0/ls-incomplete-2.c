@@ -2216,7 +2216,11 @@ __CPROVER_DUMP_L42:
       scan_and_display_dirs_recur(dnd, (signed int)(dnfiles == (unsigned int)0));
     }
 
+    dfree(dnd);
+    dfree(dnf);
   }
+
+  free(dnp);
   return (signed int)((struct globals *)&bb_common_bufsiz1)->exit_code;
 }
 
