@@ -65,8 +65,11 @@ Example:
 ```
 Such a header can be easily created with the [reuse tool](https://github.com/fsfe/reuse-tool/):
 ```
-reuse addheader --template header.jinja2 --copyright "..." --license Apache-2.0 yourfile.c
+reuse addheader --template header.jinja2 --year "2020" --copyright "..." --license Apache-2.0 yourfile.c
 ```
+The tool can also be used for unsupported file types:
+- for preprocessed `*.i` files use `--style c`,
+- for text files (e.g. `README`s) use `--style python`.
 
 The stated license must allow to:
 - view, understand, investigate, and reverse engineer the algorithm or system,
