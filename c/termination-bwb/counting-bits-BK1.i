@@ -6,7 +6,7 @@ extern int __VERIFIER_nondet_int() __attribute__ ((__noreturn__));
 int v;
 int c;
 int z, y;
-int main(){
+void main(){
   y = __VERIFIER_nondet_int();
   v= __VERIFIER_nondet_int();
   c=0;
@@ -16,5 +16,5 @@ int main(){
       c++;
     }
   y=1;
-  return 0;
+return 0;
 }
