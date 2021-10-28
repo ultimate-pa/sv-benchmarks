@@ -34,8 +34,8 @@ find_parent_with_Makefile() {
   exit 1
 }
 
-# Check which branches exist
-git branch -a
+# fetching the main branch.
+git fetch origin main
 
 #following variable contains the names of the files in the diff with main:
 # i) which are either c, header or preprocesses files in the c folder, and
