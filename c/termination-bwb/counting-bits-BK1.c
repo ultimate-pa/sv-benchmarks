@@ -17,7 +17,7 @@ int v; // count the number of bits set in v
 int c; // c accumulates the total bits set in v
 int z, y;       // word value to compute the parity of
 
-void main(){
+int main(){
   y = __VERIFIER_nondet_int();
   v= __VERIFIER_nondet_int();
   c=0;

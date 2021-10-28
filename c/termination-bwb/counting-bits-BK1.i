@@ -6,7 +6,7 @@ extern int __VERIFIER_nondet_int() __attribute__ ((__noreturn__));
 int v;
 int c;
 int z, y;
-void main(){
+int main(){
   y = __VERIFIER_nondet_int();
   v= __VERIFIER_nondet_int();
   c=0;
