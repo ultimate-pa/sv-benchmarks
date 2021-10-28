@@ -59,7 +59,6 @@ Files:
  c/floats-cdfpl
  c/floats-esbmc-regression
  c/forester-heap
- c/goblint-regression
  c/heap-data
  c/heap-manipulation
  c/ldv-challenges
