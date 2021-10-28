@@ -33,6 +33,10 @@ find_parent_with_Makefile() {
   echo "No Makefile found in any parent."
   exit 1
 }
+
+# Check which branches exist
+git branch -a
+
 #following variable contains the names of the files in the diff with main:
 # i) which are either c, header or preprocesses files in the c folder, and
 # ii) deleted files are not considered
