@@ -2,7 +2,6 @@
  * Date: 2012-02-12
  * Author: leike@informatik.uni-freiburg.de
  *
- * Termination over the natural numbers unknown as of this date.
  * This version of the task exhibits an integer overflow.
  */
 
