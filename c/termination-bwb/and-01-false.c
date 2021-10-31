@@ -7,12 +7,11 @@
  * Author: yliu195@stevens.edu
  */
 
-
-int __VERIFIER_nondet();
+extern int __VERIFIER_nondet_int() __attribute__ ((__noreturn__));
 
 int main (){
   int a, x;
-  x = __VERIFIER_nondet();
+  x = __VERIFIER_nondet_int();
   a = 34;
   while (x==0){
     a--;

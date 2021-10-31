@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 extern int __VERIFIER_nondet_int() __attribute__ ((__noreturn__));
-extern void __VERIFIER_error() __attribute__ ((__noreturn__));
 int v, y, parity;
 int main(){
   void* z;

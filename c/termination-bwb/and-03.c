@@ -7,9 +7,7 @@
  * Author: yliu195@stevens.edu
  */
 
-
-int __VERIFIER_nondet_int();
-//unsigned int __VERIFIER_nondet_int();
+extern int __VERIFIER_nondet_int() __attribute__ ((__noreturn__));
 int main (){
     int x;
     x = __VERIFIER_nondet_int();

@@ -6,17 +6,17 @@
  * Date: 2021-06-21
  * Author: yliu195@stevens.edu
  */
+#include <stdlib.h>
+extern int __VERIFIER_nondet_int() __attribute__ ((__noreturn__));
 
-
-int __VERIFIER_nondet();
-void __VERIFIER_assume();
+//void __VERIFIER_assume();
 
 int main (){
   int a, x;
-  x = __VERIFIER_nondet();
-  a = __VERIFIER_nondet();
+  x = __VERIFIER_nondet_int();
+  a = __VERIFIER_nondet_int();
   /* a = 34; */
-  __VERIFIER_assume(a>0);
+  if(!(a>0)) abort();
   while (x>0){
     a--;
     x=x&a;

@@ -8,8 +8,7 @@
  */
 
 
-
-int __VERIFIER_nondet_int();
+extern int __VERIFIER_nondet_int() __attribute__ ((__noreturn__));
 
 int main (){
   int a, b;

@@ -7,16 +7,16 @@
  * Author: yliu195@stevens.edu
  */
 
+#include <stdlib.h>
 
-int __VERIFIER_nondet();
-extern void __VERIFIER_assume() __attribute__ ((__noreturn__));
+extern int __VERIFIER_nondet_int() __attribute__ ((__noreturn__));
+//extern void __VERIFIER_assume() __attribute__ ((__noreturn__));
 
 int main (){
   int a, x;
-  x = __VERIFIER_nondet();
-  a = __VERIFIER_nondet();
-  __VERIFIER_assume(a>0);
-
+  x = __VERIFIER_nondet_int();
+  a = __VERIFIER_nondet_int();
+  if (!(a>0)) abort();
   while (x>0){
     a--;
     x=x&a;
