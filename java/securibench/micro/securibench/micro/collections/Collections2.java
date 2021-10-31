@@ -32,7 +32,7 @@ public class Collections2 extends BasicTestCase implements MicroTestCase {
     ll1.addLast(s1);
 
     LinkedList ll2 = new LinkedList();
-    ll1.addLast("abc");
+    ll2.addLast("abc");
 
     String s2 = (String) ll1.getLast();
     String s3 = (String) ll2.getLast();
