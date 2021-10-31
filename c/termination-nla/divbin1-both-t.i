@@ -1,3 +1,10 @@
+// This file is part of the SV-Benchmarks collection of verification tasks:
+// https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks
+//
+// SPDX-FileCopyrightText: 2021 DynamiTe team <https://github.com/letonchanh/dynamite>
+//
+// SPDX-License-Identifier: Apache-2.0
+
 extern int __VERIFIER_nondet_int(void);
 extern unsigned __VERIFIER_nondet_unsigned_int(void);
 int main() {
