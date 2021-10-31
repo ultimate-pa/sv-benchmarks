@@ -1,3 +1,9 @@
+// This file is part of the SV-Benchmarks collection of verification tasks:
+// https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks
+//
+// SPDX-FileCopyrightText: 2021 DynamiTe team <https://github.com/letonchanh/dynamite>
+//
+// SPDX-License-Identifier: Apache-2.0
 
 typedef long double float_t;
 typedef long double double_t;
