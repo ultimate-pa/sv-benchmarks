@@ -26,7 +26,8 @@ int pqueue_init()
 int pqueue_put()
 {
   pthread_mutex_lock(&A);
-  g++;
+  if (g < 1000)
+    g++;
   pthread_mutex_unlock(&A);
   return (1);
 }
@@ -36,10 +37,9 @@ int pqueue_get()
   int got = 0;
   pthread_mutex_lock(&A);
   while (g <= 0) {
-    // g should not be just 0, unsoundness in old
-    __VERIFIER_assert(!(g == 0));
+    __VERIFIER_assert(g == 0);
   }
-  // g should not be Error int, unsoundness in global
+  __VERIFIER_assert(g != 0);
   if (g > 0) {
     g--;
     got = 1;

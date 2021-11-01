@@ -15,7 +15,7 @@ extern void __assert (const char *__assertion, const char *__file, int __line)
      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
 
 extern void abort(void);
-void reach_error() { ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "13-privatized_49-refine-protected-loop_unknown_1_pos.c", 3, __extension__ __PRETTY_FUNCTION__); })); }
+void reach_error() { ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "13-privatized_69-refine-protected-loop-interval_true.c", 3, __extension__ __PRETTY_FUNCTION__); })); }
 void __VERIFIER_assert(int cond) { if(!(cond)) { ERROR: {reach_error();abort();} } }
 typedef unsigned char __u_char;
 typedef unsigned short int __u_short;
@@ -59,6 +59,7 @@ __extension__ typedef unsigned int __id_t;
 __extension__ typedef long int __time_t;
 __extension__ typedef unsigned int __useconds_t;
 __extension__ typedef long int __suseconds_t;
+__extension__ typedef __int64_t __suseconds64_t;
 __extension__ typedef int __daddr_t;
 __extension__ typedef int __key_t;
 __extension__ typedef int __clockid_t;
@@ -274,6 +275,12 @@ struct __pthread_cond_s
   unsigned int __wrefs;
   unsigned int __g_signals[2];
 };
+typedef unsigned int __tss_t;
+typedef unsigned long int __thrd_t;
+typedef struct
+{
+  int __data ;
+} __once_flag;
 typedef unsigned long int pthread_t;
 typedef union
 {
@@ -328,6 +335,16 @@ typedef union
   int __align;
 } pthread_barrierattr_t;
 typedef int __jmp_buf[6];
+typedef struct
+{
+  unsigned long int __val[(1024 / (8 * sizeof (unsigned long int)))];
+} __sigset_t;
+struct __jmp_buf_tag
+  {
+    __jmp_buf __jmpbuf;
+    int __mask_was_saved;
+    __sigset_t __saved_mask;
+  };
 enum
 {
   PTHREAD_CREATE_JOINABLE,
@@ -478,13 +495,14 @@ extern int pthread_setcancelstate (int __state, int *__oldstate);
 extern int pthread_setcanceltype (int __type, int *__oldtype);
 extern int pthread_cancel (pthread_t __th);
 extern void pthread_testcancel (void);
+struct __cancel_jmp_buf_tag
+{
+  __jmp_buf __cancel_jmp_buf;
+  int __mask_was_saved;
+};
 typedef struct
 {
-  struct
-  {
-    __jmp_buf __cancel_jmp_buf;
-    int __mask_was_saved;
-  } __cancel_jmp_buf[1];
+  struct __cancel_jmp_buf_tag __cancel_jmp_buf[1];
   void *__pad[4];
 } __pthread_unwind_buf_t __attribute__ ((__aligned__));
 struct __pthread_cleanup_frame
@@ -502,8 +520,8 @@ extern void __pthread_unwind_next (__pthread_unwind_buf_t *__buf)
      __attribute__ ((__regparm__ (1))) __attribute__ ((__noreturn__))
      __attribute__ ((__weak__))
      ;
-struct __jmp_buf_tag;
-extern int __sigsetjmp (struct __jmp_buf_tag *__env, int __savemask) __attribute__ ((__nothrow__));
+extern int __sigsetjmp (struct __jmp_buf_tag __env[1],
+   int __savemask) __attribute__ ((__nothrow__));
 extern int pthread_mutex_init (pthread_mutex_t *__mutex,
           const pthread_mutexattr_t *__mutexattr)
      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
@@ -689,7 +707,8 @@ int pqueue_init()
 int pqueue_put()
 {
   pthread_mutex_lock(&A);
-  g++;
+  if (g < 1000)
+    g++;
   pthread_mutex_unlock(&A);
   return (1);
 }
@@ -700,6 +719,7 @@ int pqueue_get()
   while (g <= 0) {
     __VERIFIER_assert(g == 0);
   }
+  __VERIFIER_assert(g != 0);
   if (g > 0) {
     g--;
     got = 1;
