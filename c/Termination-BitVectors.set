@@ -1,0 +1,2 @@
+# Contains programs for which termination should be decided.
+termination-bwb/*.yml
