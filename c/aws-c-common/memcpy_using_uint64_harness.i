@@ -218,6 +218,7 @@ extern short __VERIFIER_nondet_short();
 extern unsigned int __VERIFIER_nondet_uint();
 extern unsigned long __VERIFIER_nondet_ulong();
 extern unsigned char __VERIFIER_nondet_uchar();
+extern char __VERIFIER_nondet_char();
 
 void __VERIFIER_assert(_Bool cond) {
     if(!cond) {reach_error();abort();}
@@ -5757,13 +5758,6 @@ void assert_ring_buffer_equivalence(
     }
 }
 
-void save_byte_from_hash_table(const struct aws_hash_table *map, struct store_byte_from_buffer *storage) {
-    struct hash_table_state *state = map->p_impl;
-    size_t size_in_bytes;
-    assume_abort_if_not(hash_table_state_required_bytes(state->size, &size_in_bytes) == (0));
-    save_byte_from_array((uint8_t *)state, size_in_bytes, storage);
-}
-
 void check_hash_table_unchanged(const struct aws_hash_table *map, const struct store_byte_from_buffer *storage) {
     struct hash_table_state *state = map->p_impl;
     uint8_t *byte_array = (uint8_t *)state;
@@ -5937,8 +5931,11 @@ void memcpy_using_uint64_harness() {
     char s[160];
     char d1[160];
     char d2[160];
+    for (int i = 0; i < 160; i++) {
+        s[i] = __VERIFIER_nondet_char();
+    }
 
-    unsigned size;
+    unsigned size = __VERIFIER_nondet_uint();
     assume_abort_if_not(size < 160);
     memcpy_impl(d1, s, size);
     memcpy_using_uint64_impl(d2, s, size);

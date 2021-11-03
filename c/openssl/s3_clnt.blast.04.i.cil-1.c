@@ -1,3 +1,13 @@
+// This file is part of the SV-Benchmarks collection of verification tasks:
+// https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks
+//
+// SPDX-FileCopyrightText: 1995-1998 Eric Young <eay@cryptsoft.com>
+// SPDX-FileCopyrightText: 1998-2001 The OpenSSL Project
+// SPDX-FileCopyrightText: 2002-2004 The Regents of the University of California
+// SPDX-FileCopyrightText: 2011-2021 The SV-Benchmarks community
+//
+// SPDX-License-Identifier: OpenSSL AND PostgreSQL AND Apache-2.0
+
 extern void abort(void);
 extern void __assert_fail(const char *, const char *, unsigned int, const char *) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
 void reach_error() { __assert_fail("0", "s3_clnt.blast.04.i.cil-1.c", 3, "reach_error"); }
@@ -1073,6 +1083,18 @@ int main(void)
   s->session = malloc(sizeof(SSL_SESSION));
   s->state = 12292;
   s->version = __VERIFIER_nondet_int();
+	
+	s->info_callback = (void (*)()) __VERIFIER_nondet_ulong(); 
+  (s->ctx)->info_callback = (void (*)()) __VERIFIER_nondet_ulong(); 
+  s->init_buf = (BUF_MEM *)__VERIFIER_nondet_ulong();
+  s->bbio = (BIO *) __VERIFIER_nondet_ulong();
+  s->wbio = (BIO *) __VERIFIER_nondet_ulong();
+  (s->s3)->flags = __VERIFIER_nondet_long();
+  (s->s3)->tmp.cert_req = __VERIFIER_nondet_int();
+  (s->s3)->tmp.new_cipher = malloc(sizeof(struct ssl_cipher_st));
+  ((s->s3)->tmp.new_cipher)->algorithms = __VERIFIER_nondet_ulong();
+  (s->s3)->tmp.next_state = __VERIFIER_nondet_int();
+	
   ssl3_connect(s);
   }
   return (0);

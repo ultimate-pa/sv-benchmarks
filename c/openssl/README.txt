@@ -1,3 +1,11 @@
+# This file is part of the SV-Benchmarks collection of verification tasks:
+# https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks
+#
+# SPDX-FileCopyrightText: 2002-2004 The Regents of the University of California
+# SPDX-FileCopyrightText: 2011-2021 The SV-Benchmarks community
+#
+# SPDX-License-Identifier: PostgreSQL AND Apache-2.0
+
 The files in this directory
 - are based on source code from OpenSSL 0.9.6c
   (https://ftp.openssl.org/source/old/0.9.x/openssl-engine-0.9.6c.tar.gz),
@@ -10,6 +18,9 @@ The files in this directory
   and were preprocessed with CIL
   by the CPAchecker team (https://cpachecker.sosy-lab.org), and
 - were further improved and adjusted by the SV-Benchmarks community.
+
+The original code is under the OpenSSL license
+and modifications are under the PostgreSQL and Apache 2.0 licenses.
 
 More information can be found in
 - Section 5 of

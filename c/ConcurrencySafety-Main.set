@@ -12,3 +12,5 @@ pthread-C-DAC/*.yml
 pthread-divine/*.yml
 pthread-nondet/*.yml
 goblint-regression/*.yml
+weaver/*.yml
+pthread-deagle/*.yml

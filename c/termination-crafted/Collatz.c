@@ -2,7 +2,7 @@
  * Date: 2012-02-12
  * Author: leike@informatik.uni-freiburg.de
  *
- * Termination unknown as of this date.
+ * This version of the task exhibits an integer overflow.
  */
 
 extern int __VERIFIER_nondet_int(void);

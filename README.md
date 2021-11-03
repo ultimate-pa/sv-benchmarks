@@ -7,8 +7,6 @@ SPDX-FileCopyrightText: 2011-2020 The SV-Benchmarks Community
 SPDX-License-Identifier: Apache-2.0
 -->
 
-[![Build Status](https://travis-ci.org/sosy-lab/sv-benchmarks.svg?branch=master)](https://travis-ci.org/sosy-lab/sv-benchmarks)
-
 # Collection of Verification Tasks
 
 ## Repository Description
@@ -108,23 +106,34 @@ is expected to satisfy property `unreach-call` and to violate property `terminat
 
 There are some old programs that have ending `.c` although they are preprocessed.
 
-### Specifications
+### Behavioral Specifications
 
 There are several 'default' specifications that many people use:
-  - [unreach-call](c/PropertyUnreachCall.prp):
+  - [unreach-call](c/properties/unreach-call.prp):
     A certain function call must not be reachable in the program.
-  - [valid-memsafety, valid-deref, valid-free, valid-memtrack](c/PropertyMemSafety.prp):
+  - [valid-memsafety, valid-deref, valid-free, valid-memtrack](c/properties/valid-memsafety.prp):
     A certain memory safety property must hold in the program.
     "memsafety" is the conjunction the other three properties.
-  - [valid-memcleanup](c/PropertyMemCleanup.prp):
+  - [valid-memcleanup](c/properties/valid-memcleanup.prp):
     All allocated memory must be deallocated before the program terminates (note that this is stronger then avoiding memory leaks).
-  - [no-overflow](c/PropertyNoOverflow.prp):
+  - [no-overflow](c/properties/no-overflow.prp):
     A certain kind of undefined behavior (overflows of signed ints) must not be present in the program.
-  - [termination](c/PropertyTermination.prp):
+  - [termination](c/properties/termination.prp):
     The program must terminate on all execution paths.
 
-The above specifications are used, e.g., by SV-COMP, and the [rules page](http://sv-comp.sosy-lab.org/2017/rules.php)
+The above specifications are used, e.g., by SV-COMP, and the [competition reports](https://doi.org/10.1007/978-3-030-45237-7_21)
 explains those specifications.
+
+### Test Specifications
+
+The following are some 'default' specifications that many people use for test-case generation:
+  - [coverage-branches](c/properties/coverage-branches.prp):
+    The generated test suite should cover all branches of the program.
+  - [coverage-error-call](c/properties/coverage-error-call.prp):
+    The generated test suite should contain (at least) one test case that covers the call of a certain function.
+
+The above test specifications are used, e.g., by Test-Comp, and the [competition reports](https://doi.org/10.1007/978-3-030-45234-6_25)
+define those specifications.
 
 ### Parameters
 
@@ -132,13 +141,13 @@ The parameters of a verification task are needed to make additional information
 about the verification task available to the verification run.
 The most prominent parameter is the machine model;
 currently, there are verification tasks for the ILP32 (32-bit) and the LP64 (64-bit) architecture
-(cf. http://www.unix.org/whitepapers/64bit.html).
+(cf. https://www.unix.org/whitepapers/64bit.html).
 
 ### Task Definitions
 
 In order to obtain verification tasks from the programs and specifications in the repository,
 a simple task-definition mechanism is used.
-We use [version 2.0 of this format](https://gitlab.com/sosy-lab/software/task-definition-format/-/tree/2.0)
+We use [version 2.0 of this format](https://gitlab.com/sosy-lab/benchmarking/task-definition-format/-/tree/2.0)
 with some additional requirements.
 For each program, the repository contains a .yml file that specifies the following items:
   - `format_version`: the version of the format (the version string `2.0`)
@@ -154,18 +163,18 @@ For each program, the repository contains a .yml file that specifies the followi
   - `options`: parameters that are relevant for verification or give extra information:
     - `language`: programming language that the program is written in (`C` or `Java`)
     - `data_model` data model of the computer architecture
-      (`ILP32`, `LP64`, see http://www.unix.org/whitepapers/64bit.html, only for `C` programs)
+      (`ILP32`, `LP64`, see https://www.unix.org/whitepapers/64bit.html, only for `C` programs)
 
 Optional items are explicitly marked as optional, all other items are mandatory.
 The dictionary `options` can contain additional data that are not mentioned above.
 
-[C-props]: https://github.com/sosy-lab/sv-benchmarks/tree/master/c/properties
-[Java-props]: https://github.com/sosy-lab/sv-benchmarks/tree/master/java/properties
+[C-props]: https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks/-/tree/main/c/properties
+[Java-props]: https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks/-/tree/main/java/properties
 
 The [SV-COMP 2019 report] has documented the first version of the repository's task-definition format 1.0,
 and contains a description of the format with an example in Sect. 4 and Fig. 3.
 Format 2.0 adds the `options` dictionary.
-Here as example an extract of the task-definition file [c/list-properties/list-1.yml]:
+Here as example an extract of the task-definition file [c/list-properties/list-1.yml](c/list-properties/list-1.yml):
 
 ```
 format_version: '2.0'

@@ -6,8 +6,9 @@
 #include <limits.h>
 
 extern void abort(void);
-void reach_error(){}
-extern unsigned __VERIFIER_nondet_unsigned_int(void);
+#include <assert.h>
+void reach_error() { assert(0); }
+extern unsigned __VERIFIER_nondet_uint(void);
 extern void abort(void);
 void assume_abort_if_not(int cond) {
   if(!cond) {abort();}
@@ -23,10 +24,10 @@ void __VERIFIER_assert(int cond) {
 int main() {
   unsigned A, B;
   unsigned q, r, b;
-    A = __VERIFIER_nondet_unsigned_int();
-    assume_abort_if_not(A>0 && A<=2);
-    B = __VERIFIER_nondet_unsigned_int();
-    assume_abort_if_not(B>0 && B<=2);
+    A = __VERIFIER_nondet_uint();
+    assume_abort_if_not(A>=0 && A<=2);
+    B = __VERIFIER_nondet_uint();
+    assume_abort_if_not(B>=0 && B<=2);
     assume_abort_if_not(B < UINT_MAX/2);
     assume_abort_if_not(B >= 1);
 

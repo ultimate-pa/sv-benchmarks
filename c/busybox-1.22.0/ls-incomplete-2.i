@@ -4218,7 +4218,10 @@ __CPROVER_DUMP_L42:
       dnsort(dnd, (signed int)dndirs);
       scan_and_display_dirs_recur(dnd, (signed int)(dnfiles == (unsigned int)0));
     }
+    dfree(dnd);
+    dfree(dnf);
   }
+  free(dnp);
   return (signed int)((struct globals *)&bb_common_bufsiz1)->exit_code;
 }
 static const char * make_human_readable_str(unsigned long long int val, unsigned long int block_size, unsigned long int display_unit)

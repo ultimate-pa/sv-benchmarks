@@ -4943,7 +4943,8 @@ struct protosw *pffindproto(int family, int protocol, int type) {
 }
 u_char ip_protox[256];
 u_char ip6_protox[256];
-struct cpumem *ipcounters;
+struct cpumem ipcounters_array[ips_ncounters + 1];
+struct cpumem *ipcounters = ipcounters_array;
 struct cpumem *ip6counters;
 void ip6_init(void) {
   struct protosw *pr;
@@ -4993,6 +4994,8 @@ int ip_deliver(struct mbuf **mp, int *offp, int nxt, int af) {
       psw = &inet6sw[ip6_protox[nxt]];
       break;
     }
+    if (!psw->pr_input)
+      goto bad;
     nxt = (*psw->pr_input)(mp, offp, nxt, af);
     af = naf;
   }

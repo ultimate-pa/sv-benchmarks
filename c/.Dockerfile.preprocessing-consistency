@@ -6,14 +6,24 @@
 # SPDX-License-Identifier: Apache-2.0
 
 # This is a Docker image for running the consistency checks for preprocessed C files.
-# It should be pushed to registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/preprocessing-consistency
+# It should be pushed to registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/preprocessing-consistency
 # and will be used by CI as declared in .gitlab-ci.yml.
 #
 # Commands for updating the image:
-# docker build --pull -t registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/preprocessing-consistency:latest - < .Dockerfile.preprocessing-consistency
-# docker push registry.gitlab.com/sosy-lab/software/sv-benchmarks/ci/preprocessing-consistency
+# docker build --pull -t registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/preprocessing-consistency:latest - < .Dockerfile.preprocessing-consistency
+# docker push registry.gitlab.com/sosy-lab/benchmarking/sv-benchmarks/ci/preprocessing-consistency
 
-FROM diffblue/cbmc-builder:latest
+FROM ubuntu:focal
+
+RUN apt-get update && apt-get install -y \
+  g++ \
+  gcc \
+  flex \
+  bison \
+  make \
+  git \
+  curl \
+  patch
 
 RUN git clone --depth=1 https://github.com/diffblue/cbmc.git
 
@@ -35,6 +45,6 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip3 install yq
 
-COPY --from=0 /cbmc .
+COPY --from=0 /cbmc /cbmc
 
 ENV PATH="/cbmc/src/goto-cc:/cbmc/src/goto-diff:${PATH}"

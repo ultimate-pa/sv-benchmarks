@@ -1,3 +1,13 @@
+// This file is part of the SV-Benchmarks collection of verification tasks:
+// https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks
+//
+// SPDX-FileCopyrightText: 1995-1998 Eric Young <eay@cryptsoft.com>
+// SPDX-FileCopyrightText: 1998-2001 The OpenSSL Project
+// SPDX-FileCopyrightText: 2002-2004 The Regents of the University of California
+// SPDX-FileCopyrightText: 2011-2021 The SV-Benchmarks community
+//
+// SPDX-License-Identifier: OpenSSL AND PostgreSQL AND Apache-2.0
+
 extern void abort(void);
 extern void __assert_fail(const char *, const char *, unsigned int, const char *) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
 void reach_error() { __assert_fail("0", "s3_srvr_4.cil.c", 3, "reach_error"); }

@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: SV-Benchmarks
-Source: https://github.com/sosy-lab/sv-benchmarks
+Source: https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks
 
 Files:
  c/*.set
@@ -8,6 +8,11 @@ Files:
  java/*.set
  java/*/*.yml
 Copyright: 2011-2020 The SV-Benchmarks Community
+License: CC0-1.0
+
+Files: c/Juliet_Test/Juliet_Test_Suite_v1.3_for_C_Cpp
+ _
+Copyright: 2010-2020 NIST
 License: CC0-1.0
 
 Files:
@@ -25,13 +30,11 @@ Files:
  c/pthread-ext
  c/seq-pthread
  c/systemc
- java/rtems-lock-model
  _
 Copyright: unknown
 License: LicenseRef-unknown
 
 Files:
- c/Juliet_Test
  c/array-cav19
  c/array-crafted
  c/array-examples
@@ -49,7 +52,6 @@ Files:
  c/bitvector-regression
  c/busybox-1.22.0
  c/eca-programs
- c/eca-rers2012
  c/eca-rers2018
  c/float-benchs
  c/float-newlib
@@ -57,7 +59,6 @@ Files:
  c/floats-cdfpl
  c/floats-esbmc-regression
  c/forester-heap
- c/goblint-regression
  c/heap-data
  c/heap-manipulation
  c/ldv-challenges
@@ -101,15 +102,6 @@ Files:
  c/nla-digbench
  c/nla-digbench-scaling
  c/openbsd-6.2
- c/openssl
- c/openssl
- c/openssl
- c/openssl
- c/openssl-simplified
- c/openssl-simplified
- c/openssl-simplified
- c/openssl-simplified
- c/product-lines
  c/psyco
  c/pthread-C-DAC
  c/pthread-atomic
@@ -125,8 +117,6 @@ Files:
  c/recursive-with-pointer
  c/reducercommutativity
  c/regression
- c/seq-mthreaded
- c/seq-mthreaded-reduced
  c/signedintegeroverflow-regression
  c/sqlite
  c/termination-15
@@ -142,8 +132,6 @@ Files:
  c/termination-restricted-15-todo
  c/uthash-2.0.2
  c/verifythis
- c/xcsp
- java/MinePump
  java/algorithms
  java/java-ranger-regression
  java/java-ranger-regression
@@ -153,7 +141,6 @@ Files:
  java/jdart-regression
  java/jdart-regression
  java/jpf-regression
- java/juliet-java
  _
 Copyright: unknown
 License: LicenseRef-in-text-file

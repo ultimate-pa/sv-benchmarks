@@ -11,7 +11,7 @@ SPDX-License-Identifier: Apache-2.0
 
 If you have identified an issue with existing verification tasks,
 or want to submit new verification tasks,
-please [file an issue](https://github.com/sosy-lab/sv-benchmarks/issues/new)
+please [file an issue](https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks/-/issues/new)
 or, even better, submit a pull request.
 
 For issues with existing verification tasks that affect the expected answer of the task,
@@ -57,7 +57,7 @@ and [FAQ](https://reuse.software/faq/) of the REUSE project.
 Example:
 ```
 // This file is part of the SV-Benchmarks collection of verification tasks:
-// https://github.com/sosy-lab/sv-benchmarks
+// https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks
 //
 // SPDX-FileCopyrightText: 2020 ...
 //
@@ -65,8 +65,11 @@ Example:
 ```
 Such a header can be easily created with the [reuse tool](https://github.com/fsfe/reuse-tool/):
 ```
-reuse addheader --template header.jinja2 --copyright "..." --license Apache-2.0 yourfile.c
+reuse addheader --template header.jinja2 --year "2020" --copyright "..." --license Apache-2.0 yourfile.c
 ```
+The tool can also be used for unsupported file types:
+- for preprocessed `*.i` files use `--style c`,
+- for text files (e.g. `README`s) use `--style python`.
 
 The stated license must allow to:
 - view, understand, investigate, and reverse engineer the algorithm or system,
@@ -107,7 +110,7 @@ but for real-world programs GNU C is also acceptable.
 #### Task Definition
 
 For each verification problem,
-a separate [task definition](https://github.com/sosy-lab/sv-benchmarks/blob/master/README.md#task-definitions)
+a separate [task definition](README.md#task-definitions)
 in form of a `.yml` file is required that contains the file name of the verification task and
 the expected result for at least one [property](README.md#specifications).
 The `.yml` file should be named just like the original verification problem (except file ending).
