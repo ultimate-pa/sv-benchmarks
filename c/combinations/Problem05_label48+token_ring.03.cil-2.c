@@ -1,3 +1,12 @@
+// This file is part of the SV-Benchmarks collection of verification tasks:
+// https://github.com/sosy-lab/sv-benchmarks
+//
+// SPDX-FileCopyrightText: 2011-2021 The SV-Benchmarks Community
+// SPDX-FileCopyrightText: 2012 The RERS Challenge <https://www.rers-challenge.org>
+// SPDX-FileCopyrightText: 2010 Alessandro Cimatti
+//
+// SPDX-License-Identifier: Apache-2.0
+
 extern unsigned int __VERIFIER_nondet_uint();
 extern char __VERIFIER_nondet_char();
 extern int __VERIFIER_nondet_int();
