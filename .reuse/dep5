@@ -17,6 +17,7 @@ License: CC0-1.0
 
 Files:
  clauses
+ c/bitvector
  c/ddv-machzwd
  c/ldv-memsafety
  c/ldv-regression
@@ -28,6 +29,7 @@ Files:
  c/ntdrivers-simplified
  c/pthread-ext
  c/seq-pthread
+ c/systemc
  _
 Copyright: unknown
 License: LicenseRef-unknown
