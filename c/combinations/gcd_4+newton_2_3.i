@@ -2,7 +2,7 @@
 // https://github.com/sosy-lab/sv-benchmarks
 //
 // SPDX-FileCopyrightText: 2012-2021 The SV-Benchmarks Community
-// SPDX-FileCopyrightText: 2012 Alberto Griggio
+// SPDX-FileCopyrightText: 2012 FBK-ES <https://es.fbk.eu/>
 // SPDX-FileCopyrightText: 2001-2016 Daniel Kroening
 // SPDX-FileCopyrightText: 2001-2016 Edmund Clarke
 //

@@ -3,7 +3,7 @@
 //
 // SPDX-FileCopyrightText: 2011-2021 The SV-Benchmarks Community
 // SPDX-FileCopyrightText: 2012 The RERS Challenge <https://www.rers-challenge.org>
-// SPDX-FileCopyrightText: 2010 Alessandro Cimatti
+// SPDX-FileCopyrightText: 2010 FBK-ES <https://es.fbk.eu/>
 //
 // SPDX-License-Identifier: Apache-2.0
 
