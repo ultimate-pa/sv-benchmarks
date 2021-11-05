@@ -14,12 +14,13 @@
 
 /* Compute the floor of the square root, by Dijkstra */
 /*
-extern void __VERIFIER_error() __attribute__((__noreturn__));
+#include <assert.h>
+#include <stdlib.h>
+void reach_error() { assert(0); }
 extern int __VERIFIER_nondet_int(void);
 void __VERIFIER_assert(int cond) {
     if (!(cond)) {
-    ERROR:
-        __VERIFIER_error();
+        ERROR: {reach_error();abort();}
     }
     return;
 }

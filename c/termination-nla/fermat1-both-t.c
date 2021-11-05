@@ -14,13 +14,13 @@
 
 /* program computing a divisor for factorisation, by Knuth 4.5.4 Alg C ? */
 /*
+#include <assert.h>
 #include <stdlib.h>
-extern void __VERIFIER_error() __attribute__((__noreturn__));
+void reach_error() { assert(0); }
 extern double __VERIFIER_nondet_double(void);
 void __VERIFIER_assert(int cond) {
     if (!(cond)) {
-    ERROR:
-        __VERIFIER_error();
+        ERROR: {reach_error();abort();}
     }
     return;
 }
