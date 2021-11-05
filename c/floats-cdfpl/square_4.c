@@ -1,3 +1,12 @@
+// This file is part of the SV-Benchmarks collection of verification tasks:
+// https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks
+//
+// SPDX-FileCopyrightText: 2001-2016 Daniel Kroening
+// SPDX-FileCopyrightText: 2001-2016 Edmund Clarke
+// SPDX-FileCopyrightText: 2014-2021 The SV-Benchmarks Community
+//
+// SPDX-License-Identifier: LicenseRef-BSD-4-Clause-Attribution-Kroening-Clarke
+
 extern void abort(void);
 void assume_abort_if_not(int cond) {
   if(!cond) {abort();}
