@@ -18,9 +18,9 @@
 */
 
 #include <limits.h>
+// #include <assert.h>
+// #include <stdlib.h>
 /*
-#include <assert.h>
-#include <stdlib.h>
 void reach_error() { assert(0); }
 extern unsigned __VERIFIER_nondet_unsigned_int(void);
 void __VERIFIER_assert(int cond) {

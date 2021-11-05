@@ -20,9 +20,9 @@ cpa.sh -kInduction -setprop solver.solver=z3 freire1.c
 */
 
 //extern int __VERIFIER_nondet_int(void);
+// #include <assert.h>
+// #include <stdlib.h>
 /*
-#include <assert.h>
-#include <stdlib.h>
 void reach_error() { assert(0); }
 void __VERIFIER_assert(int cond) {
     if (!(cond)) {

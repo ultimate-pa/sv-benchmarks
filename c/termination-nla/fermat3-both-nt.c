@@ -13,9 +13,9 @@
 */
 
 /* program computing a divisor for factorisation, by Knuth 4.5.4 Alg C ? */
+// #include <assert.h>
+// #include <stdlib.h>
 /*
-#include <assert.h>
-#include <stdlib.h>
 void reach_error() { assert(0); }
 extern double __VERIFIER_nondet_double(void);
 void __VERIFIER_assert(int cond) {

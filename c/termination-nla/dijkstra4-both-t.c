@@ -13,10 +13,10 @@
 */
 
 /* Compute the floor of the square root, by Dijkstra */
+// #include <assert.h>
+// #include <stdlib.h>
 /*
 extern int __VERIFIER_nondet_int(void);
-#include <assert.h>
-#include <stdlib.h>
 void reach_error() { assert(0); }
 void __VERIFIER_assert(int cond) {
     if (!(cond)) {
