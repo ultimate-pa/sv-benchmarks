@@ -16,17 +16,8 @@
 Printing consecutive cubes, by Cohen
 http://www.cs.upc.edu/~erodri/webpage/polynomial_invariants/cohencu.htm
 */
-// #include <assert.h>
-// #include <stdlib.h>
 /*
-void reach_error() { assert(0); }
 extern int __VERIFIER_nondet_int(void);
-void __VERIFIER_assert(int cond) {
-    if (!(cond)) {
-        ERROR: {reach_error();abort();}
-    }
-    return;
-}
 */
 
 extern int __VERIFIER_nondet_int(void);

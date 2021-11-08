@@ -18,17 +18,9 @@
 */
 
 #include <limits.h>
-// #include <assert.h>
-// #include <stdlib.h>
 /*
-void reach_error() { assert(0); }
 extern unsigned __VERIFIER_nondet_unsigned_int(void);
-void __VERIFIER_assert(int cond) {
-    if (!(cond)) {
-        ERROR: {reach_error();abort();}
-    }
-    return;
-    }*/
+*/
 
 extern int __VERIFIER_nondet_int(void);
 extern unsigned __VERIFIER_nondet_unsigned_int(void);

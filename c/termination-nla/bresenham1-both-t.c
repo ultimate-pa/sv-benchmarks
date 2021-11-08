@@ -16,17 +16,8 @@
   Bresenham's line drawing algorithm 
   from Srivastava et al.'s paper From Program Verification to Program Synthesis in POPL '10 
 */
-// #include <assert.h>
-// #include <stdlib.h>
 /*
-void reach_error() { assert(0); }
 extern int __VERIFIER_nondet_int(void);
-void __VERIFIER_assert(int cond) {
-    if (!(cond)) {
-        ERROR: {reach_error();abort();}
-    }
-    return;
-}
 */
 extern int __VERIFIER_nondet_int(void);
 int main() {
