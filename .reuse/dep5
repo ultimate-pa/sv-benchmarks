@@ -54,7 +54,6 @@ Files:
  c/float-benchs
  c/float-newlib
  c/floats-cbmc-regression
- c/floats-cdfpl
  c/floats-esbmc-regression
  c/forester-heap
  c/heap-data
