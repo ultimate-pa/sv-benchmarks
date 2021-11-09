@@ -3,11 +3,11 @@
 //
 // SPDX-FileCopyrightText: 2012-2021 The SV-Benchmarks Community
 // SPDX-FileCopyrightText: 2012 FBK-ES <https://es.fbk.eu/>
-// SPDX-FileCopyrightText: 2001-2016 Daniel Kroening
-// SPDX-FileCopyrightText: 2001-2016 Edmund Clarke
+// SPDX-FileCopyrightText: 2001-2016 Daniel Kroening, Computer Science Department, University of Oxford
+// SPDX-FileCopyrightText: 2001-2016 Edmund Clarke, Computer Science Department, Carnegie Mellon University
 //
 // SPDX-License-Identifier: Apache-2.0
-// SPDX-License-Identifier: LicenseRef-FloatsCdfpl
+// SPDX-License-Identifier: LicenseRef-BSD-4-Clause-Attribution-Kroening-Clarke
 
 extern unsigned int __VERIFIER_nondet_uint();
 extern char __VERIFIER_nondet_char();
