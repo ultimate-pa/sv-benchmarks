@@ -7,7 +7,7 @@ void reach_error() { assert(0); }
 #define assert(e) { if(!(e)) { ERROR: {reach_error();abort();}(void)0; } }
 
 _Bool s = 0;
-__thread _Bool l = 0;
+_Bool l = 0;
 
 void* thr1(void* arg)
 {
