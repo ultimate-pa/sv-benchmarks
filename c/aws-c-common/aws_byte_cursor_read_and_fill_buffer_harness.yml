@@ -5,6 +5,7 @@ input_files: 'aws_byte_cursor_read_and_fill_buffer_harness.i'
 properties:
   - property_file: ../properties/unreach-call.prp
     expected_verdict: true
+  - property_file: ../properties/coverage-branches.prp
 
 options:
   language: C
