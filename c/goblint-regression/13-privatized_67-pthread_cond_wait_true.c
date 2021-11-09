@@ -23,7 +23,7 @@ void* f1(void* ptr) {
     pthread_mutex_lock(&mut);
     g = 1;
     pthread_cond_wait(&cond,&mut);
-    __VERIFIER_assert(g == 0);
+    __VERIFIER_assert(g == 1);
     printf("g is %i", g);
     g = 0;
     pthread_mutex_unlock(&mut);
