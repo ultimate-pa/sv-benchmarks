@@ -564,15 +564,15 @@ int main() {
     }
     char* nondetString1 = (char*) __builtin_alloca (length1 * sizeof(char));
     char* nondetString2 = (char*) __builtin_alloca (length2 * sizeof(char));
-    nondetString1[length1-1] = '\0';
     for(int i=0; i<length1-1; i++)
     {
       nondetString1[i] = __VERIFIER_nondet_char();
     }
-    nondetString2[length2-1] = '\0';
+    nondetString1[length1-1] = '\0';
     for(int i=0; i<length2-1; i++)
     {
       nondetString2[i] = __VERIFIER_nondet_char();
     }
+    nondetString2[length2-1] = '\0';
     return cstrcmp(nondetString1,nondetString2);
 }

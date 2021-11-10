@@ -513,11 +513,11 @@ int main(){
   int in_len = __VERIFIER_nondet_int();
   if(in_len < 1){return 1;}
   char* in = __builtin_alloca (in_len);
-  in[in_len-1]=0;
   for(int i=0; i<in_len-1; i++)
   {
     in[i] = __VERIFIER_nondet_char();
   }
+  in[in_len-1]=0;
   int out_len = __VERIFIER_nondet_int();
   if(out_len < 1){return 1;}
   char* out = __builtin_alloca (out_len);
