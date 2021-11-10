@@ -14,6 +14,7 @@ from pathlib import Path
 import yaml
 import sys
 import re
+from collections import defaultdict
 
 
 class TaskError(Exception):
@@ -167,6 +168,41 @@ def _get_spdx_header(*files):
             # search didn't work
             return None, None
 
+    def _collapse_copyright(spdx_info):
+        spdx_info = dict(spdx_info)
+        owners_to_years = defaultdict(lambda: (9999, 0))
+        if "SPDX-FileCopyrightText" not in spdx_info:
+            return spdx_info
+        for value in spdx_info["SPDX-FileCopyrightText"]:
+            entities = value.split(" ")
+            years, owner = entities[0], " ".join(entities[1:])
+            year_start, _, year_end = years.rpartition("-")
+            if year_start:
+                year_start = int(year_start)
+            else:
+                year_start = 0
+            year_end = int(year_end)
+            start, end = owners_to_years[owner]
+            if year_start < start:
+                start = year_start
+            if end < year_end:
+                end = year_end
+            owners_to_years[owner] = (start, end)
+
+        copyright = set()
+        for owner, years in owners_to_years.items():
+            year_start, year_end = years
+            copyright_text = ""
+            if year_start:
+                copyright_text += f"{year_start}-"
+            copyright_text += f"{year_end}"
+            copyright_text += f" {owner}"
+
+            copyright.add(copyright_text)
+
+        spdx_info["SPDX-FileCopyrightText"] = copyright
+        return spdx_info
+
     all_spdx_info = dict()
     for f in files:
         with open(f) as inp:
@@ -176,6 +212,8 @@ def _get_spdx_header(*files):
                     if key not in all_spdx_info:
                         all_spdx_info[key] = set()
                     all_spdx_info[key].add(value)
+
+    all_spdx_info = _collapse_copyright(all_spdx_info)
 
     return f"""// This file is part of the SV-Benchmarks collection of verification tasks:
 // https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks

@@ -1,10 +1,10 @@
 // This file is part of the SV-Benchmarks collection of verification tasks:
-// https://github.com/sosy-lab/sv-benchmarks
+// https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks
 //
-// SPDX-FileCopyrightText: 2012-2021 The SV-Benchmarks Community
-// SPDX-FileCopyrightText: 2012 FBK-ES <https://es.fbk.eu/>
 // SPDX-FileCopyrightText: 2001-2016 Daniel Kroening, Computer Science Department, University of Oxford
 // SPDX-FileCopyrightText: 2001-2016 Edmund Clarke, Computer Science Department, Carnegie Mellon University
+// SPDX-FileCopyrightText: 2012 FBK-ES <https://es.fbk.eu/>
+// SPDX-FileCopyrightText: 2012-2021 The SV-Benchmarks Community
 //
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: LicenseRef-BSD-4-Clause-Attribution-Kroening-Clarke
@@ -16,6 +16,7 @@ extern long __VERIFIER_nondet_long();
 extern unsigned long __VERIFIER_nondet_ulong();
 extern float __VERIFIER_nondet_float();
 extern void exit(int);
+
 extern void abort(void);
 
 extern void __assert_fail (const char *__assertion, const char *__file,
@@ -49,6 +50,12 @@ int main1()
   return 0;
 }
 
+extern void abort(void);
+extern void __assert_fail(const char *, const char *, unsigned int, const char *) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+extern void abort(void);
+
+extern char __VERIFIER_nondet_char(void);
+extern unsigned int __VERIFIER_nondet_uint(void);
 void __VERIFIER_assert(int cond) {
   if (!(cond)) {
     ERROR: {reach_error();abort();}

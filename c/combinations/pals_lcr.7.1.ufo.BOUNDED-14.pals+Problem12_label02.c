@@ -1,5 +1,5 @@
 // This file is part of the SV-Benchmarks collection of verification tasks:
-// https://github.com/sosy-lab/sv-benchmarks
+// https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks
 //
 // SPDX-FileCopyrightText: 2012 The RERS Challenge <https://www.rers-challenge.org>
 // SPDX-FileCopyrightText: 2013 Carnegie Mellon University
@@ -264,8 +264,6 @@ void node7(void)
   return;
 }
 }
-void (*nodes[7])(void)  = {      & node1,      & node2,      & node3,      & node4, 
-        & node5,      & node6,      & node7};
 int init(void) 
 { 
   int tmp ;
@@ -604,6 +602,10 @@ int calculate_output(int);
 int calculate_output2(int);
 int calculate_output3(int);
 int calculate_output4(int);
+extern void abort(void);
+extern void __assert_fail(const char *, const char *, unsigned int, const char *) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+extern int __VERIFIER_nondet_int(void);
+extern void exit(int);
 
 	// inputs
 	int inputC = 3;

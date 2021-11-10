@@ -1,10 +1,10 @@
 // This file is part of the SV-Benchmarks collection of verification tasks:
-// https://github.com/sosy-lab/sv-benchmarks
+// https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks
 //
-// SPDX-FileCopyrightText: 2012-2021 The SV-Benchmarks Community
-// SPDX-FileCopyrightText: 2012 FBK-ES <https://es.fbk.eu/>
 // SPDX-FileCopyrightText: 2001-2016 Daniel Kroening, Computer Science Department, University of Oxford
 // SPDX-FileCopyrightText: 2001-2016 Edmund Clarke, Computer Science Department, Carnegie Mellon University
+// SPDX-FileCopyrightText: 2012 FBK-ES <https://es.fbk.eu/>
+// SPDX-FileCopyrightText: 2012-2021 The SV-Benchmarks Community
 //
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: LicenseRef-BSD-4-Clause-Attribution-Kroening-Clarke
@@ -16,6 +16,7 @@ extern long __VERIFIER_nondet_long();
 extern unsigned long __VERIFIER_nondet_ulong();
 extern float __VERIFIER_nondet_float();
 extern void exit(int);
+
 extern void abort(void);
 extern void __assert_fail(const char *, const char *, unsigned int, const char *) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
 void reach_error() { __assert_fail("0", "gcd_1.c", 3, "reach_error"); }
@@ -58,15 +59,22 @@ int main1()
     return 0;
 }
 
+extern void abort(void);
+
+extern void __assert_fail (const char *__assertion, const char *__file,
       unsigned int __line, const char *__function)
      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+extern void __assert_perror_fail (int __errnum, const char *__file,
       unsigned int __line, const char *__function)
      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+extern void __assert (const char *__assertion, const char *__file, int __line)
      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
 
+extern void abort(void);
 void assume_abort_if_not(int cond) {
   if(!cond) {abort();}
 }
+extern float __VERIFIER_nondet_float(void);
 float f(float x)
 {
   return x - (x*x*x)/6.0f + (x*x*x*x*x)/120.0f + (x*x*x*x*x*x*x)/5040.0f;
