@@ -88,8 +88,7 @@ def _create_combo(
         content2 = "".join(
             repl2(line.replace("main(", "main2("))
             for line in inp.readlines()
-            if not line.startswith("extern ")
-            and not line.startswith("void reach_error")
+            if not line.startswith("void reach_error")
         )
 
     additional_defs = """extern unsigned int __VERIFIER_nondet_uint();
@@ -100,6 +99,9 @@ extern unsigned long __VERIFIER_nondet_ulong();
 extern float __VERIFIER_nondet_float();
 extern void exit(int);
 """
+
+    if not content1.endswith("\n"):
+        content1 += "\n"
 
     content = (
         additional_defs
