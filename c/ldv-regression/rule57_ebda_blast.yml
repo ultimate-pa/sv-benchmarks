@@ -8,7 +8,7 @@ properties:
     expected_verdict: true
   - property_file: ../properties/unreach-call.prp
     expected_verdict: true
-    # __VERIFIER_error would be reachable if memory allocation with kzalloc fails.
+    # 'reach_error()'-call would be reachable if memory allocation with kzalloc fails.
   - property_file: ../properties/coverage-branches.prp
   - property_file: ../properties/coverage-conditions.prp
   - property_file: ../properties/coverage-statements.prp

@@ -19,16 +19,8 @@
 
 #include <limits.h>
 /*
-extern void __VERIFIER_error() __attribute__((__noreturn__));
 extern unsigned __VERIFIER_nondet_unsigned_int(void);
-extern void __VERIFIER_assume(int expression);
-void __VERIFIER_assert(int cond) {
-    if (!(cond)) {
-    ERROR:
-        __VERIFIER_error();
-    }
-    return;
-    }*/
+*/
 
 extern int __VERIFIER_nondet_int(void);
 extern unsigned int __VERIFIER_nondet_unsigned_int(void);
@@ -37,9 +29,9 @@ int main() {
   unsigned q, r, b;
   A = __VERIFIER_nondet_unsigned_int();
   B = __VERIFIER_nondet_unsigned_int();
-  //__VERIFIER_assume(B < UINT_MAX/2);
+  // if (! (B < UINT_MAX/2) ) { abort(); }
   if (B >= UINT_MAX/2) return 0;
-  //__VERIFIER_assume(B >= 1);
+  // if (! (B >= 1) ) { abort(); }
   if ( B < 1 ) return 0;
 
   if (A >= UINT_MAX/2) return 0;

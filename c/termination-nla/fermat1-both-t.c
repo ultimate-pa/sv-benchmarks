@@ -14,16 +14,7 @@
 
 /* program computing a divisor for factorisation, by Knuth 4.5.4 Alg C ? */
 /*
-extern void __VERIFIER_error() __attribute__((__noreturn__));
 extern double __VERIFIER_nondet_double(void);
-extern void __VERIFIER_assume(int expression);
-void __VERIFIER_assert(int cond) {
-    if (!(cond)) {
-    ERROR:
-        __VERIFIER_error();
-    }
-    return;
-}
 */
 extern int __VERIFIER_nondet_int(void);
 
@@ -32,10 +23,10 @@ int main() {
     int u, v, r;
     A = __VERIFIER_nondet_int();
     R = __VERIFIER_nondet_int();
-    //__VERIFIER_assume((R - 1) * (R - 1) < A);
+    // if (! ((R - 1) * (R - 1) < A) ) { abort(); }
     if ((R - 1) * (R - 1) >= A) return 0;
-    //__VERIFIER_assume(A <= R * R);
-    //__VERIFIER_assume(A % 2 == 1);
+    // if (! (A <= R * R) ) { abort(); }
+    // if (! (A % 2 == 1) ) { abort(); }
     if (A % 2 != 1) return 0;
 
     u = 2 * R + 1;

@@ -291,6 +291,28 @@ class FileChecks(Checks):
         if any('\r' in line for line in self.lines):
             self.error("Windows line endings")
 
+    def check_file_has_no_VERIFIER_ASSUME_call(self):
+        if any('__VERIFIER_assume' in line for line in self.lines):
+            self.error(
+                "Deprecated call '__VERIFIER_assume' found. "
+                "Please replace with: if(!COND) { abort(); }"
+            )
+
+    def check_file_has_no_VERIFIER_ERROR_call(self):
+        if any('__VERIFIER_error' in line for line in self.lines):
+            self.error(
+                "Deprecated call '__VERIFIER_error' found. "
+                "Please replace it by applying the following three steps:\n"
+                "\n"
+                "1. Insert the next two lines to the top of your c-file\n"
+                "  #include <assert.h>\n"
+                "  void reach_error() { assert(0); }\n"
+                "\n"
+                "2. Replace any '__VERIFIER_error()' by 'reach_error()'\n"
+                "3. Create a preprocessed file (.i)-file and refer to that in the "
+                "corresponding .yml file\n"
+            )
+
 
 class TaskDefinitionFileChecks(FileChecks):
     """Checks about the content of a single task definition .yml file."""
