@@ -110,7 +110,7 @@ int main() {
   pthread_join(t2, 0);
   pthread_join(t3, 0);
   
-  assume_abort_if_not(maxc > maxa + maxb);
+  assume_abort_if_not(maxc > plus(maxa, maxb));
   reach_error();
 
   return 0;

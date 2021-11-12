@@ -110,7 +110,7 @@ int main() {
   pthread_join(t2, 0);
   pthread_join(t3, 0);
 
-  assume_abort_if_not(minc < mina + minb);
+  assume_abort_if_not(minc < plus(mina, minb));
   reach_error();
 
   return 0;
