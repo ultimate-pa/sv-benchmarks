@@ -44,7 +44,7 @@ int ssl3_accept(int initial_state )
   int s__s3__tmp__use_rsa_tmp ;
   int s__s3__tmp__new_cipher  = __VERIFIER_nondet_int();
   int s__s3__tmp__new_cipher__algorithms  = __VERIFIER_nondet_int();
-  int s__s3__tmp__next_state___0 ;
+  int s__s3__tmp__next_state___0 = __VERIFIER_nondet_int();
   int s__s3__tmp__new_cipher__algo_strength  = __VERIFIER_nondet_int();
   int s__session__cipher ;
   int buf ;

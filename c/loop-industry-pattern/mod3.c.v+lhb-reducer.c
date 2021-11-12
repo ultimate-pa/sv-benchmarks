@@ -15,7 +15,7 @@ int __tmp_91_1;
 int __return_121;
  int main()
  {
- unsigned int main__x;
+ unsigned int main__x = __VERIFIER_nondet_int();
  unsigned int main__y = 1;
  label_75:; 
  int main____CPAchecker_TMP_0;

@@ -8,7 +8,7 @@ int main();
 int __return_107;
  int main()
  {
- unsigned int main__x;
+ unsigned int main__x = __VERIFIER_nondet_int();
  unsigned int main__y = 1;
  label_75:; 
  int main____CPAchecker_TMP_0;

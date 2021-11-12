@@ -31,7 +31,7 @@ int ssl3_accept(int initial_state )
   int s__init_num ;
   int s__hit  = __VERIFIER_nondet_int();
   int s__rwstate ;
-  int s__init_buf___0 ;
+  int s__init_buf___0 = __VERIFIER_nondet_int();
   int s__debug  = __VERIFIER_nondet_int();
   int s__shutdown ;
   int s__cert  = __VERIFIER_nondet_int();
@@ -40,8 +40,8 @@ int ssl3_accept(int initial_state )
   int s__session__peer  = __VERIFIER_nondet_int();
   int s__cert__pkeys__AT0__privatekey  = __VERIFIER_nondet_int();
   int s__ctx__info_callback  = __VERIFIER_nondet_int();
-  int s__ctx__stats__sess_accept_renegotiate ;
-  int s__ctx__stats__sess_accept ;
+  int s__ctx__stats__sess_accept_renegotiate = __VERIFIER_nondet_int();
+  int s__ctx__stats__sess_accept = __VERIFIER_nondet_int();
   int s__ctx__stats__sess_accept_good  = __VERIFIER_nondet_int();
   int s__s3__tmp__cert_request ;
   int s__s3__tmp__reuse_message  = __VERIFIER_nondet_int();
@@ -73,9 +73,9 @@ int ssl3_accept(int initial_state )
   int tmp___9 ;
   int tmp___10 ;
   int blastFlag ;
-  int ag_X ;
+  int ag_X = __VERIFIER_nondet_int();
   int ag_Y  = __VERIFIER_nondet_int();
-  int ag_Z ;
+  int ag_Z = __VERIFIER_nondet_int();
   int __retres70 ;
 
   assume_abort_if_not(ag_Z!=0);

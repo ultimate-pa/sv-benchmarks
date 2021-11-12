@@ -7,6 +7,7 @@
 
 
 extern int __VERIFIER_nondet_int(void);
+extern char __VERIFIER_nondet_char(void);
 
 size_t strlen(const char *s) {
   register size_t i;
@@ -48,10 +49,18 @@ int main(){
   int in_len = __VERIFIER_nondet_int();
   if(in_len < 1){return 1;}
   char* hay = alloca(in_len);
+  for(int i=0; i<in_len-1; i++)
+  {
+    hay[i] = __VERIFIER_nondet_char();
+  }
   hay[in_len-1]=0;
   int out_len = __VERIFIER_nondet_int();
   if(out_len < 1){return 1;}
   char* needle = alloca(out_len);
+  for(int i=0; i<out_len-1; i++)
+  {
+    needle[i] = __VERIFIER_nondet_char();
+  }
   needle[out_len-1]=0;
   return (int) strstr(hay, needle);
 }

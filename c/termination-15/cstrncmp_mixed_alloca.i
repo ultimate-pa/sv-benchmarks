@@ -361,6 +361,7 @@ void __attribute__((__cdecl__)) __eprintf (const char *, const char *, unsigned 
 extern long double strtold (const char *, char **);
 
 extern int __VERIFIER_nondet_int(void);
+extern char __VERIFIER_nondet_char(void);
 int (cstrncmp)(const char *s1, const char *s2, int n)
  {
      unsigned char uc1, uc2;
@@ -387,7 +388,15 @@ int main() {
     }
     char* nondetString1 = (char*) __builtin_alloca(length1 * sizeof(char));
     char* nondetString2 = (char*) __builtin_alloca(length2 * sizeof(char));
+    for (int i=0; i<length1-1; i++)
+    {
+      nondetString1[i] = __VERIFIER_nondet_char();
+    }
     nondetString1[length1-1] = '\0';
+    for (int i=length2-1; i>0; i--)
+    {
+      nondetString2[i] = __VERIFIER_nondet_char();
+    }
     nondetString2[0] = '\0';
     nondetString2 += length2 - 1;
     return cstrncmp(nondetString1,nondetString2,__VERIFIER_nondet_int());

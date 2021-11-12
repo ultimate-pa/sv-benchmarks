@@ -503,6 +503,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
 
 extern int __VERIFIER_nondet_int(void);
+extern char __VERIFIER_nondet_char(void);
 size_t strlen(const char *s) {
   register size_t i;
   if ((!s)) return 0;
@@ -540,10 +541,18 @@ int main(){
   int in_len = __VERIFIER_nondet_int();
   if(in_len < 1){return 1;}
   char* hay = __builtin_alloca (in_len);
+  for(int i=0; i<in_len-1; i++)
+  {
+    hay[i] = __VERIFIER_nondet_char();
+  }
   hay[in_len-1]=0;
   int out_len = __VERIFIER_nondet_int();
   if(out_len < 1){return 1;}
   char* needle = __builtin_alloca (out_len);
+  for(int i=0; i<out_len-1; i++)
+  {
+    needle[i] = __VERIFIER_nondet_char();
+  }
   needle[out_len-1]=0;
   return (int) strstr(hay, needle);
 }

@@ -7,6 +7,7 @@
 
 
 extern int __VERIFIER_nondet_int(void);
+extern char __VERIFIER_nondet_char(void);
 
 #define WANT_SMALL_STRING_ROUTINES
 
@@ -56,10 +57,18 @@ int main(){
   int in_len = __VERIFIER_nondet_int();
   if(in_len < 1){return 1;}
   char* in = alloca(in_len);
+  for(int i=0; i<in_len-1; i++)
+  {
+    in[i] = __VERIFIER_nondet_char();
+  }
   in[in_len-1]=0;
   int out_len = __VERIFIER_nondet_int();
   if(out_len < 1){return 1;}
   char* out = alloca(out_len);
+  for(int i=0; i<out_len-1; i++)
+  {
+    out[i] = __VERIFIER_nondet_char();
+  }
   out[out_len-1]=0;
   return strcmp(in, out);
 }

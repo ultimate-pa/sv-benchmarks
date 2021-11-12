@@ -503,6 +503,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
 
 extern int __VERIFIER_nondet_int(void);
+extern char __VERIFIER_nondet_char(void);
 unsigned long int strtoul(const char *ptr, char **endptr, int base)
 {
   int neg = 0;
@@ -550,6 +551,10 @@ int main(){
   int in_len = __VERIFIER_nondet_int();
   if(in_len < 1){return 1;}
   char* in = __builtin_alloca (in_len);
+  for(int i=0; i<in_len-1; i++)
+  {
+    in[i] = __VERIFIER_nondet_char();
+  }
   in[in_len-1]=0;
   int base = __VERIFIER_nondet_int();
   char* end = 0;
