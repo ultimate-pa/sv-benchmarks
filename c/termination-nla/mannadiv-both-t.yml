@@ -3,6 +3,7 @@ input_files: 'mannadiv-both-t.c'
 properties:
   - property_file: ../properties/termination.prp
     expected_verdict: true
+  - property_file: ../properties/coverage-branches.prp
 
 options:
   language: C
