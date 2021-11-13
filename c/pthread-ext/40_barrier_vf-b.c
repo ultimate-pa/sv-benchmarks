@@ -13,7 +13,7 @@ void reach_error() { assert(0); }
 
 volatile unsigned int count = 0; //shared
 _Bool MTX = 0; //shared mutex
-_Bool COND = 0; //condition variables become local flag indicating whether the thread was signaled
+_Bool COND = 0; //condition variables become flag indicating whether the thread was signaled
 
 void __VERIFIER_atomic_acquire()
 {
