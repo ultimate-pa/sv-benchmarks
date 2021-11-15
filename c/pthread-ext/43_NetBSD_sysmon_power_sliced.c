@@ -32,7 +32,7 @@ to correctly model the cv_broadcast(COND) statement "b1_COND := 1;" must be manu
 #define mutex_exit(m) __VERIFIER_atomic_release()
 
 volatile _Bool MTX = !LOCKED;
-__thread _Bool COND = 0;
+_Bool COND = 0;
 
 void __VERIFIER_atomic_acquire()
 {
